@@ -1,0 +1,6 @@
+LOG:
+
+JUNE 21: 
+Implemented player movement (pieces)
+Implemented player path movement for player 1
+Implemented the dice roll mechanic (RANDOMIZATION from 1-6)
