@@ -4,3 +4,11 @@ JUNE 21:
 Implemented player movement (pieces)
 Implemented player path movement for player 1
 Implemented the dice roll mechanic (RANDOMIZATION from 1-6)
+
+June 29:
+Added randomization for default names ()
+Added buttons for avatar scene change
+
+Remove previous  project (unity3d)
+Created a button for solo game
+Added some temoprary sprites for the avatar (still not in the AvatarSceneChange)
