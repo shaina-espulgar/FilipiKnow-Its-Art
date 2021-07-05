@@ -29,5 +29,6 @@ PlayGame UI Progress Update
 July 5:
 [BAGARES] (Fixed some lost code during repo in AvatarSceneChange)
 -Reestablished the button for changing scene between PlayGame And AvatarMenu
+-Readded the Random Name Gen, but optimized it more in a different script. (WILL COMMENT ON IT LATER)
 
 
