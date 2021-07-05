@@ -9,4 +9,9 @@ public class PlayGame : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void GoToAvatarChangeScene()
+    {
+        SceneManager.LoadScene("AvatarMenu");
+    }
 }
