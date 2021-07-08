@@ -31,4 +31,7 @@ July 5:
 -Reestablished the button for changing scene between PlayGame And AvatarMenu
 -Readded the Random Name Gen, but optimized it more in a different script. (WILL COMMENT ON IT LATER)
 
+July 8:
+[BAGARES] Added the nameHandling Script associated with a game object for changing name UI (INPUT FIELD)
+-[currently] fixing some issue regarding showing and hiding the UI menu.
 

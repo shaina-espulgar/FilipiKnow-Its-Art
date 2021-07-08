@@ -8,18 +8,41 @@ using UnityEngine.UI;
 
 public class nameHandling : MonoBehaviour
 {
-    public string nameOfPlayer;
-    public string DEFAULT_NAME;
-    public Text playerNameShowUI;
+    public Text playerNameShowUI; //[BAGARES] hnadles name showing in the UI
+    
+    private string _nameShow;
+    public string nameOfPlayer
+    {
+        get { return _nameShow; }
+        set{
+            _nameShow = value;
 
-    public void nameDefaultRandomization()
+            playerNameShowUI.text = nameOfPlayer.ToString();
+        }
+    }
+    public string DEFAULT_NAME;
+    
+
+    public void nameDefaultRandomization() //[BAGARES] RAndomization Function for a default name. (can add more names if necessary) 
     {
         string[] DEFAULT_NAMES_INDEX = { "Aron", "Rapiest", "Terrier", "Nosferatu" };
         DEFAULT_NAME = DEFAULT_NAMES_INDEX[Random.Range(0, DEFAULT_NAMES_INDEX.Length - 1)];
     }
 
-    void Start()
+    public void showInputUI() //[BAGARES] function used for showing/hiding the Input UI
     {
+        gameObject.SetActive(true);
+    }
+
+    public void hideInputUI()
+    {
+        gameObject.SetActive(false);
+    }
+    
+    
+    private void Awake()
+    {
+        hideInputUI();
         nameDefaultRandomization();
         Debug.Log(DEFAULT_NAME + " is your name");
     }
