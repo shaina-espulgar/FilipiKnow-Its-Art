@@ -9,4 +9,14 @@ public class AdminMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void ReturnToAdminMenu()
+    {
+        SceneManager.LoadScene("AdminMenu");
+    }
+
+    public void GoToAdminUtilities()
+    {
+        SceneManager.LoadScene("AdminUtilities");
+    }
 }

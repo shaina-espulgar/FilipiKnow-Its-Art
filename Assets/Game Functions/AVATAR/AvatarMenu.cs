@@ -14,6 +14,6 @@ public class AvatarMenu : MonoBehaviour
 
     public void changeName()
     {
-        inputNameHandling.showInputUI;
+        //inputNameHandling.showInputUI;
     }
 }

@@ -14,6 +14,7 @@ Created a button for solo game
 Added some temoprary sprites for the avatar (still not in the AvatarSceneChange)
 
 June 30:
+[Pandan] 
 UI Progress Update
 Toggle Switch in SettingsMenu Scene
 InputBox added
@@ -22,6 +23,8 @@ July 1:
 Main Menu Assets incl. new Scene and Bgvid added
 
 July 2:
+
+[Pandan] 
 Resolutions Scalling Fixed
 Orientation Locked on Landscape
 PlayGame UI Progress Update
@@ -34,4 +37,11 @@ July 5:
 July 8:
 [BAGARES] Added the nameHandling Script associated with a game object for changing name UI (INPUT FIELD)
 -[currently] fixing some issue regarding showing and hiding the UI menu.
+
+July 10:
+[Pandan] Added the functionalities for the AdminMenu
+- Need more changes in the future but the Quiz Cheat Sheet needs to be done for complete coding vicinity.
+- Still buggy and will fix one or more of them in the future but not all since it will take a lot of time.
+I will do it at the final phase of this project.
+- UI still needs to be updated and needs to be done by the designer.
 
