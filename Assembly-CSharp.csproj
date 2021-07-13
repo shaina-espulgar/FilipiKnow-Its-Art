@@ -2,18 +2,20 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{AD7F87A0-0506-5BBF-6FD0-B2DF16F8C510}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -43,13 +45,6 @@
     <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>2018.4.36f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -104,9 +99,29 @@
     <Compile Include="Assets\TextMesh Pro\MainMenu.cs" />
     <Compile Include="Assets\UniScripts\QuizLoader.cs" />
     <Compile Include="Assets\UniScripts\ToggleBehavior.cs" />
+    <Compile Include="Assets\UtilScript\Assets.cs" />
+    <Compile Include="Assets\UtilScript\CMDebug.cs" />
+    <Compile Include="Assets\UtilScript\MonoBehaviours\CameraFollow.cs" />
+    <Compile Include="Assets\UtilScript\MonoBehaviours\CameraFollowSetup.cs" />
+    <Compile Include="Assets\UtilScript\MonoBehaviours\ComponentActions.cs" />
+    <Compile Include="Assets\UtilScript\MonoBehaviours\PositionRendererSorter.cs" />
+    <Compile Include="Assets\UtilScript\Utils\Button_Sprite.cs" />
+    <Compile Include="Assets\UtilScript\Utils\Button_UI.cs" />
+    <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
+    <Compile Include="Assets\UtilScript\Utils\FunctionTimer.cs" />
+    <Compile Include="Assets\UtilScript\Utils\FunctionUpdater.cs" />
+    <Compile Include="Assets\UtilScript\Utils\UI_Bar.cs" />
+    <Compile Include="Assets\UtilScript\Utils\UI_BarMultiple.cs" />
+    <Compile Include="Assets\UtilScript\Utils\UI_Sprite.cs" />
+    <Compile Include="Assets\UtilScript\Utils\UI_TextComplex.cs" />
+    <Compile Include="Assets\UtilScript\Utils\UtilsClass.cs" />
+    <Compile Include="Assets\UtilScript\Utils\World_Bar.cs" />
+    <Compile Include="Assets\UtilScript\Utils\World_Mesh.cs" />
+    <Compile Include="Assets\UtilScript\Utils\World_Sprite.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\UtilScript\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -126,25 +141,25 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.36f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -345,7 +360,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.36f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>K:/work/Game Project/~From Uni (Team 11)/~new/BUILD_07052021-2/FilipiKnow-Its-Art/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.36f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -694,7 +709,6 @@
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

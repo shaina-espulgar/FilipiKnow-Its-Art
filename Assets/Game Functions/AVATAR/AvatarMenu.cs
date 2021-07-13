@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using CodeMonkey.Utils;
 
 public class AvatarMenu : MonoBehaviour
 {
-    public nameHandling inputNameHandling;
+    [SerializeField]
+    private nameHandling nameHandling; //reference for the nameHandling Script
+
 
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void changeName()
+    private void Start()
     {
-        //inputNameHandling.showInputUI;
+        transform.Find("btn_changeName").GetComponent<Button_UI>().ClickFunc = nameHandling.showInputUI;
     }
 }
