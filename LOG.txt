@@ -45,3 +45,7 @@ July 10:
 I will do it at the final phase of this project.
 - UI still needs to be updated and needs to be done by the designer.
 
+July 13: 
+[BAGARES] Added functionalities for the Ui_Input Name in Avatar Change Scene
+-Opening of the scene has been established
+
