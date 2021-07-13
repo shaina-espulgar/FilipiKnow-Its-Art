@@ -49,3 +49,8 @@ July 13:
 [BAGARES] Added functionalities for the Ui_Input Name in Avatar Change Scene
 -Opening of the scene has been established
 
+July 13:
+[Pandan] Multiplayer Update is still INCOMPLETE and not in beta yet but you will get gist of what I am doing 
+for other teams to cope up for my re-adjustments in the UI also.
+- The only functional feature there yet is server and client relationships in this game yet
+

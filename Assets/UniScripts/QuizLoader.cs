@@ -12,7 +12,7 @@ public class QuizLoader : MonoBehaviour
     // This will load every CSV files when placed in the game
     public TextAsset[] textAssetData;
     // Will get its specific filepath
-    string filepath = "";
+    string filepath = string.Empty;
 
     // Text the specific quiz question
     public Text questionDisplay;
@@ -71,8 +71,8 @@ public class QuizLoader : MonoBehaviour
         data_display[5] = createChoices_4.text;
         data_display[6] = createAnswer.text;
 
-        string combine = "";
-        string reserve = "";
+        string combine = string.Empty;
+        string reserve = string.Empty;
         for (int i = 0; i < data_display.Length; i++)
         {
             if (i == data_display.Length - 1)
