@@ -26,9 +26,7 @@ public class PlayGame : MonoBehaviour
 
     public void HostServer()
     {
-        netAddress.text = networkLobby.networkAddress;
         networkLobby.StartHost();
-
     }
 
     // Disconnects the server if you are the host

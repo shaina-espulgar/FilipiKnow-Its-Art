@@ -12,31 +12,25 @@ public class PlayerInputName : MonoBehaviour
 
     public static string DisplayName { get; private set; }
 
-    private const string PlayerPrefsNameKey = "PlayerName";
-
     private void Start() => SetUpInputField();
 
     private void SetUpInputField()
     {
-        if (!PlayerPrefs.HasKey(PlayerPrefsNameKey)) { return; }
-
-        string defaultName = PlayerPrefs.GetString(PlayerPrefsNameKey);
+        string defaultName = "Player";
 
         playerName.text = defaultName;
 
         SetPlayerName(defaultName);
     }
 
-    public void SetPlayerName(string name)
-    {
+    public void SetPlayerName(string name)  
+    {   
         joinGame.interactable = !string.IsNullOrEmpty(name);
     }
 
     public void SavePlayerName()
     {
         DisplayName = playerName.text;
-
-        PlayerPrefs.SetString(PlayerPrefsNameKey, DisplayName);
     }
 
 }

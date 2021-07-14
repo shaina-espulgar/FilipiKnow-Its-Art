@@ -360,7 +360,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/TextMesh Pro/MainMenu.cs"
 "Assets/UniScripts/JoinGameLobby.cs"
-"Assets/UniScripts/NetworkGameLobby.cs"
+"Assets/UniScripts/NetworkGamePlayer.cs"
 "Assets/UniScripts/NetworkManagerLobby.cs"
 "Assets/UniScripts/NetworkPlayerLobby.cs"
 "Assets/UniScripts/PlayerInputName.cs"

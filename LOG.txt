@@ -54,3 +54,9 @@ July 13:
 for other teams to cope up for my re-adjustments in the UI also.
 - The only functional feature there yet is server and client relationships in this game yet
 
+July 14:
+[Pandan] Multiplayer Update is now in BETA but there is no way to get back on the PlayMenu yet. I can now permit people 
+to fix the UI since I ruined most of them when coding. 
+- Host and Client can now see each other, "ready-unready" function now working.
+Please Note: Place all of the Actual Gameplay inside the "GamePlay" scene. 
+Test it on Android first since I just test the LAN multiplayer in PC because it is hard to test it in Android.

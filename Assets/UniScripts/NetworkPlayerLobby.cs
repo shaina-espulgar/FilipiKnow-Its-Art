@@ -2,19 +2,19 @@ using Mirror;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class NetworkPlayerLobby : NetworkBehaviour
 {
     [Header("UI")]
     [SerializeField] private GameObject lobbyUI = null;
-    [SerializeField] private TMP_InputField[] playerNameTexts = new TMP_InputField[4];
+    [SerializeField] private TMP_Text[] playerNameTexts = new TMP_Text[4];
     [SerializeField] private TMP_Text[] playerReadyTexts = new TMP_Text[4];
     [SerializeField] private Button startGameButton = null;
-    [SerializeField] private TMP_InputField yourName = null;
 
-    // [SyncVar(hook = nameof(HandleDisplayNameChanged))]
-    // public string DisplayName = "Loading...";
+    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
+    public string DisplayName = "Loading...";
     [SyncVar(hook = nameof(HandleReadyStatusChanged))]
     public bool IsReady = false;
 
@@ -40,7 +40,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
 
     public override void OnStartAuthority()
     {
-        CmdSetDisplayName(yourName.text);
+        CmdSetDisplayName(PlayerInputName.DisplayName);
 
         lobbyUI.SetActive(true);
     }
@@ -57,6 +57,11 @@ public class NetworkPlayerLobby : NetworkBehaviour
         Room.RoomPlayers.Remove(this);
 
         UpdateDisplay();
+    }
+
+    public override void OnStopServer()
+    {
+        Room.StopServer();
     }
 
     public void HandleReadyStatusChanged(bool oldValue, bool newValue) => UpdateDisplay();
@@ -86,7 +91,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
 
         for (int i = 0; i < Room.RoomPlayers.Count; i++)
         {
-            playerNameTexts[i].text = Room.RoomPlayers[i].yourName.text;
+            playerNameTexts[i].text = Room.RoomPlayers[i].DisplayName;
             playerReadyTexts[i].text = Room.RoomPlayers[i].IsReady ?
                 "<color=green>Ready</color>" :
                 "<color=red>Not Ready</color>";
@@ -103,7 +108,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
     [Command]
     private void CmdSetDisplayName(string displayName)
     {
-        yourName.text = displayName;
+        DisplayName = displayName;
     }
 
     [Command]
@@ -119,6 +124,12 @@ public class NetworkPlayerLobby : NetworkBehaviour
     {
         if (Room.RoomPlayers[0].connectionToClient != connectionToClient) { return; }
 
-        // Start Game
+        Room.StartGame();
+    }
+
+    public void BackButton()
+    {
+        if (isLeader == true) { Room.StopHost(); }
+        else { Room.StopClient(); } 
     }
 }

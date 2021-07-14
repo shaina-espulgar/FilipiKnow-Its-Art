@@ -39,12 +39,10 @@ public class JoinGameLobby : MonoBehaviour
         joinGame.interactable = true;
 
         gameObject.SetActive(false);
-
     }
 
     private void HandleClientDisconnected()
     {
         joinGame.interactable = true;
     }
-
 }
