@@ -115,7 +115,6 @@ public class NetworkPlayerLobby : NetworkBehaviour
     public void CmdReadyUp()
     {
         IsReady = !IsReady;
-
         Room.NotifyPlayersOfReadyState();
     }
 
@@ -129,7 +128,6 @@ public class NetworkPlayerLobby : NetworkBehaviour
 
     public void BackButton()
     {
-        if (isLeader == true) { Room.StopHost(); }
-        else { Room.StopClient(); } 
+        Room.StopClient();
     }
 }

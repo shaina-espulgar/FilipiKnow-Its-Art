@@ -60,3 +60,8 @@ to fix the UI since I ruined most of them when coding.
 - Host and Client can now see each other, "ready-unready" function now working.
 Please Note: Place all of the Actual Gameplay inside the "GamePlay" scene. 
 Test it on Android first since I just test the LAN multiplayer in PC because it is hard to test it in Android.
+
+July 15:
+[Pandan] AdminUtilities bug fixed
+- Can now edit, add, and delete questions properly
+- Add the questions ASAP

@@ -49,7 +49,10 @@ public class QuizLoader : MonoBehaviour
     private void LoadCSV(Dropdown dropDownQuizList)
     {
         filepath = Application.dataPath + "/Quiz Database/" + textAssetData[dropDownQuizList.value].name + ".csv";
-
+        if (new FileInfo(filepath).Length == 0)
+        {
+            dropDownQuizList.value = 0;
+        }
         data_questionSet = File.ReadAllLines(filepath);
 
         data_display = data_questionSet[indexQuestion].Split(new string[] { "," }, StringSplitOptions.None);
@@ -108,9 +111,10 @@ public class QuizLoader : MonoBehaviour
 
     public void DeleteQuestion()
     {
-        data_questionSet[indexQuestion] = data_questionSet[indexQuestion + 1];
-        string[] arrline = File.ReadAllLines(filepath);
-        arrline = data_questionSet;
+        int indexToRemove = indexQuestion;
+        data_questionSet = data_questionSet.Where((source, index) => index != indexToRemove).ToArray();
+
+        string[] arrline = data_questionSet;
         File.WriteAllLines(filepath, arrline);
     }
 
@@ -123,7 +127,6 @@ public class QuizLoader : MonoBehaviour
         }
 
         LoadCSV(dropDownQuizList);
-
     }
 
     public void Next()
@@ -135,7 +138,6 @@ public class QuizLoader : MonoBehaviour
         }
 
         LoadCSV(dropDownQuizList);
-
     }
 }
 

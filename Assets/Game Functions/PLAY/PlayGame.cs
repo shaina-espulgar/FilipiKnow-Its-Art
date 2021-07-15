@@ -34,4 +34,9 @@ public class PlayGame : MonoBehaviour
     {
         networkLobby.StopHost();
     }
+
+    public void StopClient()
+    {
+        networkLobby.StopClient();
+    }
 }
