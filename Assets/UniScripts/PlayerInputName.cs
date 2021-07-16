@@ -19,18 +19,10 @@ public class PlayerInputName : MonoBehaviour
         string defaultName = "Player";
 
         playerName.text = defaultName;
-
-        SetPlayerName(defaultName);
-    }
-
-    public void SetPlayerName(string name)  
-    {   
-        joinGame.interactable = !string.IsNullOrEmpty(name);
     }
 
     public void SavePlayerName()
     {
         DisplayName = playerName.text;
     }
-
 }

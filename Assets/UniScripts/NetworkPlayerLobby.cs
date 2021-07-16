@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using System;
 
 public class NetworkPlayerLobby : NetworkBehaviour
 {
@@ -12,6 +12,9 @@ public class NetworkPlayerLobby : NetworkBehaviour
     [SerializeField] private TMP_Text[] playerNameTexts = new TMP_Text[4];
     [SerializeField] private TMP_Text[] playerReadyTexts = new TMP_Text[4];
     [SerializeField] private Button startGameButton = null;
+
+    [Header("Display Address")]
+    [SerializeField] public TMP_Text netAddress;
 
     [SyncVar(hook = nameof(HandleDisplayNameChanged))]
     public string DisplayName = "Loading...";
@@ -59,11 +62,6 @@ public class NetworkPlayerLobby : NetworkBehaviour
         UpdateDisplay();
     }
 
-    public override void OnStopServer()
-    {
-        Room.StopServer();
-    }
-
     public void HandleReadyStatusChanged(bool oldValue, bool newValue) => UpdateDisplay();
     public void HandleDisplayNameChanged(string oldValue, string newValue) => UpdateDisplay();
 
@@ -96,6 +94,8 @@ public class NetworkPlayerLobby : NetworkBehaviour
                 "<color=green>Ready</color>" :
                 "<color=red>Not Ready</color>";
         }
+
+        netAddress.text = room.networkAddress;
     }
 
     public void HandleReadyToStart(bool readyToStart)
@@ -128,6 +128,16 @@ public class NetworkPlayerLobby : NetworkBehaviour
 
     public void BackButton()
     {
-        Room.StopClient();
+        if (isLeader)
+        {
+            Room.StopHost();
+        }
+        else
+        {
+            SceneManager.LoadScene("PlayGame");
+            Room.StopServer();
+            Room.StopClient();
+
+        }
     }
 }

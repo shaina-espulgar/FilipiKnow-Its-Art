@@ -9,13 +9,11 @@ using TMPro;
 
 public class PlayGame : MonoBehaviour
 {
-    [SerializeField] private NetworkManagerLobby networkLobby = null;
-
-    [Header("Display Address")]
-    [SerializeField] private Text netAddress;
+    [SerializeField] private NetworkManagerLobby networkLobby;
 
     public void ReturnToMainMenu()
     {
+        GameObject.Destroy(GameObject.Find("Network Manager"));
         SceneManager.LoadScene("MainMenu");
     }
 

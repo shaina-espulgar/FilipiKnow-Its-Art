@@ -100,6 +100,7 @@ public class NetworkManagerLobby : NetworkManager
     public override void OnStopServer()
     {
         RoomPlayers.Clear();
+        GamePlayers.Clear();
     }
 
     public void NotifyPlayersOfReadyState()

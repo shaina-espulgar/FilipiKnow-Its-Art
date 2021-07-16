@@ -77,3 +77,8 @@ July 15:
 - Can now edit, add, and delete questions properly
 - Add the questions ASAP
 >>>>>>> 11e851069d33fe81e49d3b1d24e8bae5a567a001
+
+July 16:
+[Pandan] Multiplayeer Lobby v1.0
+- The lobby can now properly disconnects the server and client respectively
+- Added integrator for shifting the lobby to gameplay

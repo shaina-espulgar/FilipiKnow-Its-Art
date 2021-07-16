@@ -154,7 +154,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5094}
     - Class: 114
-      Script: {instanceID: 25842}
+      Script: {instanceID: 25448}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -949,7 +949,7 @@ ScriptsOnlyBuild:
     className: CoroutineExecutor
   - hash:
       serializedVersion: 2
-      Hash: afa9c3bc617dd147abccc3df6d4bf2bd
+      Hash: e9baf2817f0f047d7ea574703113e8e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkPlayerLobby
@@ -1483,7 +1483,7 @@ ScriptsOnlyBuild:
     className: Tank
   - hash:
       serializedVersion: 2
-      Hash: a9630f5932f816b401eb1b1f28349284
+      Hash: 907a5538088322e5001bb148b7379327
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayGame
