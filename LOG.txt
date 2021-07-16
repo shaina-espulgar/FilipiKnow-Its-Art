@@ -54,6 +54,17 @@ July 13:
 for other teams to cope up for my re-adjustments in the UI also.
 - The only functional feature there yet is server and client relationships in this game yet
 
+<<<<<<< HEAD
+July 15:
+-Halted Avatar Scene Progress to work on to the Game scene
+-Added Game Scene (Solo), still barebones...
+-Added pause functionality, 80% done.
+-Added the Category Menu Thingie, (Currently working on that sort of thing)
+-Added the assets/sprites from gdrive.
+-Added the new util script for external purpose.
+
+
+=======
 July 14:
 [Pandan] Multiplayer Update is now in BETA but there is no way to get back on the PlayMenu yet. I can now permit people 
 to fix the UI since I ruined most of them when coding. 
@@ -65,3 +76,4 @@ July 15:
 [Pandan] AdminUtilities bug fixed
 - Can now edit, add, and delete questions properly
 - Add the questions ASAP
+>>>>>>> 11e851069d33fe81e49d3b1d24e8bae5a567a001
