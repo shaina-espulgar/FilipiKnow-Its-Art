@@ -90,3 +90,9 @@ July 17:
 -established connection between classart csv and the Game solo scene
 -edited the Classart.csv files for testing
 -added scripts for the connection [still not totally complete]
+
+July 18:
+[Pandan]
+- modified QuizLoader to be universal for everyone
+- AdminUtilites added
+- Question category for every GameObjects

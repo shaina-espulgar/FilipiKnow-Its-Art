@@ -10,134 +10,152 @@ using TMPro;
 public class QuizLoader : MonoBehaviour
 {
     // This will load every CSV files when placed in the game
-    public TextAsset[] textAssetData;
+    [SerializeField]
+    private TextAsset[] _textAssetData;
+    public TextAsset[] TextAssetData
+    {
+        get { return _textAssetData; }
+        set { _textAssetData = value; }
+    }
+    
     // Will get its specific filepath
-    string filepath = string.Empty;
+    public string filepath = string.Empty;
 
     // Text the specific quiz question
-    public Text questionDisplay;
-    public InputField questionEdit;
+    // public Text questionDisplay;
+    // public InputField questionEdit;
     // public Text questionCreate;
 
     // Lists all of the Quiz Databases
-    public Dropdown dropDownQuizList;
-
-    public TMP_InputField createQuestion;
-    public TMP_InputField createChoices_1;
-    public TMP_InputField createChoices_2;
-    public TMP_InputField createChoices_3;
-    public TMP_InputField createChoices_4;
-    public TMP_InputField createAnswer;
+    // public Dropdown dropDownQuizList;
 
     int indexQuestion = 0;
+    string typeOfQuestion = null;
 
     string[] data_questionSet;
     string[] data_display;
 
     private void Start()
     {
-        // For Dropdown Options
-        for (int i = 0; i < textAssetData.Length; i++)
-        {
-            dropDownQuizList.options.Add(new Dropdown.OptionData() { text = textAssetData[i].name });
-        }
-        dropDownQuizList.onValueChanged.AddListener(delegate { LoadCSV(dropDownQuizList); indexQuestion = 0; });
 
-        LoadCSV(dropDownQuizList);
     }
 
-    private void LoadCSV(Dropdown dropDownQuizList)
+    public void LoadCSV(string typeOfQuestion)
     {
-        filepath = Application.dataPath + "/Quiz Database/" + textAssetData[dropDownQuizList.value].name + ".csv";
-        if (new FileInfo(filepath).Length == 0)
-        {
-            dropDownQuizList.value = 0;
-        }
+        filepath = Application.dataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
+
         data_questionSet = File.ReadAllLines(filepath);
-
         data_display = data_questionSet[indexQuestion].Split(new string[] { "," }, StringSplitOptions.None);
-
-        createQuestion.text = data_display[1];
-        createChoices_1.text = data_display[2];
-        createChoices_2.text = data_display[3];
-        createChoices_3.text = data_display[4];
-        createChoices_4.text = data_display[5];
-        createAnswer.text = data_display[6];
     }
 
-    public void EditCSV()
+    // Use Getter and Setter so we can get the variable of these stuffs even from the outside
+    private string _question;
+    public string Question
     {
-        data_display[1] = createQuestion.text;
-        data_display[2] = createChoices_1.text;
-        data_display[3] = createChoices_2.text;
-        data_display[4] = createChoices_3.text;
-        data_display[5] = createChoices_4.text;
-        data_display[6] = createAnswer.text;
+        get { return _question; }
+        set { _question = value; }
+    }
 
-        string combine = string.Empty;
-        string reserve = string.Empty;
-        for (int i = 0; i < data_display.Length; i++)
+    private List<string> _choices;
+    public List<string> Choices
+    {
+        get { return _choices; }
+        set { _choices = value; }
+    }
+
+    private List<string> _answers;
+    public List<string> Answers
+    {
+        get { return _answers; }
+        set { _answers = value; }
+    }
+
+    public void Classicart(int index)
+    {
+        _question = data_display[0];
+        for (int i = 0; i <= 4 ; i++)
         {
-            if (i == data_display.Length - 1)
-            {
-                combine = reserve + data_display[i];
-                data_questionSet[indexQuestion] = combine;
-            }
-            else
-            {
-                combine = reserve + data_display[i] + ",";
-                reserve = combine;
-            }
+            _choices.Add(data_display[i]);
         }
-
-        string[] arrline = File.ReadAllLines(filepath);
-        arrline[indexQuestion] = combine;
-        File.WriteAllLines(filepath, arrline);
+        _answers.Add(data_display[5]);
     }
 
-    public void CreateNew()
+    public void Matchart(int index)
     {
-        string numbering = Convert.ToString(data_questionSet.Length + 1);
-        string newQuestion =  numbering + "," + createQuestion.text + "," + createChoices_1.text + "," + createChoices_2.text + "," +
-            createChoices_3.text + "," + createChoices_4.text + "," + createAnswer.text;
-
-        data_questionSet = data_questionSet.Concat(new string[] { newQuestion }).ToArray();
-
-        string[] arrline = File.ReadAllLines(filepath);
-        List<string> listline = arrline.ToList();
-        listline.Add(data_questionSet[data_questionSet.Length - 1]);
-        File.WriteAllLines(filepath, listline);
-    }
-
-    public void DeleteQuestion()
-    {
-        int indexToRemove = indexQuestion;
-        data_questionSet = data_questionSet.Where((source, index) => index != indexToRemove).ToArray();
-
-        string[] arrline = data_questionSet;
-        File.WriteAllLines(filepath, arrline);
-    }
-
-    public void Previous()
-    {
-        indexQuestion--;
-        if (indexQuestion < 0)
+        _question = data_display[0];
+        for (int i = 0; i <= 4; i++)
         {
-            indexQuestion = data_questionSet.Length - 1;
+            _choices.Add(data_display[i]);
         }
-
-        LoadCSV(dropDownQuizList);
+        _answers.Add(data_display[5]);
     }
 
-    public void Next()
+    public void Switchart(int index)
     {
-        indexQuestion++;
-        if (indexQuestion > data_questionSet.Length - 1)
-        {
-            indexQuestion = 0;
-        }
 
-        LoadCSV(dropDownQuizList);
     }
+
+    public void Grabart(int index)
+    {
+        _choices = data_questionSet[index].Split(',').ToList();
+        _answers = data_questionSet[index + 1].Split(',').ToList();
+
+        string question = _choices.ElementAt(0);
+        _choices.RemoveAt(0);
+
+    }
+
+    public void Nameart(int index)
+    {
+
+    }
+
+    public void Classifyart(int index)
+    {
+
+    }
+
+    public void TicTacToe(int index)
+    {
+        _question = data_questionSet[0];
+        _answers.Add(data_questionSet[1]);
+    }
+
+    public void Maze(int index)
+    {
+        _question = data_questionSet[0];
+        _answers.Add(data_questionSet[1]);
+    }
+
 }
+
+/* 
+    Planned format when used in the GamePlay
+    LoadCSV(Grabart);
+
+    var quizLoader = new QuizLoader();
+    string question = quizLoader.Question;
+    list<string> choices = quizloader.Choices;
+    list<string> answers = quizLoader.Answers;
+
+    == Then assign a Question Type...
+    Grabart(int index) <----- index is for rotating the question numbers
+
+    --- BELOW HERE will eventually be the product ---
+
+    if (choices[input] == answers)
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+
+    --- CLEAR THE LIST IF THE ROUND ENDED ---
+
+    question = null;
+    choices.Clear();
+    answers.Clear();
+*/
 
