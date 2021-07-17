@@ -83,3 +83,10 @@ July 16:
 -added Game mode (ClasArt) (buttons and other question UI added)
 -Pause Menu (90% complete) (textures are needed)
 -Added The Game-Solo.scene into a prefab named NetworkGamePlayer.prefab
+
+July 17:
+[BAGARES] 
+-added Maze questions
+-established connection between classart csv and the Game solo scene
+-edited the Classart.csv files for testing
+-added scripts for the connection [still not totally complete]
