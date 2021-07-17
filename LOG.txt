@@ -96,3 +96,4 @@ July 18:
 - modified QuizLoader to be universal for everyone
 - AdminUtilites added
 - Question category for every GameObjects
+- Established a Universal format for our CSV files
