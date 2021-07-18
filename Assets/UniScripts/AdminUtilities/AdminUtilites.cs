@@ -18,20 +18,13 @@ public class AdminUtilites : MonoBehaviour
     public Scrollbar editor;
     public Text questionCreate;
     */
-    [SerializeField]
-    private TextAsset[] textAssetData;
+
     // Lists all of the Quiz Databases
+    [Header("QuizLoader")]
+    [SerializeField] private QuizLoader quizLoader;
 
-    [SerializeField]
-    private Dropdown dropDownQuizList;
-
-    int indexQuestion = 0;
-
-    string[] data_questionSet;
-    string[] data_display;
-
-    private QuizLoader quizLoader;
     // GameObjects that will be presented inside the ScrollView
+    [Header("GameObjects")]
     public GameObject UI_Classicart;
     public GameObject UI_Matchart;
     public GameObject UI_Switchart;
@@ -41,25 +34,38 @@ public class AdminUtilites : MonoBehaviour
     public GameObject UI_TicTacToe;
     public GameObject UI_Maze;
 
-    public void Start()
-    { 
+    [Header("Dropdown")]
+    [SerializeField] private Dropdown dropDownQuizList;
+
+    [Header("Classes")]
+    [SerializeField] private Class_Classicart classicart;
+
+    int indexQuestion = 0;
+
+    string[] data_questionSet;
+    string[] data_display;
+
+    string currentPanel;
+
+    private void Start()
+    {
         // For Dropdown Options
-        for (int i = 0; i < textAssetData.Length; i++)
+        for (int i = 0; i < quizLoader.TextAssetData.Length; i++)
         {
-            dropDownQuizList.options.Add(new Dropdown.OptionData() { text = textAssetData[i].name });
+            dropDownQuizList.options.Add(new Dropdown.OptionData() { text = quizLoader.TextAssetData[i].name });
         }
         OpenPanel(dropDownQuizList);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             OpenPanel(dropDownQuizList); 
         });
-
-        // quizLoader.LoadCSV(dropDownQuizList.name);
     }
 
     public void OpenPanel(Dropdown dropDownQuizList)
     {
         int index = dropDownQuizList.value;
+        currentPanel = dropDownQuizList.options[index].text;
+
         switch (dropDownQuizList.options[index].text)
         {
             case "Classicart": Panel_Classicart(); break;
@@ -71,11 +77,13 @@ public class AdminUtilites : MonoBehaviour
             case "TicTacToe": Panel_TicTacToe(); break;
             case "Maze": Panel_Maze(); break;
         }
+
+
     }
 
     public void EditCSV()
     {
-        quizLoader.LoadCSV(dropDownQuizList.name);
+        // quizLoader.LoadCSV(dropDownQuizList.name);
         string combine = string.Empty;
         string reserve = string.Empty;
         for (int i = 0; i < data_display.Length; i++)
@@ -99,7 +107,7 @@ public class AdminUtilites : MonoBehaviour
 
     public void CreateNew()
     {
-        quizLoader.LoadCSV(dropDownQuizList.name);
+        // quizLoader.LoadCSV(dropDownQuizList.name);
         string numbering = Convert.ToString(data_questionSet.Length + 1);
         // string newQuestion = createQuestion.text + "," + createChoices_1.text + "," + createChoices_2.text + "," +
         //    createChoices_3.text + "," + createChoices_4.text + "," + createAnswer.text;
@@ -114,7 +122,7 @@ public class AdminUtilites : MonoBehaviour
 
     public void DeleteQuestion()
     {
-        quizLoader.LoadCSV(dropDownQuizList.name);
+        // quizLoader.LoadCSV(dropDownQuizList.name);
         int indexToRemove = indexQuestion;
         data_questionSet = data_questionSet.Where((source, index) => index != indexToRemove).ToArray();
 
@@ -124,35 +132,34 @@ public class AdminUtilites : MonoBehaviour
 
     public void Previous()
     {
-        indexQuestion--;
-        if (indexQuestion < 0)
+        quizLoader.indexQuestion--;
+        if (quizLoader.indexQuestion < 0)
         {
-            indexQuestion = data_questionSet.Length - 1;
+            quizLoader.indexQuestion = quizLoader.data_questionSet.Length - 1;
         }
-
-        quizLoader.LoadCSV(dropDownQuizList.name);
-
+        quizLoader.LoadCSV(currentPanel);
     }
 
     public void Next()
     {
-        indexQuestion++;
-        if (indexQuestion > data_questionSet.Length - 1)
+        quizLoader.indexQuestion++;
+        if (quizLoader.indexQuestion > quizLoader.data_questionSet.Length - 1)
         {
-            indexQuestion = 0;
+            quizLoader.indexQuestion = 0;
         }
-
-        quizLoader.LoadCSV(dropDownQuizList.name);
+        quizLoader.LoadCSV(currentPanel);
     }
 
     public void Panel_Classicart()
     {
         UI_Classicart.SetActive(true);
 
+        quizLoader.LoadCSV(currentPanel);
+        classicart.QuizLoad();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Classicart.SetActive(false);
         });
-
     }
 
     public void Panel_Matchart()

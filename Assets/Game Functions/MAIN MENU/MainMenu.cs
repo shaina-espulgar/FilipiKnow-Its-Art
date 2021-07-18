@@ -6,19 +6,6 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject canvas;
-    public void Start()
-    {
-        DefaultControls.Resources uiResources = new DefaultControls.Resources();
-        //Set the InputField Background Image someBgSprite;
-
-        GameObject uiInputField = DefaultControls.CreateInputField(uiResources);
-        uiInputField.transform.SetParent(canvas.transform, false);
-        uiInputField.transform.position = new Vector3(100, 100, 100);
-        uiInputField.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 200);
-        uiInputField.transform.GetChild(0).GetComponent<Text>().font = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
-
-    }
     public void PlayGame()
     {
         SceneManager.LoadScene("PlayGame");

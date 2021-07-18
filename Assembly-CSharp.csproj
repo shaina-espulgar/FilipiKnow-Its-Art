@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,6 +56,7 @@
     <Compile Include="Assets\UniScripts\AdminUtilities\AdminUtilites.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\UtilScript\Utils\Button_UI.cs" />
+    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\nameHandling.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Game Functions\ABOUT US\AboutUs.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\CameraFollowSetup.cs" />
     <Compile Include="Assets\UniScripts\QuizLoader.cs" />
+    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classicart.cs" />
     <Compile Include="Assets\UniScripts\NetworkPlayerLobby.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\CameraFollow.cs" />
     <Compile Include="Assets\UtilScript\Assets.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_PauseMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\PositionRendererSorter.cs" />
+    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Switchart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\MainMenu.cs" />
     <Compile Include="Assets\UniScripts\NetworkManagerLobby.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionUpdater.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Grabart.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Category_Handling.cs" />
     <Compile Include="Assets\UniScripts\JoinGameLobby.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionTimer.cs" />
@@ -97,12 +101,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Maze.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_Bar.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_PlayerStat.cs" />
     <Compile Include="Assets\UniScripts\PlayerInputName.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\UniScripts\AdminUtilities\Class_TicTacToe.cs" />
     <Compile Include="Assets\Game Functions\PLAY\PlayGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -128,13 +134,7 @@
     <Compile Include="Assets\UtilScript\CMDebug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classicart.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Matchart.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_TicTacToe.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Maze.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Grabart.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Switchart.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

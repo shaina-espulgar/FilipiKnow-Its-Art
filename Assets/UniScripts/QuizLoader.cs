@@ -1,54 +1,53 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
+// Note: INCOMPLETE. We need to formulate a code for some of the missing questionTypes in here
 public class QuizLoader : MonoBehaviour
 {
     // This will load every CSV files when placed in the game
-    [SerializeField]
-    private TextAsset[] _textAssetData;
-    public TextAsset[] TextAssetData
-    {
-        get { return _textAssetData; }
-        set { _textAssetData = value; }
-    }
-    
+    public TextAsset[] TextAssetData;
+
     // Will get its specific filepath
     public string filepath = string.Empty;
 
-    // Text the specific quiz question
-    // public Text questionDisplay;
-    // public InputField questionEdit;
-    // public Text questionCreate;
-
-    // Lists all of the Quiz Databases
-    // public Dropdown dropDownQuizList;
-
-    int indexQuestion = 0;
-    string typeOfQuestion = null;
-
-    string[] data_questionSet;
-    string[] data_display;
-
-    private void Start()
-    {
-
-    }
+    public int indexQuestion = 0;
+    public string[] data_questionSet;
+    public string[] data_display;
 
     public void LoadCSV(string typeOfQuestion)
     {
         filepath = Application.dataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
 
+        // Transfering the CSV file into array per row
         data_questionSet = File.ReadAllLines(filepath);
+
+        // Deleting the first row of the referenced CSV
+        for(int i = 0; i < data_questionSet.Length - 1; i++)
+        {
+            data_questionSet[i] = data_questionSet[i + 1];
+        }
+        Array.Resize(ref data_questionSet, data_questionSet.Length - 1);
+
+        // Spliting the data_questionSet into columns or pieces
         data_display = data_questionSet[indexQuestion].Split(new string[] { "," }, StringSplitOptions.None);
+        
+        switch (typeOfQuestion)
+        {
+            case "Classicart": Classicart(); break;
+            case "Matchart": Matchart(indexQuestion); break;
+            case "Switchart": Switchart(); break;
+            case "Grabart": Grabart(indexQuestion); break;
+            case "Nameart": Nameart(); break;
+            case "Classifyart": Classifyart(); break;
+            case "TicTacToe": TicTacToe(); break;
+            case "Maze": Maze(); break;
+        }
     }
 
-    // Use Getter and Setter so we can get the variable of these stuffs even from the outside
+    // Use Getter and Setter so we can get the variable of these stuffs or modify it even from the outside
     private string _question;
     public string Question
     {
@@ -56,24 +55,24 @@ public class QuizLoader : MonoBehaviour
         set { _question = value; }
     }
 
-    private List<string> _choices;
+    private List<string> _choices = new List<string>();
     public List<string> Choices
     {
         get { return _choices; }
         set { _choices = value; }
     }
 
-    private List<string> _answers;
+    private List<string> _answers = new List<string>();
     public List<string> Answers
     {
         get { return _answers; }
         set { _answers = value; }
     }
 
-    public void Classicart(int index)
+    public void Classicart()
     {
         _question = data_display[0];
-        for (int i = 0; i <= 4 ; i++)
+        for (int i = 1; i <= 4 ; i++)
         {
             _choices.Add(data_display[i]);
         }
@@ -83,14 +82,14 @@ public class QuizLoader : MonoBehaviour
     public void Matchart(int index)
     {
         _question = data_display[0];
-        for (int i = 0; i <= 4; i++)
+        for (int i = 1; i <= 4; i++)
         {
             _choices.Add(data_display[i]);
         }
         _answers.Add(data_display[5]);
     }
 
-    public void Switchart(int index)
+    public void Switchart()
     {
 
     }
@@ -102,60 +101,77 @@ public class QuizLoader : MonoBehaviour
 
         string question = _choices.ElementAt(0);
         _choices.RemoveAt(0);
-
     }
 
-    public void Nameart(int index)
+    public void Nameart()
     {
 
     }
 
-    public void Classifyart(int index)
+    public void Classifyart()
     {
 
     }
 
-    public void TicTacToe(int index)
-    {
-        _question = data_questionSet[0];
-        _answers.Add(data_questionSet[1]);
-    }
-
-    public void Maze(int index)
+    public void TicTacToe()
     {
         _question = data_questionSet[0];
         _answers.Add(data_questionSet[1]);
     }
 
+    public void Maze()
+    {
+        _question = data_questionSet[0];
+        _answers.Add(data_questionSet[1]);  
+    }
 }
 
 /* 
     Planned format when used in the GamePlay
-    LoadCSV(Grabart);
 
-    var quizLoader = new QuizLoader();
-    string question = quizLoader.Question;
-    list<string> choices = quizloader.Choices;
-    list<string> answers = quizLoader.Answers;
+    [SerializeField] private QuizLoader quizLoader;
 
-    == Then assign a Question Type...
-    Grabart(int index) <----- index is for rotating the question numbers
+    void Start()
+    {
+        string question = quizLoader.Question;
+        list<string> choices = quizloader.Choices;
+        list<string> answers = quizLoader.Answers;
+        
+        == Then assign a Question Type...
+        quizLoader.LoadCSV("Grabart");
+    }
 
     --- BELOW HERE will eventually be the product ---
-
-    if (choices[input] == answers)
+    void Game()
     {
-        return TRUE;
+        if (choices[input] == answers)
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
     }
-    else
+
+    void Previous()
     {
-        return FALSE;
+        quizLoader.indexQuestion--;
     }
 
-    --- CLEAR THE LIST IF THE ROUND ENDED ---
+    void Next()
+    {
+        quizLoader.indexQuestion++;
+    }
 
-    question = null;
-    choices.Clear();
-    answers.Clear();
+    -- Need some code for not overpassing the value of indexQuestion to the no. of questions
+
+    void Clear()
+    {
+        --- CLEAR THE LIST IF THE ROUND ENDED ---
+        question = null;
+        choices.Clear();
+        answers.Clear();
+    }
 */
 

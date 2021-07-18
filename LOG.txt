@@ -97,3 +97,8 @@ July 18:
 - AdminUtilites added
 - Question category for every GameObjects
 - Established a Universal format for our CSV files
+
+July 19:
+[Pandan]
+- Quizloader is now completed 90% not incl. the question presets per category
+- AdminUtilities improvements
