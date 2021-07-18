@@ -2,14 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class UI_ClasArt_QuestionTable : MonoBehaviour
 {
+    /* This handles the Classicart Game Mode in which players will choose upon Round 1
+     *  It is a basic question and answer portion in which the players will choose 1 answer in a multiple choice question
+     * 
+     */
     List<CSV_Questionnaire_Classicart> questionAnswer = new List<CSV_Questionnaire_Classicart>();
 
-    public TextAsset Classicart;
+    //References
+    public TextAsset Classicart; //[BAGARES] Variable to Reference a CSV file Classicart (through Unity)
+    [SerializeField] private QuizLoader Quizloader; //[BAGARES] Reference from Quizloader
+    public int classicartQCount; //[BAGARES] Will determine how many numbers are there now being displayed
 
-    // Start is called before the first frame update
+    public string stringX; //[BAGARES] for debugging
+
+    public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in QUestion UI
+
     void Start()
     {
 
@@ -32,11 +43,26 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         }
         foreach (CSV_Questionnaire_Classicart data in questionAnswer)
         {
-            Debug.Log(data.question);
+
+            Debug.Log(data.id + " ." + data.question); 
         
         }
+        
+    }
+
+
+    public void displayQuestionInUI()
+    {
+        /*
+         * [BAGARES] used For Debugging
+        stringX = "HEllo"; 
+        QuestionText.text = stringX;
+        */
 
         
+
+
+   
     }
 
     

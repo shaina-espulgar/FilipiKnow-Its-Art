@@ -102,3 +102,9 @@ July 19:
 [Pandan]
 - Quizloader is now completed 90% not incl. the question presets per category
 - AdminUtilities improvements
+
+July 18
+[BAGARES] Some updates for GUI in GRABART 
+-added buttons and question ui
+SOME UPDATES FOR CLASSICART
+-ADDED SCRIPTS TO SHOW SOME QUESTION IN UI QUESTION OBJECT IN CODE (10% complete)
