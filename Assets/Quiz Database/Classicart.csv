@@ -1,5 +1,5 @@
-id,question,choice_a ,choice_b,choice_c,choice_d,correct_answer
-9,weadfasdf 2,231231ssfsda,gcxz,asdaq,asddas,C
-3,weadfasdf 2,fasdfasdf,gcxz,asdaq,asddas,C
-4,weadfasdf 33,fasdfasdf,gcxz,asdaq,asddas,C
-5,weadfasdf 34321,fasdfasdf,321321ws,asdaq,asddas,C
+question,choice_a ,choice_b,choice_c,choice_d,correct_answer
+weadfasdf 2,231231ssfsda,gcxz,PURPLE,asddas,PURPLE
+weadfasdf 2,fasdfasdf,gcxz,asdaq,GREEN,GREEN
+weadfasdf 33,BLACK,gcxz,asdaq,asddas,BLACK
+weadfasdf 34321,fasdfasdf,YELLOW,asdaq,asddas,YELLOW

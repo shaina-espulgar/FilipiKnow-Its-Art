@@ -13,7 +13,7 @@ public class QuizLoader : MonoBehaviour
     // Will get its specific filepath
     public string filepath = string.Empty;
 
-    public int indexQuestion = 0;
+    public int indexQuestion;
     public string[] data_questionSet;
     public string[] data_display;
 
@@ -55,38 +55,61 @@ public class QuizLoader : MonoBehaviour
         set { _question = value; }
     }
 
-    private List<string> _choices = new List<string>();
-    public List<string> Choices
-    {
+    public int choicesLength;
+    private string[] _choices;
+    public string[] Choices
+    {   
         get { return _choices; }
         set { _choices = value; }
     }
 
-    private List<string> _answers = new List<string>();
-    public List<string> Answers
+    public int answersLength;
+    private string[] _answers;
+    public string[] Answers
     {
         get { return _answers; }
         set { _answers = value; }
     }
 
+    // private void Initialize()
+    // {
+    //    _choices = new string[choicesLength];
+    //    _answers = new string[answersLength];
+    // }
+
     public void Classicart()
     {
+        choicesLength = 4; answersLength = 1;
+        _choices = new string[choicesLength];
+        _answers = new string[answersLength];
+
         _question = data_display[0];
-        for (int i = 1; i <= 4 ; i++)
+        for (int i = 1; i <= choicesLength ; i++)
         {
-            _choices.Add(data_display[i]);
+            _choices[i - 1] = data_display[i];
         }
-        _answers.Add(data_display[5]);
+        _answers[0] = data_display[5];
     }
 
     public void Matchart(int index)
     {
-        _question = data_display[0];
-        for (int i = 1; i <= 4; i++)
+        // These three first lines were redundant anyway but Im trying to come up with an alternative
+        // choicesLength = 6; answersLength = 6;
+        // _choices = new string[choicesLength];
+        // _answers = new string[answersLength];
+
+        _choices = data_questionSet[index].Split(',');
+        _answers = data_questionSet[index + 1].Split(',');
+        _question = _choices[0];
+
+        // Decrease the size of an array by 1 (first column) since that column is composed of a question with corresponding empty block below it as always 
+        for (int i = 0; i < _choices.Length - 1; i++)
         {
-            _choices.Add(data_display[i]);
+            _choices[i] = _choices[i + 1];
+            _answers[i] = _answers[i + 1];
         }
-        _answers.Add(data_display[5]);
+        Array.Resize(ref _choices, _choices.Length - 1);
+        Array.Resize(ref _answers, _answers.Length - 1);
     }
 
     public void Switchart()
@@ -96,11 +119,23 @@ public class QuizLoader : MonoBehaviour
 
     public void Grabart(int index)
     {
-        _choices = data_questionSet[index].Split(',').ToList();
-        _answers = data_questionSet[index + 1].Split(',').ToList();
+        // These three first lines were redundant anyway but Im trying to come up with an alternative
+        // choicesLength = 15; answersLength = 15;
+        // _choices = new string[choicesLength];
+        // _answers = new string[answersLength];
 
-        string question = _choices.ElementAt(0);
-        _choices.RemoveAt(0);
+        _choices = data_questionSet[index].Split(',');
+        _answers = data_questionSet[index + 1].Split(',');
+        _question = _choices[0];
+
+        // Decrease the size of an array by 1 (first column) since that column is composed of a question with corresponding empty block below it as always
+        for (int i = 0; i < _choices.Length - 1; i++)
+        {
+            _choices[i] = _choices[i + 1];
+            _answers[i] = _answers[i + 1];
+        }
+        Array.Resize(ref _choices, _choices.Length - 1);
+        Array.Resize(ref _answers, _answers.Length - 1);
     }
 
     public void Nameart()
@@ -115,14 +150,14 @@ public class QuizLoader : MonoBehaviour
 
     public void TicTacToe()
     {
-        _question = data_questionSet[0];
-        _answers.Add(data_questionSet[1]);
+        _question = data_display[0];
+        _answers[0] = data_display[1];
     }
 
     public void Maze()
     {
-        _question = data_questionSet[0];
-        _answers.Add(data_questionSet[1]);  
+        _question = data_display[0];
+        _answers[0] = data_display[1];
     }
 }
 
@@ -157,18 +192,23 @@ public class QuizLoader : MonoBehaviour
     void Previous()
     {
         quizLoader.indexQuestion--;
+        
+        -- If it is Grabart or Matchart we will decrement the indexQuestion by 2 since each questions consume 2 rows in there.
     }
 
     void Next()
     {
         quizLoader.indexQuestion++;
+
+        -- If it is Grabart or Matchart we will increment the indexQuestion by 2 since each questions consume 2 rows in there.
     }
 
     -- Need some code for not overpassing the value of indexQuestion to the no. of questions
 
     void Clear()
     {
-        --- CLEAR THE LIST IF THE ROUND ENDED ---
+        --- CLEAR THE LIST IF THE ROUND ENDED 
+        --- However this part is just my theory that the code will not erase the former values of these.
         question = null;
         choices.Clear();
         answers.Clear();

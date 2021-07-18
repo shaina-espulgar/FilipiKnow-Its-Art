@@ -38,7 +38,14 @@ public class AdminUtilites : MonoBehaviour
     [SerializeField] private Dropdown dropDownQuizList;
 
     [Header("Classes")]
-    [SerializeField] private Class_Classicart classicart;
+    [SerializeField] private Class_Classicart class_Classicart;
+    [SerializeField] private Class_Matchart class_Matchart;
+    [SerializeField] private Class_Switchart class_Switchart;
+    [SerializeField] private Class_Grabart class_Grabart;
+    [SerializeField] private Class_Nameart class_Nameart;
+    [SerializeField] private Class_Classifyart class_Classifyart;
+    [SerializeField] private Class_TicTacToe class_TicTacToe;
+    [SerializeField] private Class_Maze class_Maze;
 
     int indexQuestion = 0;
 
@@ -66,18 +73,18 @@ public class AdminUtilites : MonoBehaviour
         int index = dropDownQuizList.value;
         currentPanel = dropDownQuizList.options[index].text;
 
+        quizLoader.LoadCSV(currentPanel);
         switch (dropDownQuizList.options[index].text)
         {
             case "Classicart": Panel_Classicart(); break;
             case "Matchart": Panel_Matchart(); break;
             case "Switchart": Panel_Switchart(); break;
             case "Grabart": Panel_Grabart(); break;
-            case "Nameart": Panel_Grabart(); break;
+            case "Nameart": Panel_Nameart(); break;
             case "Classifyart": Panel_Classifyart(); break;
             case "TicTacToe": Panel_TicTacToe(); break;
             case "Maze": Panel_Maze(); break;
         }
-
 
     }
 
@@ -132,30 +139,44 @@ public class AdminUtilites : MonoBehaviour
 
     public void Previous()
     {
-        quizLoader.indexQuestion--;
+        int index = dropDownQuizList.value;
+        // It seems you cannot insert a logic between them when using a string or bool. It had to be this way.
+        switch (dropDownQuizList.options[index].text)
+        {
+            case "Grabart": quizLoader.indexQuestion-= 2;  break;
+            case "Matchart": quizLoader.indexQuestion-= 2; break;
+            default: quizLoader.indexQuestion-- ; break;
+        }
+
         if (quizLoader.indexQuestion < 0)
         {
             quizLoader.indexQuestion = quizLoader.data_questionSet.Length - 1;
         }
-        quizLoader.LoadCSV(currentPanel);
+        OpenPanel(dropDownQuizList);
     }
 
     public void Next()
     {
-        quizLoader.indexQuestion++;
+        int index = dropDownQuizList.value;
+        // It seems you cannot insert a logic between them when using a string or bool. It had to be this way.
+        switch (dropDownQuizList.options[index].text)
+        {
+            case "Grabart": quizLoader.indexQuestion+=2; break;
+            case "Matchart": quizLoader.indexQuestion+=2; break;
+            default: quizLoader.indexQuestion++; break;
+        }
+
         if (quizLoader.indexQuestion > quizLoader.data_questionSet.Length - 1)
         {
             quizLoader.indexQuestion = 0;
         }
-        quizLoader.LoadCSV(currentPanel);
+        OpenPanel(dropDownQuizList);
     }
 
     public void Panel_Classicart()
     {
         UI_Classicart.SetActive(true);
-
-        quizLoader.LoadCSV(currentPanel);
-        classicart.QuizLoad();
+        class_Classicart.Display();
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Classicart.SetActive(false);
@@ -181,6 +202,8 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Grabart()
     {
         UI_Grabart.SetActive(true);
+        class_Grabart.Display();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Grabart.SetActive(false);
         });

@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 40807020}
   - component: {fileID: 40807021}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1912,10 +1912,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizLoader: {fileID: 92138410}
   input_Question: {fileID: 1911358026}
-  input_Choices1: {fileID: 1987518095}
-  input_Choices2: {fileID: 699838076}
-  input_Choices3: {fileID: 1740873189}
-  input_Choices4: {fileID: 1096913801}
+  arrChoices:
+  - {fileID: 1987518095}
+  - {fileID: 699838076}
+  - {fileID: 1740873189}
+  - {fileID: 1096913801}
   input_Answer: {fileID: 1450913246}
 --- !u!1 &92138407
 GameObject:
@@ -1994,6 +1995,8 @@ MonoBehaviour:
   indexQuestion: 0
   data_questionSet: []
   data_display: []
+  choicesLength: 0
+  answersLength: 0
 --- !u!1 &92734796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,7 +2008,7 @@ GameObject:
   - component: {fileID: 92734797}
   - component: {fileID: 92734798}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3846,7 +3849,7 @@ GameObject:
   - component: {fileID: 173924185}
   - component: {fileID: 173924186}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4279,6 +4282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 200882469}
+  - component: {fileID: 200882470}
   m_Layer: 5
   m_Name: Switchart
   m_TagString: Untagged
@@ -4314,6 +4318,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -392}
   m_SizeDelta: {x: -820, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &200882470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200882468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66e5b1ee200b874c9788cd2706cee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &207198703
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,6 +4472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 211400885}
+  - component: {fileID: 211400886}
   m_Layer: 5
   m_Name: Nameart
   m_TagString: Untagged
@@ -4491,6 +4508,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -392}
   m_SizeDelta: {x: -820, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &211400886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211400884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d78d5f9699cd4a8fa2e9e2bedea42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &212557037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6336,7 +6365,7 @@ GameObject:
   - component: {fileID: 326595272}
   - component: {fileID: 326595273}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6868,7 +6897,7 @@ GameObject:
   - component: {fileID: 354011412}
   - component: {fileID: 354011413}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8500,7 +8529,14 @@ MonoBehaviour:
   UI_TicTacToe: {fileID: 2009587197}
   UI_Maze: {fileID: 0}
   dropDownQuizList: {fileID: 1423623661}
-  classicart: {fileID: 85475936}
+  class_Classicart: {fileID: 85475936}
+  class_Matchart: {fileID: 0}
+  class_Switchart: {fileID: 0}
+  class_Grabart: {fileID: 1783713323}
+  class_Nameart: {fileID: 0}
+  class_Classifyart: {fileID: 0}
+  class_TicTacToe: {fileID: 0}
+  class_Maze: {fileID: 0}
 --- !u!1 &466234579
 GameObject:
   m_ObjectHideFlags: 0
@@ -10308,7 +10344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8520c8f3357207b4984716941dfbce74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizLoader: {fileID: 0}
+  quizLoader: {fileID: 92138410}
   UI_Classicart: {fileID: 85475934}
   UI_Matchart: {fileID: 1707102544}
   UI_Switchart: {fileID: 200882468}
@@ -10318,7 +10354,14 @@ MonoBehaviour:
   UI_TicTacToe: {fileID: 2009587197}
   UI_Maze: {fileID: 0}
   dropDownQuizList: {fileID: 1594388646}
-  classicart: {fileID: 0}
+  class_Classicart: {fileID: 85475936}
+  class_Matchart: {fileID: 0}
+  class_Switchart: {fileID: 0}
+  class_Grabart: {fileID: 0}
+  class_Nameart: {fileID: 0}
+  class_Classifyart: {fileID: 0}
+  class_TicTacToe: {fileID: 0}
+  class_Maze: {fileID: 0}
 --- !u!1 &587189756
 GameObject:
   m_ObjectHideFlags: 0
@@ -12898,7 +12941,7 @@ RectTransform:
   m_Father: {fileID: 1206029784}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.37536997}
+  m_AnchorMin: {x: 0, y: 0.4040498}
   m_AnchorMax: {x: 1, y: 0.99999994}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -13959,7 +14002,7 @@ GameObject:
   - component: {fileID: 748301065}
   - component: {fileID: 748301066}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15749,7 +15792,7 @@ GameObject:
   - component: {fileID: 855226721}
   - component: {fileID: 855226722}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18161,7 +18204,7 @@ GameObject:
   - component: {fileID: 1054178026}
   - component: {fileID: 1054178027}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21375,7 +21418,7 @@ GameObject:
   - component: {fileID: 1218272575}
   - component: {fileID: 1218272576}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24040,7 +24083,7 @@ GameObject:
   - component: {fileID: 1350057975}
   - component: {fileID: 1350057976}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25120,7 +25163,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00006010069}
-  m_SizeDelta: {x: 0, y: 880}
+  m_SizeDelta: {x: 0, y: 922.3497}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1414968537
 GameObject:
@@ -27003,7 +27046,7 @@ GameObject:
   - component: {fileID: 1519212643}
   - component: {fileID: 1519212644}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27548,7 +27591,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 687271196}
   m_Direction: 2
   m_Value: 0.9999998
-  m_Size: 0.62463
+  m_Size: 0.5959501
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28440,7 +28483,7 @@ GameObject:
   - component: {fileID: 1617492130}
   - component: {fileID: 1617492131}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29170,7 +29213,7 @@ GameObject:
   - component: {fileID: 1663067138}
   - component: {fileID: 1663067139}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31461,6 +31504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783713322}
+  - component: {fileID: 1783713323}
   m_Layer: 5
   m_Name: Grabart
   m_TagString: Untagged
@@ -31505,6 +31549,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -392}
   m_SizeDelta: {x: -820, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1783713323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783713321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55de087fba6a0654f827f73d120d40fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quizLoader: {fileID: 92138410}
+  input_Question: {fileID: 163298584}
+  arrChoices:
+  - {fileID: 1333781609}
+  - {fileID: 412319224}
+  - {fileID: 617341730}
+  - {fileID: 728837687}
+  - {fileID: 681996171}
+  - {fileID: 1886458666}
+  - {fileID: 546789245}
+  - {fileID: 1783164778}
+  - {fileID: 1792092191}
+  - {fileID: 1377192488}
+  - {fileID: 1787197434}
+  - {fileID: 1466964181}
+  - {fileID: 595402649}
+  - {fileID: 1849853570}
+  - {fileID: 553572545}
+  arrAnswers:
+  - {fileID: 1617492131}
+  - {fileID: 748301066}
+  - {fileID: 855226722}
+  - {fileID: 40807021}
+  - {fileID: 173924186}
+  - {fileID: 1663067139}
+  - {fileID: 354011413}
+  - {fileID: 92734798}
+  - {fileID: 1054178027}
+  - {fileID: 1218272576}
+  - {fileID: 1854361073}
+  - {fileID: 326595273}
+  - {fileID: 1519212644}
+  - {fileID: 1844017998}
+  - {fileID: 1350057976}
 --- !u!1 &1787197432
 GameObject:
   m_ObjectHideFlags: 0
@@ -32390,7 +32480,7 @@ GameObject:
   - component: {fileID: 1844017997}
   - component: {fileID: 1844017998}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32917,7 +33007,7 @@ GameObject:
   - component: {fileID: 1854361072}
   - component: {fileID: 1854361073}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35846,6 +35936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009587198}
+  - component: {fileID: 2009587199}
   m_Layer: 5
   m_Name: TicTacToe
   m_TagString: Untagged
@@ -35877,6 +35968,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -439}
   m_SizeDelta: {x: -820, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2009587199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009587197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8c2224ee7fdf643adc81d9cff77f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010278302
 GameObject:
   m_ObjectHideFlags: 0
@@ -36264,7 +36367,14 @@ MonoBehaviour:
   UI_TicTacToe: {fileID: 2009587197}
   UI_Maze: {fileID: 0}
   dropDownQuizList: {fileID: 1053115609}
-  classicart: {fileID: 85475936}
+  class_Classicart: {fileID: 85475936}
+  class_Matchart: {fileID: 0}
+  class_Switchart: {fileID: 0}
+  class_Grabart: {fileID: 0}
+  class_Nameart: {fileID: 0}
+  class_Classifyart: {fileID: 0}
+  class_TicTacToe: {fileID: 0}
+  class_Maze: {fileID: 0}
 --- !u!1 &2041747140
 GameObject:
   m_ObjectHideFlags: 0

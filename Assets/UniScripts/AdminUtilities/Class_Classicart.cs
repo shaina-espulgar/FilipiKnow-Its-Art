@@ -14,30 +14,24 @@ public class Class_Classicart : MonoBehaviour
 
     [Header("Inputs")]
     [SerializeField] private TMP_InputField input_Question;
-    [SerializeField] private TMP_InputField input_Choices1;
-    [SerializeField] private TMP_InputField input_Choices2;
-    [SerializeField] private TMP_InputField input_Choices3;
-    [SerializeField] private TMP_InputField input_Choices4;
+    [SerializeField] private TMP_InputField[] arrChoices;
     [SerializeField] private TMP_InputField input_Answer;
 
     // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    public void QuizLoad()
+    public void Display()
     {
         string question = quizLoader.Question;
-        List<string> choices = quizLoader.Choices;
-        List<string> answers = quizLoader.Answers;
+        string[] choices = quizLoader.Choices;
+        string[] answers = quizLoader.Answers;
 
         input_Question.text = question;
-        input_Choices1.text = choices.ElementAt(0);
-        input_Choices2.text = choices.ElementAt(1);
-        input_Choices3.text = choices.ElementAt(2);
-        input_Choices4.text = choices.ElementAt(3);
-
-        input_Answer.text = answers.ElementAt(0);
+        int index = 0;
+        foreach (string text in choices)
+        {
+            arrChoices[index].text = text;
+            index++;
+        }
+        input_Answer.text = answers[0];
     }
 }

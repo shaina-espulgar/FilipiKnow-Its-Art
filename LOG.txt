@@ -63,7 +63,6 @@ July 15:
 -Added the assets/sprites from gdrive.
 -Added the new util script for external purpose.
 
-
 =======
 July 14:
 [Pandan] Multiplayer Update is now in BETA but there is no way to get back on the PlayMenu yet. I can now permit people 
@@ -76,7 +75,6 @@ July 15:
 [Pandan] AdminUtilities bug fixed
 - Can now edit, add, and delete questions properly
 - Add the questions ASAP
->>>>>>> 11e851069d33fe81e49d3b1d24e8bae5a567a001
 
 July 16: 
 [BAGARES] 
@@ -98,13 +96,18 @@ July 18:
 - Question category for every GameObjects
 - Established a Universal format for our CSV files
 
+[BAGARES] Some updates for GUI in GRABART 
+-added buttons and question ui
+SOME UPDATES FOR CLASSICART
+-ADDED SCRIPTS TO SHOW SOME QUESTION IN UI QUESTION OBJECT IN CODE (10% complete)
+
 July 19:
 [Pandan]
 - Quizloader is now completed 90% not incl. the question presets per category
 - AdminUtilities improvements
 
-July 18
-[BAGARES] Some updates for GUI in GRABART 
--added buttons and question ui
-SOME UPDATES FOR CLASSICART
--ADDED SCRIPTS TO SHOW SOME QUESTION IN UI QUESTION OBJECT IN CODE (10% complete)
+[Pandan]
+- Quizloader is now loaded with 5 of 8 questionTypes in its script, 95% compatible within its LoadCSV()
+- AdminUtilities improvements
+- This was uploaded immaturely to avoid confusion in the future
+
