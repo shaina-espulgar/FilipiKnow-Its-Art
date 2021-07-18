@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -11,12 +12,13 @@ public class Class_Matchart : MonoBehaviour
     [SerializeField] private QuizLoader quizLoader;
 
     [Header("Inputs")]
+    [SerializeField] private TMP_InputField input_Question;
     [SerializeField] private TMP_InputField[] arrChoices;
 
     [Header("Toggle")]
     [SerializeField] private Toggle[] arrAnswers;
 
-    public void QuizLoad()
+    public void Display()
     {
         string question = quizLoader.Question;
         string[] choices = quizLoader.Choices;
@@ -45,4 +47,68 @@ public class Class_Matchart : MonoBehaviour
             index++;
         }
     }
+
+    public void Modify(string operation)
+    {
+        string combineInput = string.Empty;
+        string reserveInput = string.Empty;
+        string combineToggle = string.Empty;
+        string reserveToggle = string.Empty;
+
+        reserveInput = input_Question.text + ",";
+        for (int i = 0; i < arrChoices.Length; i++)
+        {
+            if (i < arrChoices.Length - 1)
+            {
+                combineInput = reserveInput + arrChoices[i].text + ",";
+                reserveInput = combineInput;
+            }
+            else
+            {
+                combineInput = reserveInput + arrChoices[i].text;
+            }
+
+        }
+
+        reserveToggle = ",";
+        for (int i = 0; i < arrAnswers.Length; i++)
+        {
+            if (i < arrAnswers.Length - 1)
+            {
+                if (arrAnswers[i].isOn == true)
+                {
+                    combineToggle = reserveToggle + "TRUE,";
+                    reserveToggle = combineToggle;
+                }
+                else
+                {
+                    combineToggle = reserveToggle + ",";
+                    reserveToggle = combineToggle;
+                }
+            }
+            else
+            {
+                if (arrAnswers[i].isOn == true) { combineToggle = reserveToggle + "TRUE"; }
+                else { combineToggle = reserveToggle; }
+            }
+        }
+
+        if (operation == "add")
+        {
+            string[] arrline = File.ReadAllLines(quizLoader.filepath);
+            arrline[arrline.Length] = combineInput;
+            arrline[arrline.Length + 1] = combineToggle;
+            File.WriteAllLines(quizLoader.filepath, arrline);
+        }
+
+        if (operation == "edit")
+        {
+            string[] arrline = File.ReadAllLines(quizLoader.filepath);
+            arrline[quizLoader.indexQuestion + 1] = combineInput;
+            arrline[quizLoader.indexQuestion + 2] = combineToggle;
+            File.WriteAllLines(quizLoader.filepath, arrline);
+        }
+
+    }
+
 }

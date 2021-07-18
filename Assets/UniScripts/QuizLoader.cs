@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 // Note: INCOMPLETE. We need to formulate a code for some of the missing questionTypes in here
@@ -17,6 +18,8 @@ public class QuizLoader : MonoBehaviour
     public string[] data_questionSet;
     public string[] data_display;
 
+    Regex CSVSplitter = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+
     public void LoadCSV(string typeOfQuestion)
     {
         filepath = Application.dataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
@@ -25,15 +28,15 @@ public class QuizLoader : MonoBehaviour
         data_questionSet = File.ReadAllLines(filepath);
 
         // Deleting the first row of the referenced CSV
-        for(int i = 0; i < data_questionSet.Length - 1; i++)
+        for (int i = 0; i < data_questionSet.Length - 1; i++)
         {
             data_questionSet[i] = data_questionSet[i + 1];
         }
         Array.Resize(ref data_questionSet, data_questionSet.Length - 1);
 
         // Spliting the data_questionSet into columns or pieces
-        data_display = data_questionSet[indexQuestion].Split(new string[] { "," }, StringSplitOptions.None);
-        
+        data_display = CSVSplitter.Split(data_questionSet[indexQuestion]);
+
         switch (typeOfQuestion)
         {
             case "Classicart": Classicart(); break;

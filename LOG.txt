@@ -101,13 +101,16 @@ July 18:
 SOME UPDATES FOR CLASSICART
 -ADDED SCRIPTS TO SHOW SOME QUESTION IN UI QUESTION OBJECT IN CODE (10% complete)
 
-July 19:
-[Pandan]
 - Quizloader is now completed 90% not incl. the question presets per category
 - AdminUtilities improvements
 
+
+July 19:
 [Pandan]
 - Quizloader is now loaded with 5 of 8 questionTypes in its script, 95% compatible within its LoadCSV()
 - AdminUtilities improvements
 - This was uploaded immaturely to avoid confusion in the future
+
+[Pandan]
+- Can add, edit, delete in AdminUtilities (only 2 out of 8 QuestionTypes yet)
 

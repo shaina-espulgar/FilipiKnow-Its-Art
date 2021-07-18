@@ -5,20 +5,10 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using Unity.UI;
 using TMPro;
 
 public class AdminUtilites : MonoBehaviour
 {
-    /* 
-    Text the specific quiz question
-
-    public Text questionDisplay;
-    public InputField questionEdit;
-    public Scrollbar editor;
-    public Text questionCreate;
-    */
-
     // Lists all of the Quiz Databases
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
@@ -47,10 +37,11 @@ public class AdminUtilites : MonoBehaviour
     [SerializeField] private Class_TicTacToe class_TicTacToe;
     [SerializeField] private Class_Maze class_Maze;
 
-    int indexQuestion = 0;
+    [Header("Question Number")]
+    [SerializeField] private TMP_Text questionNumber;
 
-    string[] data_questionSet;
-    string[] data_display;
+    // string[] data_questionSet;
+    // string[] data_display;
 
     string currentPanel;
 
@@ -64,7 +55,8 @@ public class AdminUtilites : MonoBehaviour
         OpenPanel(dropDownQuizList);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
-            OpenPanel(dropDownQuizList); 
+            OpenPanel(dropDownQuizList);
+            quizLoader.indexQuestion = 0;
         });
     }
 
@@ -74,6 +66,7 @@ public class AdminUtilites : MonoBehaviour
         currentPanel = dropDownQuizList.options[index].text;
 
         quizLoader.LoadCSV(currentPanel);
+        questionNumber.text = Convert.ToString(quizLoader.indexQuestion + 1) + "/" + Convert.ToString(quizLoader.data_questionSet.Length);
         switch (dropDownQuizList.options[index].text)
         {
             case "Classicart": Panel_Classicart(); break;
@@ -85,55 +78,56 @@ public class AdminUtilites : MonoBehaviour
             case "TicTacToe": Panel_TicTacToe(); break;
             case "Maze": Panel_Maze(); break;
         }
-
     }
 
     public void EditCSV()
     {
-        // quizLoader.LoadCSV(dropDownQuizList.name);
-        string combine = string.Empty;
-        string reserve = string.Empty;
-        for (int i = 0; i < data_display.Length; i++)
+        int index = dropDownQuizList.value;
+        switch (dropDownQuizList.options[index].text)
         {
-            if (i == data_display.Length - 1)
-            {
-                combine = reserve + data_display[i];
-                data_questionSet[indexQuestion] = combine;
-            }
-            else
-            {
-                combine = reserve + data_display[i] + ",";
-                reserve = combine;
-            }
+            case "Classicart": class_Classicart.Modify("edit"); break;
+            case "Switchart": class_Switchart.Modify("edit"); break;
+            case "Grabart": class_Grabart.Modify("edit"); break;
+            case "Matchart": class_Matchart.Modify("edit"); break;
         }
-
-        string[] arrline = File.ReadAllLines(quizLoader.filepath);
-        arrline[indexQuestion] = combine;
-        File.WriteAllLines(quizLoader.filepath, arrline);
     }
 
     public void CreateNew()
     {
-        // quizLoader.LoadCSV(dropDownQuizList.name);
-        string numbering = Convert.ToString(data_questionSet.Length + 1);
-        // string newQuestion = createQuestion.text + "," + createChoices_1.text + "," + createChoices_2.text + "," +
-        //    createChoices_3.text + "," + createChoices_4.text + "," + createAnswer.text;
-
-        // data_questionSet = data_questionSet.Concat(new string[] { newQuestion }).ToArray();
-
-        string[] arrline = File.ReadAllLines(quizLoader.filepath);
-        List<string> listline = arrline.ToList();
-        listline.Add(data_questionSet[data_questionSet.Length - 1]);
-        File.WriteAllLines(quizLoader.filepath, listline);
+        int index = dropDownQuizList.value;
+        switch (dropDownQuizList.options[index].text)
+        {
+            case "Classicart": class_Classicart.Modify("add"); break;
+            case "Grabart": class_Grabart.Modify("add"); break;
+            case "Matchart": class_Matchart.Modify("add"); break;
+        }
     }
 
     public void DeleteQuestion()
     {
         // quizLoader.LoadCSV(dropDownQuizList.name);
-        int indexToRemove = indexQuestion;
-        data_questionSet = data_questionSet.Where((source, index) => index != indexToRemove).ToArray();
+        int indexToRemove = quizLoader.indexQuestion + 1;
+        string[] arrline = File.ReadAllLines(quizLoader.filepath);
 
-        string[] arrline = data_questionSet;
+        int index = dropDownQuizList.value;
+        if (dropDownQuizList.options[index].text == "Matchart" || dropDownQuizList.options[index].text == "Grabart")
+        {
+            for (int i = indexToRemove + (1 * 2); i < arrline.Length / 2; i++)
+            {
+                arrline[i] = arrline[i + 2];
+            }
+            Array.Resize(ref arrline, arrline.Length - 2);  
+        }
+        else
+        {
+            for (int i = indexToRemove; i < arrline.Length - 1; i++)
+            {
+                arrline[i] = arrline[i + 1];
+            }
+            Array.Resize(ref arrline, arrline.Length - 1);
+        }
+
+        
         File.WriteAllLines(quizLoader.filepath, arrline);
     }
 
@@ -194,6 +188,8 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Switchart()
     {
         UI_Switchart.SetActive(true);
+        class_Switchart.Display();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Switchart.SetActive(false);
         });

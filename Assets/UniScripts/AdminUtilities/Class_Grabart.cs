@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -17,7 +19,6 @@ public class Class_Grabart : MonoBehaviour
 
     [Header("Toggle")]
     [SerializeField] private Toggle[] arrAnswers;
-
 
     public void Display()
     {
@@ -51,6 +52,69 @@ public class Class_Grabart : MonoBehaviour
                 arrAnswers[index].isOn = false;
             }
             index++;
+        }
+    }
+
+    public void Modify(string operation)
+    {
+        string combineInput = string.Empty;
+        string reserveInput = string.Empty;
+        string combineToggle = string.Empty;
+        string reserveToggle = string.Empty;
+
+        reserveInput = input_Question.text + ",";
+        for (int i = 0; i < arrChoices.Length; i++)
+        {
+            if (i < arrChoices.Length - 1)
+            {
+                combineInput = reserveInput + arrChoices[i].text + ",";
+                reserveInput = combineInput;
+            }
+            else
+            {
+                combineInput = reserveInput + arrChoices[i].text;
+            }
+
+        }
+
+        reserveToggle = ",";
+        for (int i = 0; i < arrAnswers.Length; i++)
+        {
+            if (i < arrAnswers.Length - 1)
+            {
+                if (arrAnswers[i].isOn == true)
+                {
+                    combineToggle = reserveToggle + "TRUE,";
+                    reserveToggle = combineToggle;
+                }
+                else
+                {
+                    combineToggle = reserveToggle + ",";
+                    reserveToggle = combineToggle;
+                }
+            }
+            else
+            {
+                if (arrAnswers[i].isOn == true) { combineToggle = reserveToggle + "TRUE";}
+                else { combineToggle = reserveToggle; }
+            }
+        }
+
+        if (operation == "add")
+        {
+            string[] arrline = File.ReadAllLines(quizLoader.filepath);
+            List<string> listline = arrline.ToList();
+
+            listline.Add(combineInput);
+            listline.Add(combineToggle);
+            File.WriteAllLines(quizLoader.filepath, listline);
+        }
+        if(operation == "edit")
+        {
+            string[] arrline = File.ReadAllLines(quizLoader.filepath);
+            arrline[quizLoader.indexQuestion + 1] = combineInput;
+            arrline[quizLoader.indexQuestion + 2] = combineToggle;
+            File.WriteAllLines(quizLoader.filepath, arrline);
         }
     }
 }
