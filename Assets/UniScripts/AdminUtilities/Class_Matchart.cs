@@ -55,12 +55,12 @@ public class Class_Matchart : MonoBehaviour
         string combineToggle = string.Empty;
         string reserveToggle = string.Empty;
 
-        reserveInput = input_Question.text + ",";
+        reserveInput = input_Question.text + "|";
         for (int i = 0; i < arrChoices.Length; i++)
         {
             if (i < arrChoices.Length - 1)
             {
-                combineInput = reserveInput + arrChoices[i].text + ",";
+                combineInput = reserveInput + arrChoices[i].text + "|";
                 reserveInput = combineInput;
             }
             else
@@ -70,19 +70,19 @@ public class Class_Matchart : MonoBehaviour
 
         }
 
-        reserveToggle = ",";
+        reserveToggle = "|";
         for (int i = 0; i < arrAnswers.Length; i++)
         {
             if (i < arrAnswers.Length - 1)
             {
                 if (arrAnswers[i].isOn == true)
                 {
-                    combineToggle = reserveToggle + "TRUE,";
+                    combineToggle = reserveToggle + "TRUE|";
                     reserveToggle = combineToggle;
                 }
                 else
                 {
-                    combineToggle = reserveToggle + ",";
+                    combineToggle = reserveToggle + "|";
                     reserveToggle = combineToggle;
                 }
             }

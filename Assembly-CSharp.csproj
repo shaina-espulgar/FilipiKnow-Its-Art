@@ -65,6 +65,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\UtilScript\Utils\World_Mesh.cs" />
+    <Compile Include="Assets\Game Functions\GAME\Solo\UI_Grabart_QuestionTable.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_TextComplex.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\CSV_Questionnaire_Classicart.cs" />
     <Compile Include="Assets\Game Functions\SETTINGS\SettingsMenu.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\UtilScript\Utils\FunctionUpdater.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Grabart.cs" />
+    <Compile Include="Assets\TextMesh Pro\NewBehaviourScript.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Category_Handling.cs" />
     <Compile Include="Assets\UniScripts\JoinGameLobby.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionTimer.cs" />
@@ -136,7 +138,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Matchart.cs" />
-    <Compile Include="Assets\Game Functions\GAME\Solo\UI_Grabart_QuestionTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

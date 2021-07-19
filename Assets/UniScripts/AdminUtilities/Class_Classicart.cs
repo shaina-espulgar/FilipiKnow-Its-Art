@@ -42,10 +42,10 @@ public class Class_Classicart : MonoBehaviour
         string reserve = string.Empty;
         string final = string.Empty;
 
-        reserve = input_Question.text + ",";
+        reserve = input_Question.text + "|";
         for (int i = 0; i < arrChoices.Length; i++)
         {
-            combine = reserve + arrChoices[i].text + ",";
+            combine = reserve + arrChoices[i].text + "|";
             reserve = combine;
         }
         final = combine + input_Answer.text;

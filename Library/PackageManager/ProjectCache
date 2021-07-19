@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637617499241170195
-    m_Hash: 369430391
+      ticks: 637622449786211957
+    m_Hash: 342339664
   m_LockFileStatus:
     m_FilePath: C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637617499241783660
-    m_Hash: 3451696566
+      ticks: 637622449786221957
+    m_Hash: 3011523352
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -727,9 +727,11 @@ m_ResolvedPackages:
     - 3.1.0
     - 3.2.1
     - 3.2.2
+    - 3.2.3
     compatible:
     - 3.2.2
-    verified: 3.2.2
+    - 3.2.3
+    verified: 3.2.3
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0

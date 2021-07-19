@@ -113,4 +113,5 @@ July 19:
 
 [Pandan]
 - Can add, edit, delete in AdminUtilities (only 2 out of 8 QuestionTypes yet)
-
+[Pandan]
+- Changed the CSV delimiter from "," to "|"

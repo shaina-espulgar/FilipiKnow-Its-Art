@@ -1,7 +1,8 @@
-2,weadfasdf 2,fasdfasdf,gcxz,asdaq,asddas,C
-2,weadfasdf 2,fasdfasdf,gcxz,asdaq,asddas,C
-3,qwerty 3,Sanaol Test,asdasd,asdasd,asdasdq,A
-4,weadfasdf 2,fasdfasdf,gcxz,asdaq,asddas,C
-5,weadfasdf 2,fasdfasdf,gcxz,asdaq,asddas,C
-6,weadfasdf 2,fasdfasdf,gcxz,asdaq,asddas,C
-9,weadfasdf 2,fasdfasdf,gcxz,asdaq,asddas,C
+Question|Choices1|Choices2|Choices3|Choics4|Answer
+weadfasdf 2|fasdfasdf|gcxz|asdaq|asddas|asdaq
+weadfasdf 2|fasdfasdf|gcxz|asdaq|asddas|fasdfasdf
+qwerty 3|Sanaol Test|asdasd|asdasd|asdasdq|Sanaol Test
+weadfasdf 2|fasdfasdf|gcxz|asdaq|asddas|asddas
+weadfasdf 2|fasdfasdf|gcxz|asdaq|asddas|gcxz
+weadfasdf 2|fasdfasdf|gcxz|asdaq|asddas|asddas
+weadfasdf 2|fasdfasdf|gcxz|asdaq|asddas|fasdfasdf
