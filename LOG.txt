@@ -115,3 +115,8 @@ July 19:
 - Can add, edit, delete in AdminUtilities (only 2 out of 8 QuestionTypes yet)
 [Pandan]
 - Changed the CSV delimiter from "," to "|"
+
+[BAGARES] 
+-ADDED SOME SCCRIPTS SO THAT THE CHOICES CAN BE SEEN IN THE GAME SCENE (not fully working yet)
+-ADDED SOME CODES FOR THE PLAYER UI
+

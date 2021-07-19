@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CSV_Questionnaire_Classicart
 {
-    public int id;
+    
     public string question;
     public string choice_a;
     public string choice_b;
