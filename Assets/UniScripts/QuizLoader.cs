@@ -37,8 +37,15 @@ public class QuizLoader : MonoBehaviour
             {
                 if (typeOfQuestion == "Grabart" || typeOfQuestion == "Matchart")
                 {
-                    data_questionSet.Add(txt_file[i]);
-                    data_questionSet.Add(txt_file[i + 1]);
+                    if (i != txt_file.Length - 1)
+                    {
+                        data_questionSet.Add(txt_file[i]);
+                        data_questionSet.Add(txt_file[i + 1]);
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
                 else
                 {
@@ -46,11 +53,11 @@ public class QuizLoader : MonoBehaviour
                 }
             }
 
-            if (typeOfQuestion == "Classifyart")
+            else if (typeOfQuestion == "Classifyart")
             {
                 if (i != txt_file.Length - 1)
                 {
-                    data_questionSet.Add(txt_file[i]);
+                    data_questionSet.Add(txt_file[i + 1]);
                 }
                 else
                 {
@@ -85,8 +92,8 @@ public class QuizLoader : MonoBehaviour
         set { _question = value; }
     }
 
-    private string[] _subjects;
-    public string[] Subjects
+    private List<string> _subjects = new List<string>();
+    public List<string> Subjects
     {
         get { return _subjects; }
         set { _subjects = value; }
@@ -133,7 +140,7 @@ public class QuizLoader : MonoBehaviour
         _question = _choices[0];
 
         // Decrease the size of an array by 1 (first column) since that column is composed of a question with corresponding empty block below it as always 
-        for (int i = 0; i < _choices.Length - 1; i++)
+        for (int i = 0; i < _choices.Length - 2; i++)
         {
             _choices[i] = _choices[i + 1];
             _answers[i] = _answers[i + 1];
@@ -193,13 +200,22 @@ public class QuizLoader : MonoBehaviour
 
     public void Classifyart()
     {
-        _question = data_display[0];
-        for (int i = 1; i <= data_display.Count; i++)
+        choicesLength = 4; answersLength = 2;
+        _choices = new string[choicesLength];
+        _answers = new string[answersLength];
+
+        int index1 = 0; int index2 = 0;
+        for (int i = 0; i < data_display.Count; i++)
         {
-            _choices[i - 1] = data_display[i];
-            if (i == 3 || i == 6)
+            if (i == 2 || i == 5)
             {
-                _subjects = _subjects.Concat(new string[] { _choices[i] }).ToArray();
+                _answers[index1] = data_display[i];
+                index1++;
+            }
+            else
+            {
+                _choices[index2] = data_display[i];
+                index2++;
             }
         }
     }

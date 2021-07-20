@@ -253,8 +253,10 @@ public class AdminUtilites : MonoBehaviour
         UI_Classifyart.SetActive(true);
         class_Classifyart.Display(true);
 
+        dropDownSubjectList.gameObject.SetActive(false);
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Classifyart.SetActive(false);
+            dropDownSubjectList.gameObject.SetActive(true);
         });
     }
 

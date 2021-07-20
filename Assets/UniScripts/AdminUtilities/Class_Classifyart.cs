@@ -20,7 +20,6 @@ public class Class_Classifyart : MonoBehaviour
 
     public void Display(bool display)
     {
-        /*
         if (display == true)
         {
             string[] answers = quizLoader.Answers;
@@ -28,7 +27,7 @@ public class Class_Classifyart : MonoBehaviour
 
             for (int i = 0; i < subjectDrop.Length; i++)
             {
-                subjectDrop[i].value = subjectDrop[i].options.FindIndex(option => option.text == answers[0]);
+                subjectDrop[i].value = subjectDrop[i].options.FindIndex(option => option.text == answers[i]);
             }
 
             for (int i = 0; i < arrChoices.Length; i++)
@@ -40,7 +39,6 @@ public class Class_Classifyart : MonoBehaviour
         {
             return;
         }
-        */
     }
 
     public void Modify(string operation)

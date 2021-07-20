@@ -29,6 +29,7 @@ public class Class_Matchart : MonoBehaviour
             string[] choices = quizLoader.Choices;
             string[] answers = quizLoader.Answers;
 
+            input_Question.text = question;
             for (int i = 0; i < answers.Length - 1; i++)
             {
                 answers[i] = answers[i + 1];
