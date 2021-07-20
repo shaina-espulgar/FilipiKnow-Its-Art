@@ -35,6 +35,7 @@ public class QuizLoader : MonoBehaviour
         // Spliting the data_questionSet into columns or pieces
         data_display = data_questionSet[indexQuestion].Split(new string[] { "|" }, StringSplitOptions.None);
 
+        // Perform separation of Questions, Choices, Answers from data_display
         switch (typeOfQuestion)
         {
             case "Classicart": Classicart(); break;
@@ -115,7 +116,16 @@ public class QuizLoader : MonoBehaviour
 
     public void Switchart()
     {
+        choicesLength = 4; answersLength = 1;
+        _choices = new string[choicesLength];
+        _answers = new string[answersLength];
 
+        _question = data_display[0];
+        for (int i = 1; i <= choicesLength; i++)
+        {
+            _choices[i - 1] = data_display[i];
+        }
+        _answers[0] = data_display[5];
     }
 
     public void Grabart(int index)
@@ -141,7 +151,16 @@ public class QuizLoader : MonoBehaviour
 
     public void Nameart()
     {
+        choicesLength = 4; answersLength = 1;
+        _choices = new string[choicesLength];
+        _answers = new string[answersLength];
 
+        _question = data_display[0];
+        for (int i = 1; i <= choicesLength; i++)
+        {
+            _choices[i - 1] = data_display[i];
+        }
+        _answers[0] = data_display[5];
     }
 
     public void Classifyart()
@@ -195,6 +214,7 @@ public class QuizLoader : MonoBehaviour
         quizLoader.indexQuestion--;
         
         -- If it is Grabart or Matchart we will decrement the indexQuestion by 2 since each questions consume 2 rows in there.
+        quizLoader.indexQuestion-=2
     }
 
     void Next()
@@ -202,6 +222,7 @@ public class QuizLoader : MonoBehaviour
         quizLoader.indexQuestion++;
 
         -- If it is Grabart or Matchart we will increment the indexQuestion by 2 since each questions consume 2 rows in there.
+        quizLoader.indexQuestion+=2
     }
 
     -- Need some code for not overpassing the value of indexQuestion to the no. of questions

@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Class_Classifyart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Display()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Modify(string operation)
     {
-        
+
     }
 }

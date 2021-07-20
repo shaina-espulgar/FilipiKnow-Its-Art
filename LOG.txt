@@ -120,3 +120,7 @@ July 19:
 -ADDED SOME SCCRIPTS SO THAT THE CHOICES CAN BE SEEN IN THE GAME SCENE (not fully working yet)
 -ADDED SOME CODES FOR THE PLAYER UI
 
+July 20
+[Pandan]
+- Admin Utilities - 90% Complete
+- Added a default logo icon for our game

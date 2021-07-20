@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -39,9 +39,6 @@ public class AdminUtilites : MonoBehaviour
 
     [Header("Question Number")]
     [SerializeField] private TMP_Text questionNumber;
-
-    // string[] data_questionSet;
-    // string[] data_display;
 
     string currentPanel;
 
@@ -86,9 +83,13 @@ public class AdminUtilites : MonoBehaviour
         switch (dropDownQuizList.options[index].text)
         {
             case "Classicart": class_Classicart.Modify("edit"); break;
+            case "Matchart": class_Matchart.Modify("edit"); break;
             case "Switchart": class_Switchart.Modify("edit"); break;
             case "Grabart": class_Grabart.Modify("edit"); break;
-            case "Matchart": class_Matchart.Modify("edit"); break;
+            // case "Nameart": class_Nameart.Modify("edit"); break;
+            case "Classifyart": class_Classifyart.Modify("edit"); break;
+            case "TicTacToe": class_TicTacToe.Modify("edit"); break;
+            case "Maze": class_Maze.Modify("edit"); break;
         }
     }
 
@@ -98,14 +99,18 @@ public class AdminUtilites : MonoBehaviour
         switch (dropDownQuizList.options[index].text)
         {
             case "Classicart": class_Classicart.Modify("add"); break;
-            case "Grabart": class_Grabart.Modify("add"); break;
             case "Matchart": class_Matchart.Modify("add"); break;
+            case "Switchart": class_Switchart.Modify("add"); break;
+            case "Grabart": class_Grabart.Modify("add"); break;
+            // case "Nameart": class_Nameart.Modify("add"); break;
+            case "Classifyart": class_Classifyart.Modify("add"); break;
+            case "TicTacToe": class_TicTacToe.Modify("add"); break;
+            case "Maze": class_Maze.Modify("add"); break;
         }
     }
 
     public void DeleteQuestion()
     {
-        // quizLoader.LoadCSV(dropDownQuizList.name);
         int indexToRemove = quizLoader.indexQuestion + 1;
         string[] arrline = File.ReadAllLines(quizLoader.filepath);
 
@@ -126,20 +131,19 @@ public class AdminUtilites : MonoBehaviour
             }
             Array.Resize(ref arrline, arrline.Length - 1);
         }
-
-        
         File.WriteAllLines(quizLoader.filepath, arrline);
     }
 
     public void Previous()
     {
         int index = dropDownQuizList.value;
-        // It seems you cannot insert a logic between them when using a string or bool. It had to be this way.
-        switch (dropDownQuizList.options[index].text)
+        if (dropDownQuizList.options[index].text == "Grabart" || dropDownQuizList.options[index].text == "Matchart")
         {
-            case "Grabart": quizLoader.indexQuestion-= 2;  break;
-            case "Matchart": quizLoader.indexQuestion-= 2; break;
-            default: quizLoader.indexQuestion-- ; break;
+            quizLoader.indexQuestion-= 2;
+        }
+        else
+        {
+            quizLoader.indexQuestion--;
         }
 
         if (quizLoader.indexQuestion < 0)
@@ -152,12 +156,13 @@ public class AdminUtilites : MonoBehaviour
     public void Next()
     {
         int index = dropDownQuizList.value;
-        // It seems you cannot insert a logic between them when using a string or bool. It had to be this way.
-        switch (dropDownQuizList.options[index].text)
+        if (dropDownQuizList.options[index].text == "Grabart" || dropDownQuizList.options[index].text == "Matchart")
         {
-            case "Grabart": quizLoader.indexQuestion+=2; break;
-            case "Matchart": quizLoader.indexQuestion+=2; break;
-            default: quizLoader.indexQuestion++; break;
+            quizLoader.indexQuestion+=2;
+        }
+        else
+        {
+            quizLoader.indexQuestion++;
         }
 
         if (quizLoader.indexQuestion > quizLoader.data_questionSet.Length - 1)
@@ -180,6 +185,8 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Matchart()
     {
         UI_Matchart.SetActive(true);
+        class_Matchart.Display();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Matchart.SetActive(false);
         });
@@ -208,6 +215,8 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Nameart()
     {
         UI_Nameart.SetActive(true);
+        // class_Nameart.Display();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Nameart.SetActive(false);
         });
@@ -216,6 +225,8 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Classifyart()
     {
         UI_Classifyart.SetActive(true);
+        class_Classifyart.Display();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Classifyart.SetActive(false);
         });
@@ -224,6 +235,8 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_TicTacToe()
     {
         UI_TicTacToe.SetActive(true);
+        class_TicTacToe.Display();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_TicTacToe.SetActive(false);
         });
@@ -232,6 +245,8 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Maze()
     {
         UI_Maze.SetActive(true);
+        class_Maze.Display();
+
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Maze.SetActive(false);
         });

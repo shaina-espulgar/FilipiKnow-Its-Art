@@ -12,13 +12,10 @@ public class Class_Classicart : MonoBehaviour
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
 
-
     [Header("Inputs")]
     [SerializeField] private TMP_InputField input_Question;
     [SerializeField] private TMP_InputField[] arrChoices;
     [SerializeField] private TMP_InputField input_Answer;
-
-    // Start is called before the first frame update
 
     public void Display()
     {
