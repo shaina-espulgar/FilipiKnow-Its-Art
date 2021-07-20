@@ -26,6 +26,7 @@ public class AdminUtilites : MonoBehaviour
 
     [Header("Dropdown")]
     [SerializeField] private Dropdown dropDownQuizList;
+    [SerializeField] public Dropdown dropDownSubjectList;
 
     [Header("Classes")]
     [SerializeField] private Class_Classicart class_Classicart;
@@ -40,7 +41,11 @@ public class AdminUtilites : MonoBehaviour
     [Header("Question Number")]
     [SerializeField] private TMP_Text questionNumber;
 
+    [Header("Prompt Warning if Empty")]
+    [SerializeField] private GameObject emptyCaution;
+
     string currentPanel;
+    string currentSubject;
 
     private void Start()
     {
@@ -49,32 +54,53 @@ public class AdminUtilites : MonoBehaviour
         {
             dropDownQuizList.options.Add(new Dropdown.OptionData() { text = quizLoader.TextAssetData[i].name });
         }
-        OpenPanel(dropDownQuizList);
+        OpenPanel(dropDownQuizList, dropDownSubjectList);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
-            OpenPanel(dropDownQuizList);
+            OpenPanel(dropDownQuizList, dropDownSubjectList);
             quizLoader.indexQuestion = 0;
+        });
+
+        dropDownSubjectList.onValueChanged.AddListener(delegate
+        {
+           OpenPanel(dropDownQuizList, dropDownSubjectList);
+           quizLoader.indexQuestion = 0;
         });
     }
 
-    public void OpenPanel(Dropdown dropDownQuizList)
+    public void OpenPanel(Dropdown dropDownQuizList, Dropdown dropDownSubjectList)
     {
-        int index = dropDownQuizList.value;
-        currentPanel = dropDownQuizList.options[index].text;
+        int index_dropDownQuizList = dropDownQuizList.value;
+        int index_dropDownSubjectList = dropDownSubjectList.value;
 
-        quizLoader.LoadCSV(currentPanel);
-        questionNumber.text = Convert.ToString(quizLoader.indexQuestion + 1) + "/" + Convert.ToString(quizLoader.data_questionSet.Length);
-        switch (dropDownQuizList.options[index].text)
+        currentPanel = dropDownQuizList.options[index_dropDownQuizList].text;
+        currentSubject = dropDownSubjectList.options[index_dropDownSubjectList].text;
+
+        quizLoader.LoadCSV(currentPanel, currentSubject);
+
+        // The game will prompt the admin if that specific type of question was empty
+        if (quizLoader.data_questionSet.Any() == true)
         {
-            case "Classicart": Panel_Classicart(); break;
-            case "Matchart": Panel_Matchart(); break;
-            case "Switchart": Panel_Switchart(); break;
-            case "Grabart": Panel_Grabart(); break;
-            case "Nameart": Panel_Nameart(); break;
-            case "Classifyart": Panel_Classifyart(); break;
-            case "TicTacToe": Panel_TicTacToe(); break;
-            case "Maze": Panel_Maze(); break;
+            emptyCaution.SetActive(false);
+
+            questionNumber.text = Convert.ToString(quizLoader.indexQuestion + 1) + "/" + Convert.ToString(quizLoader.data_questionSet.Count);
+            switch (dropDownQuizList.options[index_dropDownQuizList].text)
+            {
+                case "Classicart": Panel_Classicart(); break;
+                case "Matchart": Panel_Matchart(); break;
+                case "Switchart": Panel_Switchart(); break;
+                case "Grabart": Panel_Grabart(); break;
+                case "Nameart": Panel_Nameart(); break;
+                case "Classifyart": Panel_Classifyart(); break;
+                case "TicTacToe": Panel_TicTacToe(); break;
+                case "Maze": Panel_Maze(); break;
+            }
         }
+        else
+        {
+            emptyCaution.SetActive(true);
+        }
+
     }
 
     public void EditCSV()
@@ -148,9 +174,9 @@ public class AdminUtilites : MonoBehaviour
 
         if (quizLoader.indexQuestion < 0)
         {
-            quizLoader.indexQuestion = quizLoader.data_questionSet.Length - 1;
+            quizLoader.indexQuestion = quizLoader.data_questionSet.Count - 1;
         }
-        OpenPanel(dropDownQuizList);
+        OpenPanel(dropDownQuizList, dropDownSubjectList);
     }
 
     public void Next()
@@ -165,17 +191,17 @@ public class AdminUtilites : MonoBehaviour
             quizLoader.indexQuestion++;
         }
 
-        if (quizLoader.indexQuestion > quizLoader.data_questionSet.Length - 1)
+        if (quizLoader.indexQuestion > quizLoader.data_questionSet.Count - 1)
         {
             quizLoader.indexQuestion = 0;
         }
-        OpenPanel(dropDownQuizList);
+        OpenPanel(dropDownQuizList, dropDownSubjectList);
     }
 
     public void Panel_Classicart()
     {
         UI_Classicart.SetActive(true);
-        class_Classicart.Display();
+        class_Classicart.Display(true);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Classicart.SetActive(false);
@@ -185,7 +211,7 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Matchart()
     {
         UI_Matchart.SetActive(true);
-        class_Matchart.Display();
+        class_Matchart.Display(true);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Matchart.SetActive(false);
@@ -195,7 +221,7 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Switchart()
     {
         UI_Switchart.SetActive(true);
-        class_Switchart.Display();
+        class_Switchart.Display(true);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Switchart.SetActive(false);
@@ -205,7 +231,7 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Grabart()
     {
         UI_Grabart.SetActive(true);
-        class_Grabart.Display();
+        class_Grabart.Display(true);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Grabart.SetActive(false);
@@ -225,7 +251,7 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Classifyart()
     {
         UI_Classifyart.SetActive(true);
-        class_Classifyart.Display();
+        class_Classifyart.Display(true);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Classifyart.SetActive(false);
@@ -235,7 +261,7 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_TicTacToe()
     {
         UI_TicTacToe.SetActive(true);
-        class_TicTacToe.Display();
+        class_TicTacToe.Display(true);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_TicTacToe.SetActive(false);
@@ -245,11 +271,24 @@ public class AdminUtilites : MonoBehaviour
     public void Panel_Maze()
     {
         UI_Maze.SetActive(true);
-        class_Maze.Display();
+        class_Maze.Display(true);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
             UI_Maze.SetActive(false);
         });
+    }
+
+    // This is the script for the AddQuestionsButton 
+    public void AddQuestions(bool toDisplay)
+    {
+        if (toDisplay == true)
+        {
+
+        }
+        else
+        {
+            return;
+        }
     }
 
 }

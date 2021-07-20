@@ -19,46 +19,58 @@ public class Class_Maze : MonoBehaviour
     [SerializeField] private Toggle toggle_True;
     [SerializeField] private Toggle toggle_False;
 
-    public void Display()
-    {
-        string question = quizLoader.Question;
-        string[] choices = quizLoader.Choices;
-        string[] answers = quizLoader.Answers;
+    [Header("Dropdown")]
+    [SerializeField] public Dropdown dropDownSubjectList;
 
-        input_Question.text = question;
-        if (answers[0] == "TRUE")
+    public void Display(bool display)
+    {
+        if (display == true)
         {
-            toggle_True.isOn = true;
+            string question = quizLoader.Question;
+            string[] choices = quizLoader.Choices;
+            string[] answers = quizLoader.Answers;
+
+            input_Question.text = question;
+            if (answers[0] == "TRUE")
+            {
+                toggle_True.isOn = true;
+            }
+            else
+            {
+                toggle_False.isOn = true;
+            }
         }
         else
         {
-            toggle_False.isOn = true;
+            return;
         }
+
     }
 
     public void Modify(string operation)
     {
+        int index = dropDownSubjectList.value;
+        string subject = dropDownSubjectList.options[index].text;
+
         string final = string.Empty;
         string combine = string.Empty;
 
         combine = input_Question.text + "|";
         if (toggle_True.isOn == true)
         {
-            final = combine + "TRUE";
+            combine = combine + "TRUE";
         }
         if (toggle_False.isOn == true)
         {
-            final = combine + "FALSE";
+            combine = combine + "FALSE";
         }
+        final = combine + "|" + subject;
 
         if (operation == "add")
         {
-            quizLoader.data_questionSet = quizLoader.data_questionSet.Concat(new string[] { final }).ToArray();
             string[] arrline = File.ReadAllLines(quizLoader.filepath);
-            List<string> listline = arrline.ToList();
-
-            listline.Add(final);
-            File.WriteAllLines(quizLoader.filepath, listline);
+            arrline = arrline.Concat(new string[] { final }).ToArray();
+            File.WriteAllLines(quizLoader.filepath, arrline);
         }
         if (operation == "edit")
         {

@@ -124,3 +124,8 @@ July 20
 [Pandan]
 - Admin Utilities - 90% Complete
 - Added a default logo icon for our game
+
+[Pandan]
+- Admin Utilites - 95% Complete
+- Admin is still buggy
+- 7 out 8 questions supported

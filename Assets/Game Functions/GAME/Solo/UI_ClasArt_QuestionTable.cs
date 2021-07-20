@@ -91,7 +91,8 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         debugButton = transform.Find("debugButton").GetComponent<Button_UI>();
         
         //== Then assign a Question Type...
-        quizLoader.LoadCSV("Classicart");
+        //[Pandan] Insert the type of question and the subject here in quizLoader now 
+        quizLoader.LoadCSV("Classicart", "National Artists" );
 
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;

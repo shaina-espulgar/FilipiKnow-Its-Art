@@ -20,43 +20,50 @@ public class Class_Grabart : MonoBehaviour
     [Header("Toggle")]
     [SerializeField] private Toggle[] arrAnswers;
 
-    public void Display()
+    [Header("Dropdown")]
+    [SerializeField] public Dropdown dropDownSubjectList;
+
+    public void Display(bool display)
     {
-        string question = quizLoader.Question;
-        string[] choices = quizLoader.Choices;
-        string[] answers = quizLoader.Answers;
-
-        input_Question.text = question;
-        for (int i = 0; i < answers.Length - 1; i++)
+        if (display == true)
         {
-            answers[i] = answers[i + 1];
-        }
-        Array.Resize(ref answers, answers.Length - 1);
+            string question = quizLoader.Question;
+            string[] choices = quizLoader.Choices;
+            string[] answers = quizLoader.Answers;
 
-        int index = 0;
-        foreach (string text in choices)
-        {
-            arrChoices[index].text = text;
-            index++;
-        }
-
-        index = 0;
-        foreach (string text in answers)
-        {
-            if (text == "TRUE")
+            input_Question.text = question;
+            int index = 0;
+            foreach (string text in choices)
             {
-                arrAnswers[index].isOn = true;
+                arrChoices[index].text = text;
+                index++;
             }
-            else
+
+            index = 0;
+            foreach (string text in answers)
             {
-                arrAnswers[index].isOn = false;
+                if (text == "TRUE")
+                {
+                    arrAnswers[index].isOn = true;
+                }
+                if (text == "FALSE")
+                {
+                    arrAnswers[index].isOn = false;
+                }
+                index++;
             }
-            index++;
+        }
+        else
+        {
+            return;
         }
     }
 
     public void Modify(string operation)
     {
+        int index = dropDownSubjectList.value;
+        string subject = dropDownSubjectList.options[index].text;
+
         string combineInput = string.Empty;
         string reserveInput = string.Empty;
         string combineToggle = string.Empty;
@@ -76,6 +83,7 @@ public class Class_Grabart : MonoBehaviour
             }
 
         }
+        combineInput = reserveInput + "|" + subject;
 
         reserveToggle = "|";
         for (int i = 0; i < arrAnswers.Length; i++)

@@ -17,24 +17,37 @@ public class Class_Classicart : MonoBehaviour
     [SerializeField] private TMP_InputField[] arrChoices;
     [SerializeField] private TMP_InputField input_Answer;
 
-    public void Display()
-    {
-        string question = quizLoader.Question;
-        string[] choices = quizLoader.Choices;
-        string[] answers = quizLoader.Answers;
+    [Header("Dropdown")]
+    [SerializeField] public Dropdown dropDownSubjectList;
 
-        input_Question.text = question;
-        int index = 0;
-        foreach (string text in choices)
+    public void Display(bool display)
+    {
+        if (display == true)
         {
-            arrChoices[index].text = text;
-            index++;
+            string question = quizLoader.Question;
+            string[] choices = quizLoader.Choices;
+            string[] answers = quizLoader.Answers;
+
+            input_Question.text = question;
+            int index = 0;
+            foreach (string text in choices)
+            {
+                arrChoices[index].text = text;
+                index++;
+            }
+            input_Answer.text = answers[0];
         }
-        input_Answer.text = answers[0];
+        else
+        {
+            return;
+        }
     }
 
     public void Modify(string operation)
     {
+        int index = dropDownSubjectList.value;
+        string subject = dropDownSubjectList.options[index].text;
+
         string combine = string.Empty;
         string reserve = string.Empty;
         string final = string.Empty;
@@ -45,16 +58,13 @@ public class Class_Classicart : MonoBehaviour
             combine = reserve + arrChoices[i].text + "|";
             reserve = combine;
         }
-        final = combine + input_Answer.text;
+        final = combine + input_Answer.text + "|" + subject;
 
         if (operation == "add")
         {
-            quizLoader.data_questionSet = quizLoader.data_questionSet.Concat(new string[] { final }).ToArray();
             string[] arrline = File.ReadAllLines(quizLoader.filepath);
-            List<string> listline = arrline.ToList();
-
-            listline.Add(final);
-            File.WriteAllLines(quizLoader.filepath, listline);
+            arrline = arrline.Concat(new string[] { final }).ToArray();
+            File.WriteAllLines(quizLoader.filepath, arrline);
         }
         if (operation == "edit")
         {

@@ -2,46 +2,74 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using UnityEngine;
 
-// Note: INCOMPLETE. We need to formulate a code for some of the missing questionTypes in here
+// Note: PARTIALLY COMPLETE. 95% - Nameart is still not being worked on
+
+// Note: You might have to prompt the user first if that type of question and/or subject is empty for FAIL SAFE purposes (optional if that's the case) 
 public class QuizLoader : MonoBehaviour
 {
     // This will load every CSV files when placed in the game
     public TextAsset[] TextAssetData;
 
     // Will get its specific filepath
-    public string filepath = string.Empty;
+    [HideInInspector] public string filepath = string.Empty;
 
-    public int indexQuestion;
-    public string[] data_questionSet;
-    public string[] data_display;
+    [HideInInspector] public int indexQuestion;
+    // Note: these are lists now instead of arrays before
+    [HideInInspector]  public List<string> data_questionSet = new List<string>();
+    [HideInInspector]  public List<string> data_display = new List<string>();
 
-    public void LoadCSV(string typeOfQuestion)
+    public void LoadCSV(string typeOfQuestion, string typeOfSubject)
     {
         filepath = Application.dataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
 
-        // Transfering the CSV file into array per row
-        data_questionSet = File.ReadAllLines(filepath);
+        // Clear the Question Set first before proceeding
+        data_questionSet.Clear();
 
-        // Deleting the first row of the referenced CSV
-        for (int i = 0; i < data_questionSet.Length - 1; i++)
+        // List<string> txt_file = new List<string>(File.ReadLines(filepath));
+        string[] txt_file = File.ReadAllLines(filepath);
+        for (int i = 0; i < txt_file.Length; i++)
         {
-            data_questionSet[i] = data_questionSet[i + 1];
+            // Sending the string to data_questionSet if it has a specific type of subject
+            // "Classifyart" is an exclusion for this because it uses the subjects as part of its quiz
+            if (txt_file[i].Contains(typeOfSubject) && typeOfQuestion != "Classifyart")
+            {
+                if (typeOfQuestion == "Grabart" || typeOfQuestion == "Matchart")
+                {
+                    data_questionSet.Add(txt_file[i]);
+                    data_questionSet.Add(txt_file[i + 1]);
+                }
+                else
+                {
+                    data_questionSet.Add(txt_file[i]);
+                }
+            }
+
+            if (typeOfQuestion == "Classifyart")
+            {
+                if (i != txt_file.Length - 1)
+                {
+                    data_questionSet.Add(txt_file[i]);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
         }
-        Array.Resize(ref data_questionSet, data_questionSet.Length - 1);
 
         // Spliting the data_questionSet into columns or pieces
-        data_display = data_questionSet[indexQuestion].Split(new string[] { "|" }, StringSplitOptions.None);
+        data_display = data_questionSet[indexQuestion].Split(new string[] { "|" }, StringSplitOptions.None).ToList(); ;
 
         // Perform separation of Questions, Choices, Answers from data_display
         switch (typeOfQuestion)
         {
             case "Classicart": Classicart(); break;
-            case "Matchart": Matchart(indexQuestion); break;
+            case "Matchart": Matchart(); break;
             case "Switchart": Switchart(); break;
-            case "Grabart": Grabart(indexQuestion); break;
+            case "Grabart": Grabart(); break;
             case "Nameart": Nameart(); break;
             case "Classifyart": Classifyart(); break;
             case "TicTacToe": TicTacToe(); break;
@@ -57,7 +85,14 @@ public class QuizLoader : MonoBehaviour
         set { _question = value; }
     }
 
-    public int choicesLength;
+    private string[] _subjects;
+    public string[] Subjects
+    {
+        get { return _subjects; }
+        set { _subjects = value; }
+    }
+
+    private int choicesLength;
     private string[] _choices;
     public string[] Choices
     {   
@@ -65,19 +100,13 @@ public class QuizLoader : MonoBehaviour
         set { _choices = value; }
     }
 
-    public int answersLength;
+    private int answersLength;
     private string[] _answers;
     public string[] Answers
     {
         get { return _answers; }
         set { _answers = value; }
     }
-
-    // private void Initialize()
-    // {
-    //    _choices = new string[choicesLength];
-    //    _answers = new string[answersLength];
-    // }
 
     public void Classicart()
     {
@@ -93,15 +122,14 @@ public class QuizLoader : MonoBehaviour
         _answers[0] = data_display[5];
     }
 
-    public void Matchart(int index)
+    public void Matchart()
     {
         // These three first lines were redundant anyway but Im trying to come up with an alternative
         // choicesLength = 6; answersLength = 6;
         // _choices = new string[choicesLength];
         // _answers = new string[answersLength];
-
-        _choices = data_questionSet[index].Split('|');
-        _answers = data_questionSet[index + 1].Split('|');
+        _choices = data_questionSet[indexQuestion].Split('|');
+        _answers = data_questionSet[indexQuestion + 1].Split('|');
         _question = _choices[0];
 
         // Decrease the size of an array by 1 (first column) since that column is composed of a question with corresponding empty block below it as always 
@@ -110,7 +138,7 @@ public class QuizLoader : MonoBehaviour
             _choices[i] = _choices[i + 1];
             _answers[i] = _answers[i + 1];
         }
-        Array.Resize(ref _choices, _choices.Length - 1);
+        Array.Resize(ref _choices, _choices.Length - 2);
         Array.Resize(ref _answers, _answers.Length - 1);
     }
 
@@ -128,15 +156,15 @@ public class QuizLoader : MonoBehaviour
         _answers[0] = data_display[5];
     }
 
-    public void Grabart(int index)
+    public void Grabart()
     {
         // These three first lines were redundant anyway but Im trying to come up with an alternative
         // choicesLength = 15; answersLength = 15;
         // _choices = new string[choicesLength];
         // _answers = new string[answersLength];
 
-        _choices = data_questionSet[index].Split('|');
-        _answers = data_questionSet[index + 1].Split('|');
+        _choices = data_questionSet[indexQuestion].Split('|');
+        _answers = data_questionSet[indexQuestion + 1].Split('|');
         _question = _choices[0];
 
         // Decrease the size of an array by 1 (first column) since that column is composed of a question with corresponding empty block below it as always
@@ -145,7 +173,7 @@ public class QuizLoader : MonoBehaviour
             _choices[i] = _choices[i + 1];
             _answers[i] = _answers[i + 1];
         }
-        Array.Resize(ref _choices, _choices.Length - 1);
+        Array.Resize(ref _choices, _choices.Length - 2);
         Array.Resize(ref _answers, _answers.Length - 1);
     }
 
@@ -165,7 +193,15 @@ public class QuizLoader : MonoBehaviour
 
     public void Classifyart()
     {
-
+        _question = data_display[0];
+        for (int i = 1; i <= data_display.Count; i++)
+        {
+            _choices[i - 1] = data_display[i];
+            if (i == 3 || i == 6)
+            {
+                _subjects = _subjects.Concat(new string[] { _choices[i] }).ToArray();
+            }
+        }
     }
 
     public void TicTacToe()
@@ -193,7 +229,8 @@ public class QuizLoader : MonoBehaviour
         list<string> answers = quizLoader.Answers;
         
         == Then assign a Question Type...
-        quizLoader.LoadCSV("Grabart");
+        quizLoader.LoadCSV("Grabart", "National Artists");
+
     }
 
     --- BELOW HERE will eventually be the product ---
@@ -209,7 +246,7 @@ public class QuizLoader : MonoBehaviour
         }
     }
 
-    void Previous()
+    void PreviousQuestion()
     {
         quizLoader.indexQuestion--;
         
@@ -217,7 +254,7 @@ public class QuizLoader : MonoBehaviour
         quizLoader.indexQuestion-=2
     }
 
-    void Next()
+    void NextQuestion()
     {
         quizLoader.indexQuestion++;
 
@@ -231,9 +268,8 @@ public class QuizLoader : MonoBehaviour
     {
         --- CLEAR THE LIST IF THE ROUND ENDED 
         --- However this part is just my theory that the code will not erase the former values of these.
-        question = null;
-        choices.Clear();
-        answers.Clear();
+        question = string.Empty;
+        Array.Clear(choices, 0, choices.Length)
+        Array.Clear(answers, 0, answers.Length)
     }
 */
-
