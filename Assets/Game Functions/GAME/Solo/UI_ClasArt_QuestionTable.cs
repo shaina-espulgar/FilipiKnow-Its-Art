@@ -74,66 +74,44 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     private Button_UI choiceCButton;
     private Button_UI choiceDButton;
 
+    private Button_UI debugButton;
+
     public TextMeshProUGUI choiceA;
     public TextMeshProUGUI choiceB;
     public TextMeshProUGUI choiceC;
     public TextMeshProUGUI choiceD;
 
-    public string input; //For input Players
+    public string[] input; //For input Players
+    public bool onToNextQuestion;
+    public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in QUestion UI
 
 
     void Start()
     {
+        debugButton = transform.Find("debugButton").GetComponent<Button_UI>();
         
         //== Then assign a Question Type...
         quizLoader.LoadCSV("Classicart");
 
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;
+        question = quizLoader.Question;
 
-        for(int i = 0; i != choices.Length; i++) //For showing the text asset from text Meshes in choice UI
-        {
-            if(i == 0)
-            {
-                choiceA.text = choices[i];
-                Debug.Log(i + " is choice A");
-            }
-            else if(i==1)
-            {
-                choiceB.text = choices[i];
-                Debug.Log(i + " is choice B");
-            }
-            else if (i == 2)
-            {
-                choiceC.text = choices[i];
-                Debug.Log(i + " is choice Bc");
-            }
-            else if (i == 3)
-            {
-                choiceD.text = choices[i];
-                Debug.Log(i + " is choice B");
-            }
-            else
-            {
-                Debug.Log("ERROR");
-            }
-        }
+        onToNextQuestion = false;
+
+        showTextInQuestionUI();
 
       
     }
 
 
     //--- BELOW HERE will eventually be the product ---
-    void Game()
+    void Update()
     {
-        /*if (choices[input] == answers)
+        if (onToNextQuestion == true)
         {
-            return true;
+            Next();
         }
-        else
-        {
-            return false;
-        }*/
     }
 
     void Previous()
@@ -156,6 +134,41 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         Array.Clear(answers, 0, answers.Length);
     }
 
+    void showTextInChoiceUI()
+    {
+        for (int i = 0; i != choices.Length; i++) //For showing the text asset from text Meshes in choice UI
+        {
+            if (i == 0)
+            {
+                choiceA.text = choices[i];
+                //Debug.Log(i + " is choice A");
+            }
+            else if (i == 1)
+            {
+                choiceB.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 2)
+            {
+                choiceC.text = choices[i];
+                //Debug.Log(i + " is choice Bc");
+            }
+            else if (i == 3)
+            {
+                choiceD.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else
+            {
+                Debug.Log("ERROR");
+            }
+        }
+    }
+
+    void showTextInQuestionUI()
+    {
+        QuestionText.text = question;
+    }
 
 }
 
