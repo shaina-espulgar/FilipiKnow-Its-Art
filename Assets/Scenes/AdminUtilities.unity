@@ -2276,7 +2276,7 @@ MonoBehaviour:
   class_Matchart: {fileID: 1707102546}
   class_Switchart: {fileID: 200882470}
   class_Grabart: {fileID: 1783713323}
-  class_Nameart: {fileID: 211400886}
+  class_Nameart: {fileID: 0}
   class_Classifyart: {fileID: 1991728655}
   class_TicTacToe: {fileID: 2009587199}
   class_Maze: {fileID: 14645611}
@@ -4868,6 +4868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211400885}
   - component: {fileID: 211400886}
+  - component: {fileID: 211400887}
   m_Layer: 5
   m_Name: Nameart
   m_TagString: Untagged
@@ -4914,6 +4915,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d84d78d5f9699cd4a8fa2e9e2bedea42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &211400887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211400884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5c1d74a41ea8545921ea982d4f26d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &212557037
@@ -31150,6 +31163,7 @@ GameObject:
   - component: {fileID: 1552347096}
   - component: {fileID: 1552347095}
   - component: {fileID: 1552347094}
+  - component: {fileID: 1552347097}
   m_Layer: 5
   m_Name: btn_OpenLocalFiles
   m_TagString: Untagged
@@ -31221,9 +31235,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Class_Nameart, Assembly-CSharp
-        m_MethodName: OpenExplorer
+      - m_Target: {fileID: 211400887}
+        m_TargetAssemblyTypeName: AndroidFIleBrowser, Assembly-CSharp
+        m_MethodName: Browse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31231,7 +31245,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1552347095
 MonoBehaviour:
@@ -31271,6 +31285,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552347092}
   m_CullTransparentMesh: 1
+--- !u!114 &1552347097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552347092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5c1d74a41ea8545921ea982d4f26d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1553015039
 GameObject:
   m_ObjectHideFlags: 0

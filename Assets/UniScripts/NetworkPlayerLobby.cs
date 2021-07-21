@@ -9,8 +9,10 @@ public class NetworkPlayerLobby : NetworkBehaviour
 {
     [Header("UI")]
     [SerializeField] private GameObject lobbyUI = null;
+    [SerializeField] private GameObject[] panels = new GameObject[4];
     [SerializeField] private TMP_Text[] playerNameTexts = new TMP_Text[4];
     [SerializeField] private TMP_Text[] playerReadyTexts = new TMP_Text[4];
+
     [SerializeField] private Button startGameButton = null;
 
     [Header("Display Address")]
@@ -80,9 +82,11 @@ public class NetworkPlayerLobby : NetworkBehaviour
 
             return;
         }
-
-        for (int i = 0; i < playerNameTexts.Length; i++)
+        
+        for (int i = 0; i < Room.maxConnections; i++)
         {
+            panels[i].SetActive(true);
+
             playerNameTexts[i].text = "Waiting For Player...";
             playerReadyTexts[i].text = string.Empty;
         }
@@ -95,7 +99,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
                 "<color=red>Not Ready</color>";
         }
 
-        netAddress.text = room.networkAddress;
+        netAddress.text = Room.networkAddress;
     }
 
     public void HandleReadyToStart(bool readyToStart)

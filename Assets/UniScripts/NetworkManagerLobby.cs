@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Mirror;
+using TMPro;
 
 
 public class NetworkManagerLobby : NetworkManager
@@ -24,8 +25,10 @@ public class NetworkManagerLobby : NetworkManager
     public List<NetworkPlayerLobby> RoomPlayers { get; } = new List<NetworkPlayerLobby>();
     public List<NetworkGamePlayer> GamePlayers { get; } = new List<NetworkGamePlayer>();
 
-
-    public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
+    public override void OnStartServer()
+    {
+        spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
+    }
 
     public override void OnStartClient()
     {

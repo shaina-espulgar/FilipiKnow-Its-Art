@@ -58,6 +58,7 @@
     <Compile Include="Assets\UtilScript\Utils\Button_UI.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\nameHandling.cs" />
+    <Compile Include="Assets\UniScripts\AndroidFIleBrowser.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Game Functions\ABOUT US\AboutUs.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -872,6 +873,10 @@
     <ProjectReference Include="Mirror.Weaver.csproj">
       <Project>{B9258465-38BB-F704-7D2A-7277AA31AC11}</Project>
       <Name>Mirror.Weaver</Name>
+    </ProjectReference>
+    <ProjectReference Include="SimpleFileBrowser.Runtime.csproj">
+      <Project>{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}</Project>
+      <Name>SimpleFileBrowser.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Editor.csproj">
       <Project>{A2336EAB-7645-D87D-6A2B-A7E9D198FDB2}</Project>

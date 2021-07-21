@@ -73,8 +73,8 @@
     <Compile Include="Assets\Mirror\Components\NetworkProximityChecker.cs" />
     <Compile Include="Assets\Mirror\Components\AssemblyInfo.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkSceneChecker.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransform.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkRoomPlayer.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkTransform.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkPingDisplay.cs" />
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkRigidbody2D.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkMatchChecker.cs" />

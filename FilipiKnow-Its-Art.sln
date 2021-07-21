@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telepathy", "Telepathy.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Authenticators", "Mirror.Authenticators.csproj", "{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileBrowser.Runtime", "SimpleFileBrowser.Runtime.csproj", "{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Weaver", "Mirror.Weaver.csproj", "{B9258465-38BB-F704-7D2A-7277AA31AC11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Editor", "Mirror.Editor.csproj", "{A2336EAB-7645-D87D-6A2B-A7E9D198FDB2}"
@@ -61,6 +63,10 @@ Global
 		{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9258465-38BB-F704-7D2A-7277AA31AC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9258465-38BB-F704-7D2A-7277AA31AC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9258465-38BB-F704-7D2A-7277AA31AC11}.Release|Any CPU.ActiveCfg = Release|Any CPU

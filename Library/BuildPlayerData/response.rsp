@@ -16,6 +16,7 @@
 -a="C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PlayerScriptAssemblies\Unity.Analytics.DataPrivacy.dll"
 -a="C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PlayerScriptAssemblies\UnityEngine.Purchasing.AppleCore.dll"
 -a="C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PlayerScriptAssemblies\UnityEngine.Purchasing.WinRTStub.dll"
+-a="C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PlayerScriptAssemblies\SimpleFileBrowser.Runtime.dll"
 -a="C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PlayerScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll"
 -a="C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PlayerScriptAssemblies\UnityEngine.Purchasing.Codeless.dll"
 -a="C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PlayerScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll"

@@ -129,3 +129,9 @@ July 20
 - Admin Utilites - 95% Complete
 - Admin is still buggy
 - 7 out 8 questions supported
+
+July 21:
+[Pandan] 
+- Network Manager Update
+- Optimizations for Host and Client connections
+- More features including setting the number of players connecting in the game
