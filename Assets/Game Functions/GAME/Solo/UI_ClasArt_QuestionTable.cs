@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 using System;
 using TMPro;
 using CodeMonkey.Utils;
@@ -31,7 +32,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
 
         for (int i = 1; i < questionAndAnswer.Length - 1; i++ )
         {
-            string[] rowTable = questionAndAnswer[i].Split(new char[] { ',' });
+            string[] rowTable = questionAndAnswer[i].Split(new char[] { '|' });
 
             CSV_Questionnaire_Classicart data = new CSV_Questionnaire_Classicart();
             data.question = rowTable[0];
@@ -63,56 +64,50 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     }*/
 
 
+    //[Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
 
     string question; //{BAGARES] MAybe reference for an array of questions, answers and choices saved in Quizloader.cs
     string[] choices;
     string[] answers;
 
-    private Button_UI choiceAButton; //These are variables for referencing for choices ABCD 
-    private Button_UI choiceBButton;
-    private Button_UI choiceCButton;
-    private Button_UI choiceDButton;
 
-    private Button_UI debugButton;
+    [SerializeField] private Button choiceAButton;
+    [SerializeField] private Button choiceBButton;
+    [SerializeField] private Button choiceCButton;
+    [SerializeField] private Button choiceDButton;
 
     public TextMeshProUGUI choiceA;
     public TextMeshProUGUI choiceB;
     public TextMeshProUGUI choiceC;
     public TextMeshProUGUI choiceD;
 
-    public string[] input; //For input Players
-    public bool onToNextQuestion;
+    public string input; //For input Players
+    public int number;
     public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in QUestion UI
 
 
     void Start()
     {
-        debugButton = transform.Find("debugButton").GetComponent<Button_UI>();
-        
-        //== Then assign a Question Type...
-        //[Pandan] Insert the type of question and the subject here in quizLoader now 
-        quizLoader.LoadCSV("Classicart", "National Artists" );
 
-        choices = quizLoader.Choices;
-        answers = quizLoader.Answers;
-        question = quizLoader.Question;
-
-        onToNextQuestion = false;
-
-        showTextInQuestionUI();
-
-      
     }
 
 
     //--- BELOW HERE will eventually be the product ---
     void Update()
     {
-        if (onToNextQuestion == true)
-        {
-            Next();
-        }
+        //== Then assign a Question Type...
+        quizLoader.LoadCSV("Classicart");
+
+        choices = quizLoader.Choices;
+        answers = quizLoader.Answers;
+        question = quizLoader.Question;
+
+        showTextInQuestionUI();
+        showTextInChoiceUI();
+
+        
+   
     }
 
     void Previous()
@@ -120,9 +115,16 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         quizLoader.indexQuestion--;
     }
 
-    void Next()
+    public void Next()
     {
-        quizLoader.indexQuestion++;
+        choiceAButton.interactable = !choiceAButton.interactable;
+        choiceBButton.interactable = !choiceBButton.interactable;
+        choiceCButton.interactable = !choiceCButton.interactable;
+        choiceDButton.interactable = !choiceDButton.interactable;
+
+        number += 1;
+        quizLoader.indexQuestion = number ;
+        
     }
 
     //-- Need some code for not overpassing the value of indexQuestion to the no.of questions
@@ -171,5 +173,26 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         QuestionText.text = question;
     }
 
+    public void choiceButtonA_Input()
+    {
+        input = choiceA.text;
+        Debug.Log("Choice A: " + input);
+        choiceAButton.interactable = !choiceAButton.interactable;
+        choiceBButton.interactable = !choiceBButton.interactable;
+        choiceCButton.interactable = !choiceCButton.interactable;
+        choiceDButton.interactable = !choiceDButton.interactable;
+    }
+    public void choiceButtonB_Input()
+    {
+        Debug.Log("Choice B");
+    }
+    public void choiceButtonC_Input()
+    {
+        Debug.Log("Choice C");
+    }
+    public void choiceButtonD_Input()
+    {
+        Debug.Log("Choice D");
+    }
 }
 
