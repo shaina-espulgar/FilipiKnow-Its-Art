@@ -57,6 +57,7 @@ public class AdminUtilites : MonoBehaviour
         OpenPanel(dropDownQuizList, dropDownSubjectList);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
+
             UI_Classicart.SetActive(false);
             UI_Matchart.SetActive(false);
             UI_Switchart.SetActive(false);
@@ -72,6 +73,7 @@ public class AdminUtilites : MonoBehaviour
 
         dropDownSubjectList.onValueChanged.AddListener(delegate
         {
+
             UI_Classicart.SetActive(false);
             UI_Matchart.SetActive(false);
             UI_Switchart.SetActive(false);
@@ -98,7 +100,7 @@ public class AdminUtilites : MonoBehaviour
 
         if (dropDownQuizList.options[index_dropDownQuizList].text == "Grabart" || dropDownQuizList.options[index_dropDownQuizList].text == "Matchart")
         {
-            questionNumber.text = Convert.ToString((quizLoader.indexQuestion + 1) - (quizLoader.indexQuestion - 1)) + "/" +
+            questionNumber.text = Convert.ToString((quizLoader.indexQuestion + 1) - (quizLoader.indexQuestion)) + "/" +
             Convert.ToString(quizLoader.data_questionSet.Count / 2);
         }
         else
@@ -233,11 +235,6 @@ public class AdminUtilites : MonoBehaviour
         }
         OpenPanel(dropDownQuizList, dropDownSubjectList);
     }
-
-    // public void Panel_QuestionType()
-    // {
-    //
-    // }
 
     public void Panel_Classicart()
     {

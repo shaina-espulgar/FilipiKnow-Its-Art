@@ -42,6 +42,7 @@ public class QuizLoader : MonoBehaviour
                 {
                     if (typeOfQuestion == "Grabart" || typeOfQuestion == "Matchart")
                     {
+                        // Erasing the first row of the CSV
                         if (i != txt_file.Length - 1)
                         {
                             data_questionSet.Add(txt_file[i]);
@@ -186,7 +187,7 @@ public class QuizLoader : MonoBehaviour
         _question = _choices[0];
 
         // Decrease the size of an array by 1 (first column) since that column is composed of a question with corresponding empty block below it as always
-        for (int i = 0; i < _choices.Length - 1; i++)
+        for (int i = 0; i < _choices.Length - 2; i++)
         {
             _choices[i] = _choices[i + 1];
             _answers[i] = _answers[i + 1];
