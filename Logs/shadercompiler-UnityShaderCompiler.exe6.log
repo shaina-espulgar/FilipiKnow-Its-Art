@@ -1,0 +1,6 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+
+Cmd: disassembleShader
+ name=UI/Default platform=gles type=5 mask=6 insize=3037 outsize=3037 ok=1
+

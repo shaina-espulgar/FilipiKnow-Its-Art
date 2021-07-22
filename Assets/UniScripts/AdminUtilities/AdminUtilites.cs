@@ -57,14 +57,32 @@ public class AdminUtilites : MonoBehaviour
         OpenPanel(dropDownQuizList, dropDownSubjectList);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
+            UI_Classicart.SetActive(false);
+            UI_Matchart.SetActive(false);
+            UI_Switchart.SetActive(false);
+            UI_Grabart.SetActive(false);
+            // UI_Nameart.SetActive(false);
+            UI_Classifyart.SetActive(false);
+            UI_TicTacToe.SetActive(false);
+            UI_Maze.SetActive(false);
+
             OpenPanel(dropDownQuizList, dropDownSubjectList);
             quizLoader.indexQuestion = 0;
         });
 
         dropDownSubjectList.onValueChanged.AddListener(delegate
         {
-           OpenPanel(dropDownQuizList, dropDownSubjectList);
-           quizLoader.indexQuestion = 0;
+            UI_Classicart.SetActive(false);
+            UI_Matchart.SetActive(false);
+            UI_Switchart.SetActive(false);
+            UI_Grabart.SetActive(false);
+            // UI_Nameart.SetActive(false);
+            UI_Classifyart.SetActive(false);
+            UI_TicTacToe.SetActive(false);
+            UI_Maze.SetActive(false);
+
+            OpenPanel(dropDownQuizList, dropDownSubjectList);
+            quizLoader.indexQuestion = 0;
         });
     }
 
@@ -78,22 +96,20 @@ public class AdminUtilites : MonoBehaviour
 
         quizLoader.LoadCSV(currentPanel, currentSubject);
 
+        if (dropDownQuizList.options[index_dropDownQuizList].text == "Grabart" || dropDownQuizList.options[index_dropDownQuizList].text == "Matchart")
+        {
+            questionNumber.text = Convert.ToString((quizLoader.indexQuestion + 1) - (quizLoader.indexQuestion - 1)) + "/" +
+            Convert.ToString(quizLoader.data_questionSet.Count / 2);
+        }
+        else
+        {
+            questionNumber.text = Convert.ToString(quizLoader.indexQuestion + 1) + "/" + Convert.ToString(quizLoader.data_questionSet.Count);
+        }
+
         // The game will prompt the admin if that specific type of question was empty
         if (quizLoader.data_questionSet.Any() == true)
         {
             emptyCaution.SetActive(false);
-
-            if (dropDownQuizList.options[index_dropDownQuizList].text == "Grabart" || dropDownQuizList.options[index_dropDownQuizList].text == "Matchart")
-            {
-                questionNumber.text = Convert.ToString((quizLoader.indexQuestion + 1) - (quizLoader.indexQuestion - 1) + "/" +
-                Convert.ToString(quizLoader.data_questionSet.Count));
-            }
-            else
-            {
-                questionNumber.text = Convert.ToString(quizLoader.indexQuestion + 1) + "/" + Convert.ToString(quizLoader.data_questionSet.Count);
-            }
-
-
 
             switch (dropDownQuizList.options[index_dropDownQuizList].text)
             {
@@ -105,6 +121,7 @@ public class AdminUtilites : MonoBehaviour
                 case "Classifyart": Panel_Classifyart(); break;
                 case "TicTacToe": Panel_TicTacToe(); break;
                 case "Maze": Panel_Maze(); break;
+                default: return;
             }
         }
         else
@@ -226,55 +243,30 @@ public class AdminUtilites : MonoBehaviour
     {
         UI_Classicart.SetActive(true);
         class_Classicart.Display(true);
-
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_Classicart.SetActive(false);
-        });
     }
 
     public void Panel_Matchart()
     {
         UI_Matchart.SetActive(true);
         class_Matchart.Display(true);
-
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_Matchart.SetActive(false);
-        });
     }
 
     public void Panel_Switchart()
     {
         UI_Switchart.SetActive(true);
         class_Switchart.Display(true);
-
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_Switchart.SetActive(false);
-        });
     }
 
     public void Panel_Grabart()
     {
         UI_Grabart.SetActive(true);
         class_Grabart.Display(true);
-
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_Grabart.SetActive(false);
-        });
     }
     
     public void Panel_Nameart()
     {
         UI_Nameart.SetActive(true);
         // class_Nameart.Display();
-
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_Nameart.SetActive(false);
-        });
     }
 
     public void Panel_Classifyart()
@@ -284,9 +276,7 @@ public class AdminUtilites : MonoBehaviour
 
         dropDownSubjectList.gameObject.SetActive(false);
 
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
         dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_Classifyart.SetActive(false);
             dropDownSubjectList.gameObject.SetActive(true);
         });
     }
@@ -295,22 +285,12 @@ public class AdminUtilites : MonoBehaviour
     {
         UI_TicTacToe.SetActive(true);
         class_TicTacToe.Display(true);
-
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_TicTacToe.SetActive(false);
-        });
     }
 
     public void Panel_Maze()
     {
         UI_Maze.SetActive(true);
         class_Maze.Display(true);
-
-        dropDownQuizList.onValueChanged.RemoveAllListeners();
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            UI_Maze.SetActive(false);
-        });
     }
 
     // This is the script for the AddQuestionsButton [UNDECIDED YET]

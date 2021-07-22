@@ -140,3 +140,8 @@ July 22:
 [Pandan]
 - Admin Utilites, QuizLoader Optimizations
 - Added a try... catch clause on LoadCSV() in case if the txt_file didn't found anything.
+
+[Pandan]
+- Play Game Optimizations
+- Can now toggle the button of players including their colors
+- Note me what could be the exception for Entering a lobby full of players.

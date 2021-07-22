@@ -26,12 +26,22 @@ public class JoinGameLobby : MonoBehaviour
 
     public void JoinLobby()
     {
-        string ipAddress = roomName.text;
+        try
+        {
+            string ipAddress = roomName.text;
 
-        networkManager.networkAddress = ipAddress;
-        networkManager.StartClient();
+            networkManager.networkAddress = ipAddress;
+            networkManager.StartClient();
 
-        joinGame.interactable = false;
+            joinGame.interactable = false;
+        }
+
+        // Pls help me find what kind of exception will happen if a player joined on a full room
+        catch (KeyNotFoundException) // Dummy exception
+        {
+
+        }
+
     }
 
     private void HandleClientConnected()

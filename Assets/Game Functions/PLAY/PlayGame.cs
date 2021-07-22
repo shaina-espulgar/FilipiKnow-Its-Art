@@ -15,15 +15,25 @@ public class PlayGame : MonoBehaviour
     [Header("Number of Players")]
     [SerializeField] private Button[] playerNumber;
 
+
     [Header("Button Colors")]
     [SerializeField] private Color selectedColor;
     [SerializeField] private Color defaultColor;
 
+    // Sets the button that has formely applied by the selected color
+    private Button former;
+
     private int numberOfPlayers = 4;
+
+    public void Start()
+    {
+        playerNumber[playerNumber.Length - 1].image.color = selectedColor;
+        former = playerNumber[playerNumber.Length - 1];
+    }
 
     public void ReturnToMainMenu()
     {
-        GameObject.Destroy(GameObject.Find("Network Manager"));
+        Destroy(GameObject.Find("Network Manager"));
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -32,6 +42,7 @@ public class PlayGame : MonoBehaviour
         SceneManager.LoadScene("AvatarMenu");
     }
 
+    // Creates a server with a defined network address and its maximum allowed connections
     public void HostServer()
     {
         networkLobby.StartHost();
@@ -60,5 +71,8 @@ public class PlayGame : MonoBehaviour
             case 4: numberOfPlayers = 4; break;
         }
 
+        former.image.color = defaultColor;
+        playerNumber[number - 1].image.color = selectedColor;
+        former = playerNumber[number - 1];
     }       
 }

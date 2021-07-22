@@ -46,8 +46,7 @@ public class Class_TicTacToe : MonoBehaviour
         else
         {
             return;
-        }
-        
+        }  
     }
 
     public void Modify(string operation)
