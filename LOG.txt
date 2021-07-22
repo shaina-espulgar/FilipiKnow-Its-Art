@@ -145,3 +145,7 @@ July 22:
 - Play Game Optimizations
 - Can now toggle the button of players including their colors
 - Note me what could be the exception for Entering a lobby full of players.
+
+[Pandan]
+- Avatar Menu available inside Play Game
+- Game server connection will be available soon.

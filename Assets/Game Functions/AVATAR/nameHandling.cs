@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class nameHandling : MonoBehaviour
 {
-    public Text playerNameShowUI; //[BAGARES] hnadles name showing in the UI
+    public Text playerNameShowUI; //[BAGARES] handles name showing in the UI
     
     private string _nameShow;
     public string nameOfPlayer
@@ -38,7 +38,6 @@ public class nameHandling : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    
     
     private void Awake()
     {

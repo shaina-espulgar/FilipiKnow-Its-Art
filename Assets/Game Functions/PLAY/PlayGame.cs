@@ -15,14 +15,21 @@ public class PlayGame : MonoBehaviour
     [Header("Number of Players")]
     [SerializeField] private Button[] playerNumber;
 
+    [Header("Avatar Images")]
+    [SerializeField] private Image selectedAvatar;
+    [SerializeField] private Sprite[] avatarImage;
+    private int avatarIndex = 0;
 
     [Header("Button Colors")]
     [SerializeField] private Color selectedColor;
     [SerializeField] private Color defaultColor;
 
+
+
     // Sets the button that has formely applied by the selected color
     private Button former;
 
+    // The default settings for the number of players allowed to play in the game
     private int numberOfPlayers = 4;
 
     public void Start()
@@ -46,7 +53,15 @@ public class PlayGame : MonoBehaviour
     public void HostServer()
     {
         networkLobby.StartHost();
-        networkLobby.networkAddress = editAddress.text;
+        if (string.IsNullOrEmpty(editAddress.text))
+        {
+            string[] rooms = { "GameLobby", "GGhaveFun", "EnjoyTheGame", "PlayNice"};
+            networkLobby.networkAddress = rooms[Random.Range(0, rooms.Length - 1)];
+        }
+        else
+        {
+            networkLobby.networkAddress = editAddress.text;
+        }
         networkLobby.maxConnections = numberOfPlayers;
     }
 
@@ -74,5 +89,34 @@ public class PlayGame : MonoBehaviour
         former.image.color = defaultColor;
         playerNumber[number - 1].image.color = selectedColor;
         former = playerNumber[number - 1];
-    }       
+    }
+    
+    // To be separated to the Player Avatar Profile soon!!
+
+    public static Sprite AvatarProfile { get; private set; }
+
+    public void PreviousAvatar()
+    {
+        avatarIndex--;
+        if (avatarIndex < 0)
+        {
+            avatarIndex = avatarImage.Length - 1;
+        }
+        selectedAvatar.sprite = avatarImage[avatarIndex];
+    }
+
+    public void NextAvatar()
+    {
+        avatarIndex++;
+        if (avatarIndex > avatarImage.Length - 1)
+        {
+            avatarIndex = 0;
+        }
+        selectedAvatar.sprite = avatarImage[avatarIndex];
+    }
+
+    public void SaveAvatarProfile()
+    {
+        AvatarProfile = avatarImage[avatarIndex];
+    }
 }

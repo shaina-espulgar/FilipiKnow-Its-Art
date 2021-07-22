@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 using CodeMonkey.Utils;
 
 public class AvatarMenu : MonoBehaviour
 {
-    [SerializeField]
-    private nameHandling nameHandling; //reference for the nameHandling Script
+    [SerializeField] private nameHandling nameHandling; //reference for the nameHandling Script
 
+    [Header("Name Input")]
+    [SerializeField] private TMP_InputField nameInput;
 
     public void ReturnToMainMenu()
     {
