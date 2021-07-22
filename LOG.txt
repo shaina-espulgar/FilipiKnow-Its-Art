@@ -135,3 +135,8 @@ July 21:
 - Network Manager Update
 - Optimizations for Host and Client connections
 - More features including setting the number of players connecting in the game
+
+July 22:
+[Pandan]
+- Admin Utilites, QuizLoader Optimizations
+- Added a try... catch clause on LoadCSV() in case if the txt_file didn't found anything.

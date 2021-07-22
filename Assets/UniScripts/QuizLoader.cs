@@ -29,17 +29,39 @@ public class QuizLoader : MonoBehaviour
 
         // List<string> txt_file = new List<string>(File.ReadLines(filepath));
         string[] txt_file = File.ReadAllLines(filepath);
-        for (int i = 0; i < txt_file.Length; i++)
+
+        // Will use the try... except code for catching the IndexOutOfRange Exception which will 
+        // happen if the program didn't found a specific criteria in its txt_file variable
+        try
         {
-            // Sending the string to data_questionSet if it has a specific type of subject
-            // "Classifyart" is an exclusion for this because it uses the subjects as part of its quiz
-            if (txt_file[i].Contains(typeOfSubject) && typeOfQuestion != "Classifyart")
+            for (int i = 0; i < txt_file.Length; i++)
             {
-                if (typeOfQuestion == "Grabart" || typeOfQuestion == "Matchart")
+                // Sending the string to data_questionSet if it has a specific type of subject
+                // "Classifyart" is an exclusion for this because it uses the subjects as part of its quiz
+                if (txt_file[i].Contains(typeOfSubject) && typeOfQuestion != "Classifyart")
+                {
+                    if (typeOfQuestion == "Grabart" || typeOfQuestion == "Matchart")
+                    {
+                        if (i != txt_file.Length - 1)
+                        {
+                            data_questionSet.Add(txt_file[i]);
+                            data_questionSet.Add(txt_file[i + 1]);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        data_questionSet.Add(txt_file[i]);
+                    }
+                }
+
+                else if (typeOfQuestion == "Classifyart")
                 {
                     if (i != txt_file.Length - 1)
                     {
-                        data_questionSet.Add(txt_file[i]);
                         data_questionSet.Add(txt_file[i + 1]);
                     }
                     else
@@ -47,28 +69,17 @@ public class QuizLoader : MonoBehaviour
                         break;
                     }
                 }
-                else
-                {
-                    data_questionSet.Add(txt_file[i]);
-                }
+
             }
 
-            else if (typeOfQuestion == "Classifyart")
-            {
-                if (i != txt_file.Length - 1)
-                {
-                    data_questionSet.Add(txt_file[i + 1]);
-                }
-                else
-                {
-                    break;
-                }
-            }
-
+            // Spliting the data_questionSet into columns or pieces
+            data_display = data_questionSet[indexQuestion].Split(new string[] { "|" }, StringSplitOptions.None).ToList();
         }
-
-        // Spliting the data_questionSet into columns or pieces
-        data_display = data_questionSet[indexQuestion].Split(new string[] { "|" }, StringSplitOptions.None).ToList(); ;
+        catch (ArgumentOutOfRangeException)
+        {
+            Debug.Log("LoadCSV cancelled!!! Input some questions");
+            return;
+        }
 
         // Perform separation of Questions, Choices, Answers from data_display
         switch (typeOfQuestion)
@@ -198,6 +209,10 @@ public class QuizLoader : MonoBehaviour
         _answers[0] = data_display[5];
     }
 
+    // Classifyart has a different characteristics compared to the other quizzes that I loaded in here
+
+    // Since this quiz uses the type of subjects in its game, I belong it to the _answers and Answers variable since the typeOfQuestion was used to get an answer
+    // and an input from the user
     public void Classifyart()
     {
         choicesLength = 4; answersLength = 2;

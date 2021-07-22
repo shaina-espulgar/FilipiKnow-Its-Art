@@ -2281,7 +2281,7 @@ MonoBehaviour:
   class_TicTacToe: {fileID: 2009587199}
   class_Maze: {fileID: 14645611}
   questionNumber: {fileID: 196502173}
-  emptyCaution: {fileID: 8385691}
+  emptyCaution: {fileID: 1326045772}
 --- !u!1 &92734796
 GameObject:
   m_ObjectHideFlags: 0
