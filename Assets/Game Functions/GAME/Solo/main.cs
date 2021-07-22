@@ -14,6 +14,7 @@ public class main : MonoBehaviour
     private void Awake()
     {
         transform.Find("UI-Button-Pause").GetComponent<Button_UI>().ClickFunc = PauseMenu.PauseGame;
+        //transform.Find("debugButton").GetComponent<Button_UI>().ClickFunc = LoadClasArt.Next;
         //LoadClasArt.displayQuestionInUI();
 
     }
