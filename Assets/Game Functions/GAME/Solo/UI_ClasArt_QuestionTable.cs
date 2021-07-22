@@ -97,7 +97,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     void Update()
     {
         //== Then assign a Question Type...
-        quizLoader.LoadCSV("Classicart");
+        quizLoader.LoadCSV("Classicart", "National Artist");
 
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;

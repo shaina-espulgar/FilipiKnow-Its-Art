@@ -39,7 +39,7 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     void Update()
     {
         //== Then assign a Question Type...
-        quizLoader.LoadCSV("Grabart");
+        quizLoader.LoadCSV("Grabart", "National Artist");
 
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;
