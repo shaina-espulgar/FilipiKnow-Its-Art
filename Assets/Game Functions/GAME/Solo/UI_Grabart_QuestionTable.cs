@@ -14,15 +14,19 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     string[] answers;
 
 
-    [SerializeField] private Button choiceAButton;
-    [SerializeField] private Button choiceBButton;
-    [SerializeField] private Button choiceCButton;
-    [SerializeField] private Button choiceDButton;
+    [SerializeField] private Button choiceAButton; public TextMeshProUGUI choiceA;
+    [SerializeField] private Button choiceBButton; public TextMeshProUGUI choiceB;
+    [SerializeField] private Button choiceCButton; public TextMeshProUGUI choiceC;
+    [SerializeField] private Button choiceDButton; public TextMeshProUGUI choiceD;
+    [SerializeField] private Button choiceEButton; public TextMeshProUGUI choiceE;
+    [SerializeField] private Button choiceFButton; public TextMeshProUGUI choiceF;
+    [SerializeField] private Button choiceGButton; public TextMeshProUGUI choiceG;
+    [SerializeField] private Button choiceHButton; public TextMeshProUGUI choiceH;
+    [SerializeField] private Button choiceIButton; public TextMeshProUGUI choiceI;
+    [SerializeField] private Button choiceJButton; public TextMeshProUGUI choiceJ;
+    [SerializeField] private Button choiceKButton; public TextMeshProUGUI choiceK;
+    [SerializeField] private Button choiceLButton; public TextMeshProUGUI choiceL;
 
-    public TextMeshProUGUI choiceA;
-    public TextMeshProUGUI choiceB;
-    public TextMeshProUGUI choiceC;
-    public TextMeshProUGUI choiceD;
 
     public string input; //For input Players
     public int number;
@@ -103,6 +107,47 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
                 choiceD.text = choices[i];
                 //Debug.Log(i + " is choice B");
             }
+            else if (i == 4)
+            {
+                choiceE.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 5)
+            {
+                choiceF.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 6)
+            {
+                choiceG.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 7)
+            {
+                choiceH.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 8)
+            {
+                choiceI.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 9)
+            {
+                choiceJ.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 10)
+            {
+                choiceK.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+            else if (i == 11)
+            {
+                choiceL.text = choices[i];
+                //Debug.Log(i + " is choice B");
+            }
+
             else
             {
                 Debug.Log("ERROR");
@@ -135,5 +180,37 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     public void choiceButtonD_Input()
     {
         Debug.Log("Choice D");
+    }
+    public void choiceButtonE_Input()
+    {
+        Debug.Log("Choice E");
+    }
+    public void choiceButtonF_Input()
+    {
+        Debug.Log("Choice F");
+    }
+    public void choiceButtonG_Input()
+    {
+        Debug.Log("Choice G");
+    }
+    public void choiceButtonH_Input()
+    {
+        Debug.Log("Choice H");
+    }
+    public void choiceButtonI_Input()
+    {
+        Debug.Log("Choice I");
+    }
+    public void choiceButtonJ_Input()
+    {
+        Debug.Log("Choice J");
+    }
+    public void choiceButtonK_Input()
+    {
+        Debug.Log("Choice K");
+    }
+    public void choiceButtonL_Input()
+    {
+        Debug.Log("Choice L");
     }
 }
