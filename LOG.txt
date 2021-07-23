@@ -149,3 +149,6 @@ July 22:
 [Pandan]
 - Avatar Menu available inside Play Game
 - Game server connection will be available soon.
+
+Julu 23
+[Pandan] NetworkGamePlayer and NetworkPlayerLobby are now connected.

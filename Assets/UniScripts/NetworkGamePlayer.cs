@@ -13,10 +13,10 @@ public class NetworkGamePlayer : NetworkBehaviour
     [SerializeField] private Image[] avatars;
     [SerializeField] private TMP_Text[] avatarName;
 
-    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
-    private string DisplayName = "Loading...";
+    [SyncVar]
+    private string displayName = "Loading...";
     // [SyncVar(hook = nameof(HandleAvatarProfileChanged))]
-    // private Image AvatarProfile;
+    // private string AvatarProfile;
 
     private NetworkManagerLobby game;
     private NetworkManagerLobby Game
@@ -30,9 +30,6 @@ public class NetworkGamePlayer : NetworkBehaviour
 
     public override void OnStartAuthority()
     {
-        // CmdSetAvatarProfile(PlayGame.AvatarProfile);
-
-        // AvatarProfile.sprite = PlayGame.AvatarProfile;
         lobbyUI.SetActive(true);
     }
 
@@ -55,14 +52,26 @@ public class NetworkGamePlayer : NetworkBehaviour
     [Server]
     public void SetDisplayName(string displayName)
     {
-        this.DisplayName = displayName;
+        this.displayName = displayName;
     }
 
-    public void HandleDisplayNameChanged(string oldValue, string newValue) => UpdateDisplay();
-    public void HandleAvatarProfileChanged(Image oldValue, Image newValue) => UpdateDisplay();
+
+    // public void HandleAvatarProfileChanged(string oldValue, string newValue) => UpdateDisplay();
 
     private void UpdateDisplay()
     {
+        if (!hasAuthority)
+        {
+            foreach (var player in Game.GamePlayers)
+            {
+                if (player.hasAuthority)
+                {
+                    player.UpdateDisplay();
+                    break;
+                }
+            }
+        }
+
         for (int i = 0; i < Game.maxConnections; i++)
         {
             panels[i].SetActive(true);
@@ -70,15 +79,16 @@ public class NetworkGamePlayer : NetworkBehaviour
 
         for (int i = 0; i < Game.GamePlayers.Count; i++)
         {
-            avatarName[i].text = Game.GamePlayers[i].DisplayName;
+            
+            avatarName[i].text = Game.GamePlayers[i].displayName;
             // avatars[i].sprite = Game.GamePlayers[i].AvatarProfile.sprite;
         }
     }
 
     // [Command]
-    // private void CmdSetAvatarProfile(Sprite avatarProfile)
+    // private void CmdSetAvatarProfile(string avatarProfile)
     // {
-    //    AvatarProfile.sprite = avatarProfile;
+    //    AvatarProfile = avatarProfile;
     // }
 
 }

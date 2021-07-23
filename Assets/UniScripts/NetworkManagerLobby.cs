@@ -138,8 +138,25 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void ServerChangeScene(string newSceneName)
     {
+        if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("GamePlay"))
+        {
+            int newNum = RoomPlayers.Count;
+            for (int i = 0;  i < newNum; i++)
+            {
+                var conn = RoomPlayers[0].connectionToClient;
+                var gameplayerInstance = Instantiate(gamePlayerPrefab);
+                gameplayerInstance.SetDisplayName(RoomPlayers[0].DisplayName);
+
+                NetworkServer.Destroy(conn.identity.gameObject);
+                NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject, true);
+            }
+        }
+        base.ServerChangeScene(newSceneName);
+
         // From menu to game
-        if(SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("PlayGame"))
+
+        /* 
+        if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("GamePlay"))
         {
             for(int i = RoomPlayers.Count - 1; i >= 0; i--)
             {
@@ -149,10 +166,11 @@ public class NetworkManagerLobby : NetworkManager
 
                 NetworkServer.Destroy(conn.identity.gameObject);
 
-                NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject);
+                NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject, true);
             }
         }
 
         base.ServerChangeScene(newSceneName);
+        */
     }
 }

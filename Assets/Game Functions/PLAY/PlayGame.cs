@@ -93,7 +93,7 @@ public class PlayGame : MonoBehaviour
     
     // To be separated to the Player Avatar Profile soon!!
 
-    public static Sprite AvatarProfile { get; private set; }
+    public static string AvatarProfile { get; private set; }
 
     public void PreviousAvatar()
     {
@@ -117,6 +117,6 @@ public class PlayGame : MonoBehaviour
 
     public void SaveAvatarProfile()
     {
-        AvatarProfile = avatarImage[avatarIndex];
+        AvatarProfile = avatarImage[avatarIndex].name;
     }
 }
