@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354.43, y: -26}
+  m_AnchoredPosition: {x: -355, y: -25}
   m_SizeDelta: {x: 500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82546677
@@ -895,6 +895,7 @@ GameObject:
   - component: {fileID: 423973612}
   - component: {fileID: 423973617}
   - component: {fileID: 423973616}
+  - component: {fileID: 423973618}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1023,6 +1024,20 @@ MonoBehaviour:
   - {fileID: 1108597051}
   - {fileID: 35225069}
   - {fileID: 1298113348}
+  selectedColor: {r: 0.6431373, g: 0.16862746, b: 0.7058824, a: 1}
+  defaultColor: {r: 0.7803922, g: 0.5372549, b: 0.82745105, a: 1}
+--- !u!114 &423973618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423973611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85607961d04d31d4a95ac92908941304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   selectedAvatar: {fileID: 82546677}
   avatarImage:
   - {fileID: 21300000, guid: e40f26fa4ca01264493957b1af062e6e, type: 3}
@@ -1035,8 +1050,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92703a38c65678445858287b6f22ccbc, type: 3}
   - {fileID: 21300000, guid: b49cc1d3930a1bc44890b89c395f9b2a, type: 3}
   - {fileID: 21300000, guid: 3b743af164b999343beca7bc12098d4b, type: 3}
-  selectedColor: {r: 0.6431373, g: 0.16862746, b: 0.7058824, a: 1}
-  defaultColor: {r: 0.7803922, g: 0.5372549, b: 0.82745105, a: 1}
 --- !u!1 &427841042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,8 +1405,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 423973617}
-        m_TargetAssemblyTypeName: PlayGame, Assembly-CSharp
+      - m_Target: {fileID: 423973618}
+        m_TargetAssemblyTypeName: AvatarDisplay, Assembly-CSharp
         m_MethodName: PreviousAvatar
         m_Mode: 1
         m_Arguments:
@@ -1580,8 +1593,6 @@ MonoBehaviour:
   - {fileID: 1108597051}
   - {fileID: 35225069}
   - {fileID: 1298113348}
-  selectedAvatar: {fileID: 0}
-  avatarImage: []
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &650586125
@@ -1961,10 +1972,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1645146267}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 423973616}
+        m_TargetAssemblyTypeName: PlayerInputName, Assembly-CSharp
+        m_MethodName: SavePlayerName
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4797,6 +4808,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 423973617}
+        m_TargetAssemblyTypeName: PlayGame, Assembly-CSharp
+        m_MethodName: OnHostClickSection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541691539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4932,6 +4955,18 @@ MonoBehaviour:
       - m_Target: {fileID: 423973616}
         m_TargetAssemblyTypeName: PlayerInputName, Assembly-CSharp
         m_MethodName: SavePlayerName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 423973618}
+        m_TargetAssemblyTypeName: AvatarDisplay, Assembly-CSharp
+        m_MethodName: SaveAvatarProfile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5140,6 +5175,30 @@ MonoBehaviour:
       - m_Target: {fileID: 202268452}
         m_TargetAssemblyTypeName: JoinGameLobby, Assembly-CSharp
         m_MethodName: JoinLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 423973616}
+        m_TargetAssemblyTypeName: PlayerInputName, Assembly-CSharp
+        m_MethodName: SavePlayerName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 423973618}
+        m_TargetAssemblyTypeName: AvatarDisplay, Assembly-CSharp
+        m_MethodName: SaveAvatarProfile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5580,8 +5639,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 423973617}
-        m_TargetAssemblyTypeName: PlayGame, Assembly-CSharp
+      - m_Target: {fileID: 423973618}
+        m_TargetAssemblyTypeName: AvatarDisplay, Assembly-CSharp
         m_MethodName: NextAvatar
         m_Mode: 1
         m_Arguments:
@@ -5844,7 +5903,6 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
-  minPlayers: 2
   menuScene: Assets/Scenes/PlayGame.unity
   lobbyPlayerPrefab: {fileID: 4603205089722228156, guid: 760977d74651c754bba9a055adeb6d10,
     type: 3}

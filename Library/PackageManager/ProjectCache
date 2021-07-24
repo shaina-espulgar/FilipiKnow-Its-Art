@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637622449786211957
-    m_Hash: 342339664
+      ticks: 637626373990000000
+    m_Hash: 369430391
   m_LockFileStatus:
     m_FilePath: C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637622449786221957
-    m_Hash: 3011523352
+      ticks: 637626373990000000
+    m_Hash: 3451696566
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -1288,9 +1288,11 @@ m_ResolvedPackages:
     - 2.1.4
     - 2.1.6
     - 2.1.7
+    - 2.1.8
     compatible:
     - 2.1.7
-    verified: 2.1.7
+    - 2.1.8
+    verified: 2.1.8
   dependencies:
   - name: com.unity.modules.vr
     version: 1.0.0

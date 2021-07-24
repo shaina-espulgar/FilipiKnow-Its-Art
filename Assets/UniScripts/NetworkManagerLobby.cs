@@ -10,7 +10,7 @@ using TMPro;
 
 public class NetworkManagerLobby : NetworkManager
 {
-    [SerializeField] private int minPlayers = 2;
+    // [SerializeField] private int minPlayers = 2;
     [Scene] [SerializeField] private string menuScene = string.Empty;
 
     [Header("Room")]
@@ -116,7 +116,7 @@ public class NetworkManagerLobby : NetworkManager
 
     private bool IsReadyToStart()
     {
-        if (numPlayers < minPlayers) { return false; }
+        if (numPlayers < maxConnections) { return false; }
 
         foreach (var player in RoomPlayers)
         {
@@ -138,6 +138,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void ServerChangeScene(string newSceneName)
     {
+        /*
         if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("GamePlay"))
         {
             int newNum = RoomPlayers.Count;
@@ -146,31 +147,31 @@ public class NetworkManagerLobby : NetworkManager
                 var conn = RoomPlayers[0].connectionToClient;
                 var gameplayerInstance = Instantiate(gamePlayerPrefab);
                 gameplayerInstance.SetDisplayName(RoomPlayers[0].DisplayName);
+                gameplayerInstance.SetAvatarProfile(RoomPlayers[0].AvatarProfileIndex);
 
                 NetworkServer.Destroy(conn.identity.gameObject);
                 NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject, true);
             }
         }
         base.ServerChangeScene(newSceneName);
+        */
 
-        // From menu to game
-
-        /* 
         if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("GamePlay"))
         {
-            for(int i = RoomPlayers.Count - 1; i >= 0; i--)
+            for (int i = RoomPlayers.Count -1; i >= 0; i--)
             {
                 var conn = RoomPlayers[i].connectionToClient;
-                var gamePlayerInstance = Instantiate(gamePlayerPrefab);
-                gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
+                var gameplayerInstance = Instantiate(gamePlayerPrefab);
+
+                gameplayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
+                gameplayerInstance.SetAvatarProfile(RoomPlayers[i].AvatarProfileIndex);
 
                 NetworkServer.Destroy(conn.identity.gameObject);
 
-                NetworkServer.ReplacePlayerForConnection(conn, gamePlayerInstance.gameObject, true);
+                NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject);
             }
         }
 
         base.ServerChangeScene(newSceneName);
-        */
     }
 }

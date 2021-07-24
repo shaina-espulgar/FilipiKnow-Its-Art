@@ -57,6 +57,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\UtilScript\Utils\Button_UI.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
+    <Compile Include="Assets\UniScripts\InputFieldsChecker.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\nameHandling.cs" />
     <Compile Include="Assets\UniScripts\AndroidFIleBrowser.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\UtilScript\MonoBehaviours\ComponentActions.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_Sprite.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\UniScripts\AvatarDisplay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\UniScripts\ToggleBehavior.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Game Functions\HELP\Help.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\UniScripts\PlayfabManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\AvatarMenu.cs" />
     <Compile Include="Assets\UtilScript\CMDebug.cs" />
@@ -868,6 +871,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PlayFabSDKEditor.csproj">
+      <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
+      <Name>PlayFabSDKEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.csproj">
       <Project>{4E9FE01F-2E53-A857-1642-69BDFE54F314}</Project>
       <Name>Mirror</Name>
@@ -876,9 +883,17 @@
       <Project>{1EBFC4F8-E0B3-9F90-404E-5C7C155DA695}</Project>
       <Name>kcp2k</Name>
     </ProjectReference>
+    <ProjectReference Include="PlayFabEditorExtensions.csproj">
+      <Project>{86BC03A4-7CB3-5265-7810-0428FA2CEE22}</Project>
+      <Name>PlayFabEditorExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.Examples.csproj">
       <Project>{2B1638BA-783C-4B41-79DC-8318FC796D74}</Project>
       <Name>Mirror.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="PlayFab.csproj">
+      <Project>{2C923674-5DD0-1E56-FBCE-EB8D1CB4ADF7}</Project>
+      <Name>PlayFab</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Weaver.csproj">
       <Project>{B9258465-38BB-F704-7D2A-7277AA31AC11}</Project>

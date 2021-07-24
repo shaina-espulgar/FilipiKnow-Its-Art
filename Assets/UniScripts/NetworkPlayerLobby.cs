@@ -7,6 +7,10 @@ using System;
 
 public class NetworkPlayerLobby : NetworkBehaviour
 {
+    [Header("Avatar Images")]
+    [SerializeField] private Image selectedAvatar;
+    [SerializeField] public Sprite[] avatarImage;
+
     [Header("UI")]
     [SerializeField] private GameObject lobbyUI = null;
     [SerializeField] private GameObject[] panels = new GameObject[4];
@@ -18,10 +22,12 @@ public class NetworkPlayerLobby : NetworkBehaviour
     [Header("Display Address")]
     [SerializeField] public TMP_Text netAddress;
 
-    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
-    public string DisplayName = "Loading...";
     [SyncVar(hook = nameof(HandleReadyStatusChanged))]
     public bool IsReady = false;
+    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
+    public string DisplayName = "Loading...";
+    [SyncVar(hook = nameof(HandleAvatarProfileChanged))]
+    public int AvatarProfileIndex = 0;
 
     private bool isLeader;
     public bool IsLeader
@@ -47,6 +53,8 @@ public class NetworkPlayerLobby : NetworkBehaviour
     {
         CmdSetDisplayName(PlayerInputName.DisplayName);
 
+        CmdSetAvatarProfile(AvatarDisplay.AvatarProfileIndex);
+
         lobbyUI.SetActive(true);
     }
 
@@ -66,6 +74,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
 
     public void HandleReadyStatusChanged(bool oldValue, bool newValue) => UpdateDisplay();
     public void HandleDisplayNameChanged(string oldValue, string newValue) => UpdateDisplay();
+    public void HandleAvatarProfileChanged(int oldValue, int newValue) => UpdateDisplay();
 
     private void UpdateDisplay()
     {
@@ -94,6 +103,8 @@ public class NetworkPlayerLobby : NetworkBehaviour
         for (int i = 0; i < Room.RoomPlayers.Count; i++)
         {
             playerNameTexts[i].text = Room.RoomPlayers[i].DisplayName;
+            selectedAvatar.sprite = Room.RoomPlayers[i].avatarImage[AvatarProfileIndex];
+
             playerReadyTexts[i].text = Room.RoomPlayers[i].IsReady ?
                 "<color=green>Ready</color>" :
                 "<color=red>Not Ready</color>";
@@ -116,6 +127,12 @@ public class NetworkPlayerLobby : NetworkBehaviour
     }
 
     [Command]
+    private void CmdSetAvatarProfile(int avatarProfileIndex)
+    {
+        AvatarProfileIndex = avatarProfileIndex;
+    }
+
+    [Command]
     public void CmdReadyUp()
     {
         IsReady = !IsReady;
@@ -126,7 +143,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
     public void CmdStartGame()
     {
         if (Room.RoomPlayers[0].connectionToClient != connectionToClient) { return; }
-
+        
         Room.StartGame();
     }
 

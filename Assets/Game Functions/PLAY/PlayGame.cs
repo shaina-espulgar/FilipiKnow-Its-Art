@@ -15,16 +15,9 @@ public class PlayGame : MonoBehaviour
     [Header("Number of Players")]
     [SerializeField] private Button[] playerNumber;
 
-    [Header("Avatar Images")]
-    [SerializeField] private Image selectedAvatar;
-    [SerializeField] private Sprite[] avatarImage;
-    private int avatarIndex = 0;
-
     [Header("Button Colors")]
     [SerializeField] private Color selectedColor;
     [SerializeField] private Color defaultColor;
-
-
 
     // Sets the button that has formely applied by the selected color
     private Button former;
@@ -32,9 +25,10 @@ public class PlayGame : MonoBehaviour
     // The default settings for the number of players allowed to play in the game
     private int numberOfPlayers = 4;
 
-    public void Start()
+    public void OnHostClickSection()
     {
         playerNumber[playerNumber.Length - 1].image.color = selectedColor;
+
         former = playerNumber[playerNumber.Length - 1];
     }
 
@@ -90,33 +84,5 @@ public class PlayGame : MonoBehaviour
         playerNumber[number - 1].image.color = selectedColor;
         former = playerNumber[number - 1];
     }
-    
-    // To be separated to the Player Avatar Profile soon!!
-
-    public static string AvatarProfile { get; private set; }
-
-    public void PreviousAvatar()
-    {
-        avatarIndex--;
-        if (avatarIndex < 0)
-        {
-            avatarIndex = avatarImage.Length - 1;
-        }
-        selectedAvatar.sprite = avatarImage[avatarIndex];
-    }
-
-    public void NextAvatar()
-    {
-        avatarIndex++;
-        if (avatarIndex > avatarImage.Length - 1)
-        {
-            avatarIndex = 0;
-        }
-        selectedAvatar.sprite = avatarImage[avatarIndex];
-    }
-
-    public void SaveAvatarProfile()
-    {
-        AvatarProfile = avatarImage[avatarIndex].name;
-    }
+   
 }
