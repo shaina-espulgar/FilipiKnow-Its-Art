@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -57,7 +57,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\UtilScript\Utils\Button_UI.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
-    <Compile Include="Assets\UniScripts\InputFieldsChecker.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\nameHandling.cs" />
     <Compile Include="Assets\UniScripts\AndroidFIleBrowser.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -113,12 +112,15 @@
     <Compile Include="Assets\UniScripts\PlayerInputName.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\UniScripts\ChangeInput.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_TicTacToe.cs" />
     <Compile Include="Assets\Game Functions\PLAY\PlayGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\UniScripts\PlayfabManager.cs" />
     <Compile Include="Assets\Game Functions\MAIN MENU\MainMenu.cs" />
+    <Compile Include="Assets\UniScripts\InputFieldsChecker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\ComponentActions.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_Sprite.cs" />
@@ -136,7 +138,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Game Functions\HELP\Help.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\UniScripts\PlayfabManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\AvatarMenu.cs" />
     <Compile Include="Assets\UtilScript\CMDebug.cs" />
@@ -871,10 +872,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="PlayFabSDKEditor.csproj">
-      <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
-      <Name>PlayFabSDKEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="Mirror.csproj">
       <Project>{4E9FE01F-2E53-A857-1642-69BDFE54F314}</Project>
       <Name>Mirror</Name>
@@ -883,17 +880,9 @@
       <Project>{1EBFC4F8-E0B3-9F90-404E-5C7C155DA695}</Project>
       <Name>kcp2k</Name>
     </ProjectReference>
-    <ProjectReference Include="PlayFabEditorExtensions.csproj">
-      <Project>{86BC03A4-7CB3-5265-7810-0428FA2CEE22}</Project>
-      <Name>PlayFabEditorExtensions</Name>
-    </ProjectReference>
     <ProjectReference Include="Mirror.Examples.csproj">
       <Project>{2B1638BA-783C-4B41-79DC-8318FC796D74}</Project>
       <Name>Mirror.Examples</Name>
-    </ProjectReference>
-    <ProjectReference Include="PlayFab.csproj">
-      <Project>{2C923674-5DD0-1E56-FBCE-EB8D1CB4ADF7}</Project>
-      <Name>PlayFab</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Weaver.csproj">
       <Project>{B9258465-38BB-F704-7D2A-7277AA31AC11}</Project>
@@ -926,6 +915,18 @@
     <ProjectReference Include="Mirror.Components.csproj">
       <Project>{054CE4DF-BBAB-43E1-352D-DC91AE734847}</Project>
       <Name>Mirror.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="PlayFabEditorExtensions.csproj">
+      <Project>{86BC03A4-7CB3-5265-7810-0428FA2CEE22}</Project>
+      <Name>PlayFabEditorExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="PlayFabSDKEditor.csproj">
+      <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
+      <Name>PlayFabSDKEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="PlayFab.csproj">
+      <Project>{2C923674-5DD0-1E56-FBCE-EB8D1CB4ADF7}</Project>
+      <Name>PlayFab</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

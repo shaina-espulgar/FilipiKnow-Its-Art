@@ -453,14 +453,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 467301110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b375127b1bd39040a85f5fb034dd8a4, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  loginButton: {fileID: 1828030091}
-  registerButton: {fileID: 356076728}
-  forgotPasswordButton: {fileID: 1488394378}
-  emailInput: {fileID: 2146863289}
-  passwordInput: {fileID: 1065866588}
 --- !u!1 &499331120
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 532493876}
+  - component: {fileID: 532493877}
   m_Layer: 0
   m_Name: Login screen
   m_TagString: Untagged
@@ -571,6 +567,23 @@ Transform:
   m_Father: {fileID: 582599422}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &532493877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532493875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe2d95d396aa4abeb87051c9a916e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginButton: {fileID: 1828030091}
+  registerButton: {fileID: 356076728}
+  forgotPasswordButton: {fileID: 1488394378}
+  emailInput: {fileID: 2146863289}
+  passwordInput: {fileID: 1065866588}
 --- !u!1 &582599418
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +697,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 582599418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6766a8ef0ae379748885f1f6c3742c91, type: 3}
+  m_Script: {fileID: 11500000, guid: 51bfda6c0945a4237bc3c4b697403c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loginRegisterBox: {fileID: 532493875}

@@ -26,8 +26,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
     public bool IsReady = false;
     [SyncVar(hook = nameof(HandleDisplayNameChanged))]
     public string DisplayName = "Loading...";
-    [SyncVar(hook = nameof(HandleAvatarProfileChanged))]
-    public int AvatarProfileIndex = 0;
+
 
     private bool isLeader;
     public bool IsLeader
@@ -53,7 +52,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
     {
         CmdSetDisplayName(PlayerInputName.DisplayName);
 
-        CmdSetAvatarProfile(AvatarDisplay.AvatarProfileIndex);
+        // CmdSetAvatarProfile(AvatarDisplay.AvatarProfileIndex);
 
         lobbyUI.SetActive(true);
     }
@@ -74,7 +73,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
 
     public void HandleReadyStatusChanged(bool oldValue, bool newValue) => UpdateDisplay();
     public void HandleDisplayNameChanged(string oldValue, string newValue) => UpdateDisplay();
-    public void HandleAvatarProfileChanged(int oldValue, int newValue) => UpdateDisplay();
+    // public void HandleAvatarProfileChanged(int oldValue, int newValue) => UpdateDisplay();
 
     private void UpdateDisplay()
     {
@@ -103,7 +102,7 @@ public class NetworkPlayerLobby : NetworkBehaviour
         for (int i = 0; i < Room.RoomPlayers.Count; i++)
         {
             playerNameTexts[i].text = Room.RoomPlayers[i].DisplayName;
-            selectedAvatar.sprite = Room.RoomPlayers[i].avatarImage[AvatarProfileIndex];
+            // selectedAvatar.sprite = Room.RoomPlayers[i].avatarImage[AvatarProfileIndex];
 
             playerReadyTexts[i].text = Room.RoomPlayers[i].IsReady ?
                 "<color=green>Ready</color>" :
@@ -124,12 +123,6 @@ public class NetworkPlayerLobby : NetworkBehaviour
     private void CmdSetDisplayName(string displayName)
     {
         DisplayName = displayName;
-    }
-
-    [Command]
-    private void CmdSetAvatarProfile(int avatarProfileIndex)
-    {
-        AvatarProfileIndex = avatarProfileIndex;
     }
 
     [Command]

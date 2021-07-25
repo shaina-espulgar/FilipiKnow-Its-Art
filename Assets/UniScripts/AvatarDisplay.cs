@@ -12,9 +12,6 @@ public class AvatarDisplay : MonoBehaviour
     [SerializeField] public Sprite[] avatarImage;
     private int avatarIndex = 0;
 
-    // Sets the button that has formely applied by the selected color
-    private Button former;
-
     public static int AvatarProfileIndex { get; private set; }
 
     public void PreviousAvatar()

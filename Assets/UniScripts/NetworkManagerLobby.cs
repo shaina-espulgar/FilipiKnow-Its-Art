@@ -164,7 +164,7 @@ public class NetworkManagerLobby : NetworkManager
                 var gameplayerInstance = Instantiate(gamePlayerPrefab);
 
                 gameplayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
-                gameplayerInstance.SetAvatarProfile(RoomPlayers[i].AvatarProfileIndex);
+                // gameplayerInstance.SetAvatarProfile(RoomPlayers[i].AvatarProfileIndex);
 
                 NetworkServer.Destroy(conn.identity.gameObject);
 

@@ -429,6 +429,7 @@
 "Assets/UniScripts/AdminUtilities/Class_TicTacToe.cs"
 "Assets/UniScripts/AndroidFIleBrowser.cs"
 "Assets/UniScripts/AvatarDisplay.cs"
+"Assets/UniScripts/ChangeInput.cs"
 "Assets/UniScripts/InputFieldsChecker.cs"
 "Assets/UniScripts/JoinGameLobby.cs"
 "Assets/UniScripts/NetworkGamePlayer.cs"

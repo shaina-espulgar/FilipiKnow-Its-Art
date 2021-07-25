@@ -23,6 +23,9 @@ public class NetworkGamePlayer : NetworkBehaviour
     private string displayName = "Loading...";
     [SyncVar]
     private int avatarProfileIndex = 0;
+    [SyncVar(hook = nameof(HandleAvatarProfileChanged))]
+    public int AvatarProfileIndex = 0;
+
     // Player Score Here
     // [SyncVar(hook = nameof(HandleScoreRecordChanged))
     // public int PlayerScores
@@ -39,6 +42,8 @@ public class NetworkGamePlayer : NetworkBehaviour
 
     public override void OnStartAuthority()
     {
+        CmdSetAvatarProfile(AvatarDisplay.AvatarProfileIndex);
+
         lobbyUI.SetActive(true);
     }
 
@@ -77,6 +82,8 @@ public class NetworkGamePlayer : NetworkBehaviour
         this.avatarProfileIndex = avatarProfileIndex;
     }
 
+    public void HandleAvatarProfileChanged(int oldValue, int newValue) => UpdateDisplay();
+
     private void UpdateDisplay()
     {
         if (!hasAuthority)
@@ -104,6 +111,12 @@ public class NetworkGamePlayer : NetworkBehaviour
             avatarName[i].text = Game.GamePlayers[i].displayName;
 
         }
+    }
+
+    [Command]
+    private void CmdSetAvatarProfile(int avatarProfileIndex)
+    {
+        AvatarProfileIndex = avatarProfileIndex;
     }
 
 
