@@ -1,0 +1,214 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.14f1 (51d2f824827f) revision 5362424'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19043.1110; Version 2009; 64bit' Language: 'en' Physical Memory: 7068 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.14f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker12
+-projectPath
+C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art
+-logFile
+Logs/AssetImportWorker12.log
+-srvPort
+64032
+Successfully changed project path to: C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art
+C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 126.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.14f1 (51d2f824827f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon 530 Series (ID=0x6900)
+    Vendor:   ATI
+    VRAM:     2038 MB
+    Driver:   27.20.21003.8013
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56852
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003785 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 125.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.919 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5920ms)
+		BeginReloadAssembly (117ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1084ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (379ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (125ms)
+			SetupLoadedEditorAssemblies (439ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (126ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (232ms)
+				ProcessInitializeOnLoadMethodAttributes (61ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013602 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Find all reader and writers took 185 milliseconds
+Script Module: UnityEngine.UI.dll
+Weave behaviours and messages took131 milliseconds
+Find all reader and writers took 134 milliseconds
+Script Module: UnityEngine.TestRunner.dll
+Weave behaviours and messages took43 milliseconds
+Find all reader and writers took 130 milliseconds
+Script Module: UnityEngine.XR.LegacyInputHelpers.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 132 milliseconds
+Script Module: SimpleWebTransport.dll
+Weave behaviours and messages took16 milliseconds
+Find all reader and writers took 160 milliseconds
+Script Module: PlayFab.dll
+Weave behaviours and messages took196 milliseconds
+Find all reader and writers took 122 milliseconds
+Script Module: Unity.Timeline.dll
+Weave behaviours and messages took37 milliseconds
+Find all reader and writers took 122 milliseconds
+Script Module: UnityEngine.Purchasing.WinRTCore.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 126 milliseconds
+Script Module: UnityEngine.Monetization.dll
+Weave behaviours and messages took7 milliseconds
+Find all reader and writers took 598 milliseconds
+Script Module: UnityEngine.Purchasing.Stores.dll
+Weave behaviours and messages took55 milliseconds
+Find all reader and writers took 137 milliseconds
+Script Module: Elringus.UnityGoogleDrive.Runtime.dll
+Weave behaviours and messages took33 milliseconds
+Find all reader and writers took 123 milliseconds
+Script Module: UnityEngine.Purchasing.SecurityCore.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 251 milliseconds
+Script Module: Unity.TextMeshPro.dll
+Weave behaviours and messages took109 milliseconds
+Find all reader and writers took 167 milliseconds
+Script Module: UnityEngine.Purchasing.AppleCore.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 191 milliseconds
+Script Module: UnityEngine.Purchasing.dll
+Weave behaviours and messages took8 milliseconds
+Find all reader and writers took 178 milliseconds
+Script Module: UnityEngine.Advertisements.dll
+Weave behaviours and messages took17 milliseconds
+Find all reader and writers took 190 milliseconds
+Script Module: kcp2k.dll
+Weave behaviours and messages took11 milliseconds
+Find all reader and writers took 170 milliseconds
+Script Module: Telepathy.dll
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 170 milliseconds
+Script Module: UnityEngine.Purchasing.SecurityStub.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 145 milliseconds
+Script Module: Purchasing.Common.dll
+Weave behaviours and messages took6 milliseconds
+Find all reader and writers took 132 milliseconds
+Script Module: UnityEngine.Purchasing.Codeless.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 155 milliseconds
+Script Module: SimpleFileBrowser.Runtime.dll
+Weave behaviours and messages took11 milliseconds
+Find all reader and writers took 168 milliseconds
+Script Module: UnityEngine.Purchasing.WinRTStub.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 176 milliseconds
+Script Module: UnityEngine.Purchasing.AppleStub.dll
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 145 milliseconds
+Script Module: UnityEngine.Purchasing.AppleMacosStub.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 146 milliseconds
+Script Module: UnityEngine.SpatialTracking.dll
+Weave behaviours and messages took8 milliseconds
+Find all reader and writers took 155 milliseconds
+Script Module: Unity.Analytics.DataPrivacy.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 284 milliseconds
+Script Module: UnityEditor.TestRunner.dll
+Weave behaviours and messages took78 milliseconds
+Find all reader and writers took 268 milliseconds
+Script Module: UnityEditor.UI.dll
+Weave behaviours and messages took18 milliseconds
+Find all reader and writers took 249 milliseconds
+Script Module: PlayFabEditorExtensions.dll
+Weave behaviours and messages took36 milliseconds
+Find all reader and writers took 215 milliseconds
+Script Module: UnityEditor.Purchasing.dll
+Weave behaviours and messages took9 milliseconds
+Find all reader and writers took 214 milliseconds
+Script Module: UnityEditor.XR.LegacyInputHelpers.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 167 milliseconds
+Script Module: Mirror.CompilerSymbols.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 202 milliseconds
+Script Module: UnityEditor.SpatialTracking.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 141 milliseconds
+Script Module: PlayFabSDKEditor.dll
+Weave behaviours and messages took0 milliseconds
+Find all reader and writers took 217 milliseconds
+Script Module: Analytics.dll
+Weave behaviours and messages took0 milliseconds
+Mono: successfully reloaded assembly
+- Completed reload, in 21.221 seconds
+Domain Reload Profiling:
+	ReloadAssembly (21222ms)
+		BeginReloadAssembly (289ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (20796ms)
+			LoadAssemblies (193ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (533ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (19780ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (109ms)
+				ProcessInitializeOnLoadAttributes (682ms)
+				ProcessInitializeOnLoadMethodAttributes (18959ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
+Platform modules already initialized, skipping
