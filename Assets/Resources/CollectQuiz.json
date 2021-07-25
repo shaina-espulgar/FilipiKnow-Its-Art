@@ -1,0 +1,33 @@
+{
+    "QuizList":
+    [
+        {
+            "Quiz" : "Classicart",
+            "FileURL" : "https://drive.google.com/uc?export=download&id=1VpooM80JfRO_bDy4o1Pet6CKd5EVi5aL"
+        },
+        {
+            "Quiz" : "Switchart",
+            "FileURL" : "https://drive.google.com/uc?export=download&id=1WCJ4CuK38ozThpPptYMqmhzXaLD_wNCK"
+        },
+        {
+            "Quiz" : "Grabart",
+            "FileURL" : "https://drive.google.com/uc?export=download&id=1N800QGHwAQ3oxri3_ho8C_ghzpS2nDFP"
+        },
+        {
+            "Quiz" : "Matchart",
+            "FileURL" : "https://drive.google.com/uc?export=download&id=1gOJBwoyL3iNnbxyPCVuZ1ekqGGR0InnP"
+        },
+        {
+            "Quiz" : "Classifyart",
+            "FileURL" : "https://drive.google.com/uc?export=download&id=1KOiTCzzkD5VXUc8Gq5pdj4TIPU6EDaeb"
+        },
+        {
+            "Quiz" : "TicTacToe",
+            "FileURL" : "https://drive.google.com/uc?export=download&id=1oa4z2PXrZqwXu5gAVMPqRfQCGYUKzey3"
+        },
+        {
+            "Quiz" : "Maze",
+            "FileURL" : "https://drive.google.com/uc?export=download&id=1-tnOGaBSxTdo9x0nQzjA-Mg_30DiAzkG"
+        }
+    ]
+}

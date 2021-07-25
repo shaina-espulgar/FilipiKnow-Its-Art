@@ -1808,9 +1808,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1946549589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc0ffe827debde428ef575cdc71da29, type: 3}
+  m_Script: {fileID: 11500000, guid: 56071d78fe4f3488fbb4c1090d6083fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fistInput: {fileID: 2146863289}
+  submitButton: {fileID: 1828030091}
 --- !u!114 &1946549592
 MonoBehaviour:
   m_ObjectHideFlags: 0

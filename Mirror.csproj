@@ -122,8 +122,8 @@
     <Compile Include="Assets\Mirror\Runtime\NetworkIdentity.cs" />
     <Compile Include="Assets\Mirror\Runtime\SyncSet.cs" />
     <Compile Include="Assets\Mirror\Runtime\NetworkTime.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Empty\Cloud\ServerListUI.cs" />
     <Compile Include="Assets\Mirror\Runtime\Empty\Cloud\ApiConnector.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Empty\Cloud\ServerListUI.cs" />
     <Compile Include="Assets\Mirror\Runtime\Empty\Cloud\BallManager.cs" />
     <Compile Include="Assets\Mirror\Runtime\NetworkManagerHUD.cs" />
     <Compile Include="Assets\Mirror\Runtime\Empty\Cloud\ListServer.cs" />

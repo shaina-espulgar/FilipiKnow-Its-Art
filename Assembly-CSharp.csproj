@@ -128,7 +128,9 @@
     <Compile Include="Assets\UniScripts\AvatarDisplay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\UniScripts\DownloadQuizDatabase.cs" />
     <Compile Include="Assets\UniScripts\ToggleBehavior.cs" />
+    <Compile Include="Assets\UniScripts\UploadQuizDatabase.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_BarMultiple.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -161,6 +163,7 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\UnityGoogleDrive\ThirdParty\JsonNet-Lite\UnityGoogleDrive.Newtonsoft.Json.dll" />
     <None Include="Assets\UtilScript\README.txt" />
     <None Include="Assets\Mirror\Version.txt" />
     <None Include="Assets\Mirror\Readme.txt" />
@@ -178,6 +181,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Game Assets\Questions\Grab\GAMABA.txt" />
+    <None Include="Assets\UnityGoogleDrive\ThirdParty\JsonNet-Lite\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Game Assets\Questions\Grab\CAFAP.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
@@ -872,6 +876,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PlayFabSDKEditor.csproj">
+      <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
+      <Name>PlayFabSDKEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.csproj">
       <Project>{4E9FE01F-2E53-A857-1642-69BDFE54F314}</Project>
       <Name>Mirror</Name>
@@ -880,9 +888,17 @@
       <Project>{1EBFC4F8-E0B3-9F90-404E-5C7C155DA695}</Project>
       <Name>kcp2k</Name>
     </ProjectReference>
+    <ProjectReference Include="PlayFabEditorExtensions.csproj">
+      <Project>{86BC03A4-7CB3-5265-7810-0428FA2CEE22}</Project>
+      <Name>PlayFabEditorExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.Examples.csproj">
       <Project>{2B1638BA-783C-4B41-79DC-8318FC796D74}</Project>
       <Name>Mirror.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="PlayFab.csproj">
+      <Project>{2C923674-5DD0-1E56-FBCE-EB8D1CB4ADF7}</Project>
+      <Name>PlayFab</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Weaver.csproj">
       <Project>{B9258465-38BB-F704-7D2A-7277AA31AC11}</Project>
@@ -891,6 +907,10 @@
     <ProjectReference Include="SimpleFileBrowser.Runtime.csproj">
       <Project>{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}</Project>
       <Name>SimpleFileBrowser.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Elringus.UnityGoogleDrive.Runtime.csproj">
+      <Project>{B2F03D87-FCFC-3CE7-5A24-8DEA160FC1E1}</Project>
+      <Name>Elringus.UnityGoogleDrive.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Editor.csproj">
       <Project>{A2336EAB-7645-D87D-6A2B-A7E9D198FDB2}</Project>
@@ -908,6 +928,10 @@
       <Project>{081384ED-AFCC-DC84-F7A9-A2F4B787D905}</Project>
       <Name>Telepathy</Name>
     </ProjectReference>
+    <ProjectReference Include="Elringus.UnityGoogleDrive.Editor.csproj">
+      <Project>{4823E9EC-D01D-356B-BB1A-C105471E14D9}</Project>
+      <Name>Elringus.UnityGoogleDrive.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="SimpleWebTransport.csproj">
       <Project>{3321C9D1-C260-FCF8-809E-8F9C58C5356E}</Project>
       <Name>SimpleWebTransport</Name>
@@ -915,18 +939,6 @@
     <ProjectReference Include="Mirror.Components.csproj">
       <Project>{054CE4DF-BBAB-43E1-352D-DC91AE734847}</Project>
       <Name>Mirror.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="PlayFabEditorExtensions.csproj">
-      <Project>{86BC03A4-7CB3-5265-7810-0428FA2CEE22}</Project>
-      <Name>PlayFabEditorExtensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="PlayFabSDKEditor.csproj">
-      <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
-      <Name>PlayFabSDKEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PlayFab.csproj">
-      <Project>{2C923674-5DD0-1E56-FBCE-EB8D1CB4ADF7}</Project>
-      <Name>PlayFab</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
