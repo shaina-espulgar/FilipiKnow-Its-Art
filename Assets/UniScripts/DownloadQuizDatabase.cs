@@ -9,7 +9,6 @@ using UnityEngine.UI;
 using TMPro;
 using UnityGoogleDrive;
 
-
 [System.Serializable]
 public class QuizList
 {
@@ -28,7 +27,7 @@ public class DownloadQuizDatabase : MonoBehaviour
     // Loads all of the Quizzes inside Google Drive
     public QuizList QuizList = new QuizList();
 
-    private readonly string[] questionTypes = { "Classicart", "Switchart", "Classifyart", "Matchart", "Grabart", "TicTacToe", "Maze"};
+    private readonly string[] questionTypes = { "Classicart", "Switchart", "Classifyart", "Matchart", "Grabart", "TicTacToe", "Maze" };
 
     [Header("Quizloader")]
     [SerializeField] private QuizLoader quizLoader;
@@ -97,10 +96,8 @@ public class DownloadQuizDatabase : MonoBehaviour
             debugText.text = questionType + " Replaced";
             Debug.Log("File: " + questionType + " Replaced");
 
-            
+
         }
         request.Dispose();
     }
 }
-
-

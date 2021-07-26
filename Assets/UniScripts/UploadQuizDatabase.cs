@@ -1,52 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-using UnityEditor.Networking;
 using UnityEngine.UI;
-using UnityEngine.Networking;
 using TMPro;
+using System;
 
 public class UploadQuizDatabase : MonoBehaviour
 {
-    [SerializeField] private TMP_InputField testing;
-    [SerializeField] private Button submit;
-    [SerializeField] private Text display;
+    [Header("QuizLoader")]
+    [SerializeField] public QuizLoader quizLoader = new QuizLoader();
 
+    [Header("Debug Message")]
+    // Creating yet
 
-    public void Add()
+    [Header("Game Object")]
+    [SerializeField] private GameObject promptWindow;
+
+    [Header("Dropdown Quizzes")]
+    [SerializeField] private TMP_Dropdown dropDownQuizzes;
+
+    [Header("Button")]
+    [SerializeField] private Button promptToDrive;
+
+    private string typeOfQuestion;
+    public void Start()
     {
-        SendToServer("Classicart", testing.text);
-    }
-
-    public void SendToServer(string questionType, string addedRow)
-    {
-        switch (questionType)
+        // For Dropdown Options
+        for (int i = 0; i < quizLoader.TextAssetData.Length; i++)
         {
-            case "Classicart": StartCoroutine(SendToClassicart(addedRow)); break;
-            // case "Matchart": ; break;
-            // case "Switchart": ; break;
-            // case "Grabart": Panel_Grabart(); break;
-            // case "Classifyart": Panel_Classifyart(); break;
-            // case "TicTacToe": Panel_TicTacToe(); break;
-            // case "Maze": Panel_Maze(); break;
-            default: return;
+            dropDownQuizzes.options.Add(new TMP_Dropdown.OptionData() { text = quizLoader.TextAssetData[i].name });
         }
+
+        dropDownQuizzes.onValueChanged.AddListener(delegate
+        {
+            int index = dropDownQuizzes.value;
+            typeOfQuestion = dropDownQuizzes.options[index].text;
+        });
+
+        promptToDrive.interactable = false;
     }
 
-    IEnumerator SendToClassicart(string addedRow)
+    public void PromptToDrive()
     {
-        WWWForm form = new WWWForm();
-        form.AddField("entry.257186560", addedRow);
+        Application.OpenURL("https://drive.google.com/drive/folders/19IiRLlSXbSb-61mrpcGPXB1sP0CAgREf?usp=sharing");
+    }
 
-        display.text = form.data.ToString();
+    public void SendCSVtoPath()
+    {
+        // For PC test
+        Directory.CreateDirectory("D:/Filipiknows/");
+        string exportPath = "D:/Filipiknows/" + typeOfQuestion + ".csv";
+        // For Android test
+        // string exportPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); 
 
-        // string rawData = form.data.ToString();
-        // UnityWebRequest newRow = new UnityWebRequest("https://docs.google.com/forms/u/0/d/e/1FAIpQLSeydJL5xW16lsQEdJwd1rn1CLP6NH8u-A4bBcaizb9sbeBExg/formResponse", rawData);
+        quizLoader.filepath = Application.dataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
 
-        byte[] rawData = form.data;
-        WWW www = new WWW("https://docs.google.com/forms/u/0/d/e/1FAIpQLSeydJL5xW16lsQEdJwd1rn1CLP6NH8u-A4bBcaizb9sbeBExg/formResponse", rawData);
-        Debug.Log("Question Added");
+        string[] csvFile = File.ReadAllLines(quizLoader.filepath);
 
-        yield return www;
-    }   
+        if (!File.Exists(exportPath))
+        {
+            File.WriteAllLines(exportPath, csvFile);
+            promptToDrive.interactable = true;
+            Debug.Log("File has been exported");
+        }
+        else
+        {
+            File.AppendAllLines(exportPath, csvFile);
+            promptToDrive.interactable = true;
+            Debug.Log("File has been exported");
+        }
+
+
+    }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "filipiknow-its-art-data",
+  "private_key_id": "162b8ef9fed3bc36f78d626cb9e1ab34ab0ea597",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDEC1tQjyZNKl+3\nUNK3Rr5ubVVD2txGfsYLipg5U3dUNNgMGAxXGT+bDRo0WAvlwYgz/1ncUzmMJe0J\nEn78TeqZjoYDfBK6Cx3MdInKQbRBaVmeYg6GyeREhIIeM19jYDR+j0q+nLcem0uv\nOWo+7dQQgKFoNsk2+OPOQg006G2sElx/nvqyJyRlnFMffOseL+Qyk7vhwpyLc/ef\n587AK/aJdN8uiCsXxKqf1iFwVzas1gGQ+YnVavfZcN57tZJ52XF1+kci9Vevs//L\nz6NhTIRed0JfhQyz7k/3Jbjqlyh1vIEoTuY9vCbjW9bk3QlJ0IsMnt+n7kUb+S82\nCvYESOXTAgMBAAECgf8Qtu39r355MRly8YkMhH1KxADIupv/nUpPnR51ULmJ6HXK\nz549uloAdG9yMAHrkXlI04N2RYAdctoUwvnTQXU9XiAO8fk2IO+0j+/8XEGU5OhA\n4GZ3+MxNvLNiKuPRkc9+J0H3UGHYdDjCRym6LPoNOvEr4GgGlldlQfFVyBT0ropV\n9eoza2c37uMQNrSWuLh9X6qdVL0/dmCrlqMkYoaLK6vGmjgX8Z9H6GtQGROlO96C\njCBWD3xmUWlP3srBZR92Zym5xKW3H5UIEj7Z3JD1Z5YEmGItIx92Geg8B5m/CRM1\nsR45GyO4DNB/DzcrGC1Ct6Uj1N7xExMK5Vi9guECgYEA6MBM3QkTVQ7Y6RYKKDs1\nIVUKfUZZ2240BZMOJfzniqSPnPRjFRyCgvHx3t3CLCHH690P/fx3oYRNU3HRhYex\npKeqBOch8uUXlHGcXPXnDoUIk866MWKPei+H5XcV/S4fTzq1oU69iWZuWl2JiMK5\naNkrZ4af7jJBxVpYzA2obpECgYEA16Bsa4W450nnjZPDCis5mFpRdcqqqg938b6+\ncC85nnZ0pbDCx8JM1toHrhPJ3Trwv2mXpSPbTr722Bi6U8x2evfXs1qotIGcXubJ\nwDcovMRZcA9ex1JM8DnOhJsvSC4rkULnNpsMCKF8u7YAFsykhbgN/NpZAL8x/GyL\nCcsZSCMCgYEAhwMFkzIwhKaYLJ0cRzoRF8S80O5+MUs74f/rtR1/Mm1C4UjiMNzY\n2ByAsUbx26e80JTrMenBe2/DayQa5dpQsbKQbUel6b/6baF5knMSFNoWn6bLWtpR\nYA8yRWlO2A5pGwxzT57dU1aXrNOVdD+ATdGr2+G74/BDNrexyqwhiAECgYAtQzqf\nE3Ht8yCNIpBViR9M8OCaplFO43JdJ5oYOIGS1vDDeyhYAFxa2We1TegY7W9t7r9r\nZex6SjHMyNwMDSZtx6ratlQll/N4JGADXlDJ1zmjAUb29jq6TpggU+cH8tEoa+/X\nEZLkGOnzCVBZeNmsTCd7hWYbdwcKIsrI4n5LGwKBgEybrXmNHJCWsrlqtenFZ/lJ\nIYoe865nqzcTJkLX4g2HRgfnRhuG9HK7pwE8Njz72l9iSmdRr2LFzERuaB5KCwQo\nc8YntBjkHhWw2I7wOFYDFG6h3U49bcAiYPW8PHAM5rmF5fzikdzbbIwY0BInLOWj\nEwR1/XmURvipIuYE5YmD\n-----END PRIVATE KEY-----\n",
+  "client_email": "odk-oauth2-publishing@filipiknow-its-art-data.iam.gserviceaccount.com",
+  "client_id": "100403410298918287770",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/odk-oauth2-publishing%40filipiknow-its-art-data.iam.gserviceaccount.com"
+}
