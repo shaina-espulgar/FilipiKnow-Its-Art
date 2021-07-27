@@ -270,12 +270,6 @@ public class AdminUtilites : MonoBehaviour
     {
         UI_Classifyart.SetActive(true);
         class_Classifyart.Display(true);
-
-        dropDownSubjectList.gameObject.SetActive(false);
-
-        dropDownQuizList.onValueChanged.AddListener(delegate {
-            dropDownSubjectList.gameObject.SetActive(true);
-        });
     }
 
     public void Panel_TicTacToe()
@@ -289,18 +283,4 @@ public class AdminUtilites : MonoBehaviour
         UI_Maze.SetActive(true);
         class_Maze.Display(true);
     }
-
-    // This is the script for the AddQuestionsButton [UNDECIDED YET]
-    public void AddQuestions(bool toDisplay)
-    {
-        if (toDisplay == true)
-        {
-
-        }
-        else
-        {
-            return;
-        }
-    }
-
 }

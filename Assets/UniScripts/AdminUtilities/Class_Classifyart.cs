@@ -12,11 +12,12 @@ public class Class_Classifyart : MonoBehaviour
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
 
-    [Header("Dropdowns")]
-    [SerializeField] private TMP_Dropdown[] subjectDrop;
-
     [Header("Inputs")]
     [SerializeField] private TMP_InputField[] arrChoices;
+    [SerializeField] private TMP_InputField[] arrAnswers;
+
+    [Header("Dropdown")]
+    [SerializeField] public Dropdown dropDownSubjectList;
 
     public void Display(bool display)
     {
@@ -25,14 +26,14 @@ public class Class_Classifyart : MonoBehaviour
             string[] answers = quizLoader.Answers;
             string[] choices = quizLoader.Choices;
 
-            for (int i = 0; i < subjectDrop.Length; i++)
-            {
-                subjectDrop[i].value = subjectDrop[i].options.FindIndex(option => option.text == answers[i]);
-            }
-
             for (int i = 0; i < arrChoices.Length; i++)
             {
                 arrChoices[i].text = choices[i];
+            }
+
+            for (int i = 0; i < arrAnswers.Length; i++)
+            {
+                arrAnswers[i].text = answers[i];
             }
         }
         else
@@ -43,19 +44,26 @@ public class Class_Classifyart : MonoBehaviour
 
     public void Modify(string operation)
     {
+        int index = dropDownSubjectList.value;
+        string subject = dropDownSubjectList.options[index].text;
+
         string final = string.Empty;
 
-        int index;
         for (int i = 0; i < arrChoices.Length; i++)
         {
-            final = final + arrChoices[i];
             if (i == 1 || i == 3)
             {
                 index = 0;
-                final = final + subjectDrop[i].options[index].text;
+                final = final + arrAnswers[i].text;
                 index++;
             }
+            else
+            {
+                final = final + arrChoices[i];
+            }
         }
+
+        final = final + "|" + subject;
 
         if (operation == "add")
         {

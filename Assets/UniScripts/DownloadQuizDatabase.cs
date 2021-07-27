@@ -88,8 +88,12 @@ public class DownloadQuizDatabase : MonoBehaviour
         }
         else
         {
+#if UNITY_ANDROID
+            quizLoader.filepath = Application.persistentDataPath + "/Quiz Database/" + questionType + ".csv";
+#endif
+#if UNITY_STANDALONE
             quizLoader.filepath = Application.dataPath + "/Quiz Database/" + questionType + ".csv";
-
+#endif
             string[] csvReplace = request.downloadHandler.text.Split(new string[] { "\n" }, StringSplitOptions.None).ToArray();
             File.WriteAllLines(quizLoader.filepath, csvReplace);
 

@@ -440,6 +440,7 @@
 "Assets/UniScripts/NetworkGamePlayer.cs"
 "Assets/UniScripts/NetworkManagerLobby.cs"
 "Assets/UniScripts/NetworkPlayerLobby.cs"
+"Assets/UniScripts/PermissionsRationaleDialog.cs"
 "Assets/UniScripts/PlayerAvatarProfile.cs"
 "Assets/UniScripts/PlayerInputName.cs"
 "Assets/UniScripts/PlayfabManager.cs"

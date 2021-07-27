@@ -22,7 +22,14 @@ public class QuizLoader : MonoBehaviour
 
     public void LoadCSV(string typeOfQuestion, string typeOfSubject)
     {
+#if UNITY_ANDROID
+        filepath = Application.persistentDataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
+#endif
+
+#if UNITY_STANDALONE
         filepath = Application.dataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
+#endif
+
 
         // Clear the Question Set first before proceeding
         data_questionSet.Clear();
@@ -38,7 +45,7 @@ public class QuizLoader : MonoBehaviour
             {
                 // Sending the string to data_questionSet if it has a specific type of subject
                 // "Classifyart" is an exclusion for this because it uses the subjects as part of its quiz
-                if (txt_file[i].Contains(typeOfSubject) && typeOfQuestion != "Classifyart")
+                if (txt_file[i].Contains(typeOfSubject))
                 {
                     if (typeOfQuestion == "Grabart" || typeOfQuestion == "Matchart")
                     {
@@ -59,6 +66,7 @@ public class QuizLoader : MonoBehaviour
                     }
                 }
 
+                /*
                 else if (typeOfQuestion == "Classifyart")
                 {
                     if (i != txt_file.Length - 1)
@@ -70,6 +78,7 @@ public class QuizLoader : MonoBehaviour
                         break;
                     }
                 }
+                */
 
             }
 
