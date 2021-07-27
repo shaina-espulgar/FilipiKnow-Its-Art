@@ -152,3 +152,12 @@ July 22:
 
 Julu 23
 [Pandan] NetworkGamePlayer and NetworkPlayerLobby are now connected.
+
+July 24-27
+[BAGARES] Added a lot of features for the game scene
+- Added Functionality for Buttons. It can take player input. (in Classicart, Grabart, Switchart, Matchart)
+- Added indication of player input (Red button when the player selects something in a choices.)
+-Added lock feature when the player inputs a choice (locks a button when the player selects their answer)
+- Added timer function (when timer reach to zero, it transitions to a different set of question)
+- Added game over scene.
+- Currently doesn't have a function for checking the answer if player answer is correct or not.

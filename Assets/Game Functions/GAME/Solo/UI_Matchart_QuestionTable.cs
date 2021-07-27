@@ -5,8 +5,9 @@ using TMPro;
 using UnityEngine.UI;
 using System;
 
-public class UI_Grabart_QuestionTable : MonoBehaviour
+public class UI_Matchart_QuestionTable : MonoBehaviour
 {
+    [Header("QuizLoader")] 
     [SerializeField] private QuizLoader quizLoader;
     [SerializeField] TextMeshProUGUI UI_CountDown; //[BAGARES] UI Object for the timer
 
@@ -23,15 +24,13 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     [SerializeField] private Button choiceFButton; public TextMeshProUGUI choiceF;
     [SerializeField] private Button choiceGButton; public TextMeshProUGUI choiceG;
     [SerializeField] private Button choiceHButton; public TextMeshProUGUI choiceH;
-    [SerializeField] private Button choiceIButton; public TextMeshProUGUI choiceI;
-    [SerializeField] private Button choiceJButton; public TextMeshProUGUI choiceJ;
-    [SerializeField] private Button choiceKButton; public TextMeshProUGUI choiceK;
-    [SerializeField] private Button choiceLButton; public TextMeshProUGUI choiceL;
 
 
-    public string playerInput; 
-    public int indexNumber; //[BAGARES] int var for changing the indexer variable from quizloader
-    public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in QUestion UI
+    public string firstInput; //[BAGARES] Since MAtchart is a game that will match two words related, we need 2 variables for the input
+    public string secondInput;
+    bool isAtSecondOption;
+
+    public int indexNumber;
 
     float currentTime = 0f; //[BAGARES] float var, for the Timer 
     float startingTime = 10f;
@@ -39,9 +38,9 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
     void Start()
     {
+        isAtSecondOption = false;
         currentTime = startingTime;
         UI_changeToWhiteButton();
-
     }
 
 
@@ -49,13 +48,12 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     void Update()
     {
         //== Then assign a Question Type...
-        quizLoader.LoadCSV("Grabart", "National Artist");
+        quizLoader.LoadCSV("Matchart", "National Artist");
 
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;
         question = quizLoader.Question;
 
-        showTextInQuestionUI();
         showTextInChoiceUI();
 
         UI_Timer(); // Shows the UI for the Timer
@@ -70,13 +68,16 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
     public void Next()
     {
+
         if (currentTime == 0)
         {
+
             disableEnableButton();
             Debug.Log("Buttons are now set to interactable");
             UI_changeToWhiteButton();
 
-            indexNumber += 2;
+            isAtSecondOption = false;
+            indexNumber += 1;
             quizLoader.indexQuestion = indexNumber;
 
             currentTime = startingTime;
@@ -138,27 +139,6 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
                 choiceH.text = choices[i];
                 //Debug.Log(i + " is choice B");
             }
-            else if (i == 8)
-            {
-                choiceI.text = choices[i];
-                //Debug.Log(i + " is choice B");
-            }
-            else if (i == 9)
-            {
-                choiceJ.text = choices[i];
-                //Debug.Log(i + " is choice B");
-            }
-            else if (i == 10)
-            {
-                choiceK.text = choices[i];
-                //Debug.Log(i + " is choice B");
-            }
-            else if (i == 11)
-            {
-                choiceL.text = choices[i];
-                //Debug.Log(i + " is choice B");
-            }
-
             else
             {
                 Debug.Log("ERROR");
@@ -166,107 +146,142 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
         }
     }
 
-    void showTextInQuestionUI()
-    {
-        QuestionText.text = question;
-    }
 
     public void choiceButtonA_Input()
     {
-        playerInput = choiceA.text;
-        Debug.Log("Choice A: " + playerInput);
-        choiceAButton.GetComponent<Image>().color = Color.red;
+        if(isAtSecondOption == false)
+        {
+            firstInput = choiceA.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceA.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
+        
+        
+
     }
     public void choiceButtonB_Input()
     {
-        playerInput = choiceB.text;
-        choiceBButton.GetComponent<Image>().color = Color.red;
+        if (isAtSecondOption == false)
+        {
+            firstInput = choiceB.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceB.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
     }
     public void choiceButtonC_Input()
     {
-        playerInput = choiceC.text;
-        choiceCButton.GetComponent<Image>().color = Color.red;
+        if (isAtSecondOption == false)
+        {
+            firstInput = choiceC.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceC.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
     }
     public void choiceButtonD_Input()
     {
-        playerInput = choiceD.text;
-        choiceDButton.GetComponent<Image>().color = Color.red;
+        if (isAtSecondOption == false)
+        {
+            firstInput = choiceD.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceD.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
     }
     public void choiceButtonE_Input()
     {
-        playerInput = choiceE.text;
-        choiceEButton.GetComponent<Image>().color = Color.red;
+        if (isAtSecondOption == false)
+        {
+            firstInput = choiceE.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceE.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
     }
     public void choiceButtonF_Input()
     {
-        playerInput = choiceF.text;
-        choiceFButton.GetComponent<Image>().color = Color.red;
+        if (isAtSecondOption == false)
+        {
+            firstInput = choiceF.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceF.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
     }
     public void choiceButtonG_Input()
     {
-        playerInput = choiceG.text;
-        choiceGButton.GetComponent<Image>().color = Color.red;
+        if (isAtSecondOption == false)
+        {
+            firstInput = choiceG.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceG.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
     }
     public void choiceButtonH_Input()
     {
-        playerInput = choiceH.text;
-        choiceHButton.GetComponent<Image>().color = Color.red;
+        if (isAtSecondOption == false)
+        {
+            firstInput = choiceH.text;
+            isAtSecondOption = true;
+            Debug.Log("Choice _, selected. Choose one more option");
+        }
+        else
+        {
+            secondInput = choiceH.text;
+            disableEnableButton();
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
+        }
     }
-    public void choiceButtonI_Input()
-    {
-        playerInput = choiceI.text;
-        choiceIButton.GetComponent<Image>().color = Color.red;
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
-    }
-    public void choiceButtonJ_Input()
+    void UI_changeToWhiteButton()
     {
-        playerInput = choiceJ.text;
-        choiceJButton.GetComponent<Image>().color = Color.red;
+        choiceAButton.image.color = new Color(1f, 1f, 1f, 0.22f);
+        choiceBButton.image.color = new Color(1f, 1f, 1f, 0.22f);
+        choiceCButton.image.color = new Color(1f, 1f, 1f, 0.22f);
+        choiceDButton.image.color = new Color(1f, 1f, 1f, 0.22f);
+        choiceEButton.image.color = new Color(1f, 1f, 1f, 0.22f);
+        choiceFButton.image.color = new Color(1f, 1f, 1f, 0.22f);
+        choiceGButton.image.color = new Color(1f, 1f, 1f, 0.22f);
+        choiceHButton.image.color = new Color(1f, 1f, 1f, 0.22f);
 
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
-    }
-    public void choiceButtonK_Input()
-    {
-        playerInput = choiceK.text;
-        choiceKButton.GetComponent<Image>().color = Color.red;
-
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
-    }
-    public void choiceButtonL_Input()
-    {
-        playerInput = choiceL.text;
-        choiceLButton.GetComponent<Image>().color = Color.red;
-
-        disableEnableButton();
-        Debug.Log("Choice Buttons are set to !interactable");
     }
 
     void UI_Timer() //[BAGARES] Function for the UI Timer in game (some errors exist when in separate script)
@@ -279,6 +294,7 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
             currentTime = 0;
         }
     }
+
     void disableEnableButton()
     {
         choiceAButton.interactable = !choiceAButton.interactable;
@@ -289,26 +305,6 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
         choiceFButton.interactable = !choiceFButton.interactable;
         choiceGButton.interactable = !choiceGButton.interactable;
         choiceHButton.interactable = !choiceHButton.interactable;
-        choiceIButton.interactable = !choiceIButton.interactable;
-        choiceJButton.interactable = !choiceJButton.interactable;
-        choiceKButton.interactable = !choiceKButton.interactable;
-        choiceLButton.interactable = !choiceLButton.interactable;
-        
-    }
-    void UI_changeToWhiteButton()
-    {
-        choiceAButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceBButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceCButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceDButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceEButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceFButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceGButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceHButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceIButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceJButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceKButton.image.color = new Color(1f, 1f, 1f, 0.22f);
-        choiceLButton.image.color = new Color(1f, 1f, 1f, 0.22f);
 
     }
 }

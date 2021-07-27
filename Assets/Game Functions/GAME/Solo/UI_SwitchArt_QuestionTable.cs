@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 using UnityEngine.UI;
-using System;
 using TMPro;
+using System;
 
-public class UI_ClasArt_QuestionTable : MonoBehaviour
+public class UI_SwitchArt_QuestionTable : MonoBehaviour
 {
-   
     //[Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader; //[BAGARES] Reference for the quizloader script 
     [SerializeField] TextMeshProUGUI UI_CountDown; //[BAGARES] UI Object for the timer
@@ -25,7 +23,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     [SerializeField] private Button choiceCButton; public TextMeshProUGUI choiceC;
     [SerializeField] private Button choiceDButton; public TextMeshProUGUI choiceD;
 
-    public string playerInput; 
+    public string playerInput;
     public int indexNumber; // [BAGARES] int var for changing the indexer variable from quizloader
     public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in Question UI
 
@@ -43,7 +41,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     void Update()
     {
         //== Then assign a Question Type...
-        quizLoader.LoadCSV("Classicart", "National Artist");
+        quizLoader.LoadCSV("Switchart", "National Artist");
 
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;
@@ -79,7 +77,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
 
             currentTime = startingTime;
         }
-        
+
     }
 
     //-- Need some code for not overpassing the value of indexQuestion to the no.of questions
@@ -192,4 +190,3 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         }
     }
 }
-
