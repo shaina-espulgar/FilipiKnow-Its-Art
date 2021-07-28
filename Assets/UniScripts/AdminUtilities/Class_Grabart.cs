@@ -13,6 +13,9 @@ public class Class_Grabart : MonoBehaviour
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
 
+    [Header("Debug Message")]
+    [SerializeField] private DebugMessage debugMessage;
+
     [Header("Inputs")]
     [SerializeField] private TMP_InputField input_Question;
     [SerializeField] private TMP_InputField[] arrChoices;
@@ -120,6 +123,7 @@ public class Class_Grabart : MonoBehaviour
         if(operation == "edit")
         {
             string[] arrline = File.ReadAllLines(quizLoader.filepath);
+
             arrline[quizLoader.indexQuestion + 1] = combineInput;
             arrline[quizLoader.indexQuestion + 2] = combineToggle;
             File.WriteAllLines(quizLoader.filepath, arrline);

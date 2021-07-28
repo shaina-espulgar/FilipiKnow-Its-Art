@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 423973617}
         m_TargetAssemblyTypeName: PlayGame, Assembly-CSharp
         m_MethodName: ReturnToMainMenu
         m_Mode: 1

@@ -7,11 +7,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+using UnityEngine.Android;
+
+
 public class AdminUtilites : MonoBehaviour
 {
     // Lists all of the Quiz Databases
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
+    [Header("Download Quiz Database")]
+    [SerializeField] private DownloadQuizDatabase downloadQuizDatabase;
+
+    [Header("Debug Text")]
+    [SerializeField] private DebugMessage debugMessage;
+
+    [Header("Admin Utility Button")]
+    [SerializeField] Button[] adminButton;
 
     // GameObjects that will be presented inside the ScrollView
     [Header("GameObjects")]
@@ -44,12 +55,43 @@ public class AdminUtilites : MonoBehaviour
     [Header("Prompt Warning if Empty")]
     [SerializeField] private GameObject emptyCaution;
 
+    // private GameObject permissionWindow = null;
+
     string currentPanel;
     string currentSubject;
 
+    /*
     private void Start()
     {
+        downloadQuizDatabase.DownloadQuizzes();
+        while (downloadQuizDatabase.CheckQuiz() != true)
+        {
+            for (int i = 0; i < adminButton.Length; i++)
+            {
+                adminButton[i].interactable = false;
+            }
+        }
+
+        if (downloadQuizDatabase.CheckQuiz() == true)
+        {
+            for (int i = 0; i < adminButton.Length; i++)
+            {
+                adminButton[i].interactable = true;
+            }
+
+            Activate();
+        }
+    }
+    */
+    void Start()
+    {
+        downloadQuizDatabase.DownloadQuizzes();
+
         // For Dropdown Options
+        for (int i = 0; i < quizLoader.TextAssetData.Length; i++)
+        {
+            dropDownQuizList.options.Add(new Dropdown.OptionData() { text = quizLoader.TextAssetData[i].name });
+        }
         for (int i = 0; i < quizLoader.TextAssetData.Length; i++)
         {
             dropDownQuizList.options.Add(new Dropdown.OptionData() { text = quizLoader.TextAssetData[i].name });
@@ -139,6 +181,7 @@ public class AdminUtilites : MonoBehaviour
             UI_Maze.SetActive(false);
         }
 
+
     }
 
     public void EditCSV()
@@ -195,7 +238,9 @@ public class AdminUtilites : MonoBehaviour
             }
             Array.Resize(ref arrline, arrline.Length - 1);
         }
+
         File.WriteAllLines(quizLoader.filepath, arrline);
+        debugMessage.OnDeleteQuestionStatus(currentPanel, currentSubject);
     }
 
     public void Previous()

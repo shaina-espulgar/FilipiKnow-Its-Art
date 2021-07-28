@@ -11,6 +11,9 @@ public class Class_Matchart : MonoBehaviour
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
 
+    [Header("Debug Message")]
+    [SerializeField] private DebugMessage debugMessage;
+
     [Header("Inputs")]
     [SerializeField] private TMP_InputField input_Question;
     [SerializeField] private TMP_InputField[] arrChoices;
@@ -119,6 +122,7 @@ public class Class_Matchart : MonoBehaviour
             arrline[arrline.Length] = combineInput;
             arrline[arrline.Length + 1] = combineToggle;
             File.WriteAllLines(quizLoader.filepath, arrline);
+            debugMessage.OnAddQuestionStatus(dropDownSubjectList.options[index].text);
         }
 
         if (operation == "edit")
@@ -127,6 +131,7 @@ public class Class_Matchart : MonoBehaviour
             arrline[quizLoader.indexQuestion + 1] = combineInput;
             arrline[quizLoader.indexQuestion + 2] = combineToggle;
             File.WriteAllLines(quizLoader.filepath, arrline);
+            debugMessage.OnEditQuestionStatus(dropDownSubjectList.options[index].text);
         }
 
     }

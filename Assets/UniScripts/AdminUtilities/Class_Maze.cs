@@ -12,6 +12,9 @@ public class Class_Maze : MonoBehaviour
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
 
+    [Header("Debug Message")]
+    [SerializeField] private DebugMessage debugMessage;
+
     [Header("Inputs")]
     [SerializeField] private TMP_InputField input_Question;
 
@@ -71,12 +74,15 @@ public class Class_Maze : MonoBehaviour
             string[] arrline = File.ReadAllLines(quizLoader.filepath);
             arrline = arrline.Concat(new string[] { final }).ToArray();
             File.WriteAllLines(quizLoader.filepath, arrline);
+            debugMessage.OnAddQuestionStatus(dropDownSubjectList.options[index].text);
+
         }
         if (operation == "edit")
         {
             string[] arrline = File.ReadAllLines(quizLoader.filepath);
             arrline[quizLoader.indexQuestion + 1] = final;
             File.WriteAllLines(quizLoader.filepath, arrline);
+            debugMessage.OnEditQuestionStatus(dropDownSubjectList.options[index].text);
         }
     }
 }

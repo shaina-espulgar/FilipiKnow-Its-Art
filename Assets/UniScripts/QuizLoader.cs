@@ -17,19 +17,12 @@ public class QuizLoader : MonoBehaviour
 
     [HideInInspector] public int indexQuestion;
     // Note: these are lists now instead of arrays before
-    [HideInInspector]  public List<string> data_questionSet = new List<string>();
-    [HideInInspector]  public List<string> data_display = new List<string>();
+    [HideInInspector] public List<string> data_questionSet = new List<string>();
+    [HideInInspector] public List<string> data_display = new List<string>();
 
     public void LoadCSV(string typeOfQuestion, string typeOfSubject)
     {
-#if UNITY_ANDROID
-        filepath = Application.persistentDataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
-#endif
-
-#if UNITY_STANDALONE
-        filepath = Application.dataPath + "/Quiz Database/" + typeOfQuestion + ".csv";
-#endif
-
+        filepath = Application.persistentDataPath + "/" + typeOfQuestion + ".csv";
 
         // Clear the Question Set first before proceeding
         data_questionSet.Clear();
@@ -123,7 +116,7 @@ public class QuizLoader : MonoBehaviour
     private int choicesLength;
     private string[] _choices;
     public string[] Choices
-    {   
+    {
         get { return _choices; }
         set { _choices = value; }
     }
@@ -143,7 +136,7 @@ public class QuizLoader : MonoBehaviour
         _answers = new string[answersLength];
 
         _question = data_display[0];
-        for (int i = 1; i <= choicesLength ; i++)
+        for (int i = 1; i <= choicesLength; i++)
         {
             _choices[i - 1] = data_display[i];
         }
@@ -156,6 +149,7 @@ public class QuizLoader : MonoBehaviour
         // choicesLength = 6; answersLength = 6;
         // _choices = new string[choicesLength];
         // _answers = new string[answersLength];
+
         _choices = data_questionSet[indexQuestion].Split('|');
         _answers = data_questionSet[indexQuestion + 1].Split('|');
         _question = _choices[0];
@@ -230,7 +224,7 @@ public class QuizLoader : MonoBehaviour
         _answers = new string[answersLength];
 
         int index1 = 0; int index2 = 0;
-        for (int i = 0; i < data_display.Count; i++)
+        for (int i = 0; i < data_display.Count - 1; i++)
         {
             if (i == 2 || i == 5)
             {
@@ -260,9 +254,7 @@ public class QuizLoader : MonoBehaviour
 
 /* 
     Planned format when used in the GamePlay
-
     [SerializeField] private QuizLoader quizLoader;
-
     void Start()
     {
         string question = quizLoader.Question;
@@ -271,9 +263,7 @@ public class QuizLoader : MonoBehaviour
         
         == Then assign a Question Type...
         quizLoader.LoadCSV("Grabart", "National Artists");
-
     }
-
     --- BELOW HERE will eventually be the product ---
     void Game()
     {
@@ -286,7 +276,6 @@ public class QuizLoader : MonoBehaviour
             return FALSE;
         }
     }
-
     void PreviousQuestion()
     {
         quizLoader.indexQuestion--;
@@ -294,17 +283,13 @@ public class QuizLoader : MonoBehaviour
         -- If it is Grabart or Matchart we will decrement the indexQuestion by 2 since each questions consume 2 rows in there.
         quizLoader.indexQuestion-=2
     }
-
     void NextQuestion()
     {
         quizLoader.indexQuestion++;
-
         -- If it is Grabart or Matchart we will increment the indexQuestion by 2 since each questions consume 2 rows in there.
         quizLoader.indexQuestion+=2
     }
-
     -- Need some code for not overpassing the value of indexQuestion to the no. of questions
-
     void Clear()
     {
         --- CLEAR THE LIST IF THE ROUND ENDED 

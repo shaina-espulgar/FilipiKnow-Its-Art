@@ -53,9 +53,11 @@
     <UnityVersion>2021.1.14f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\UniScripts\PermissionsRationaleDialog.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\AdminUtilites.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\UtilScript\Utils\Button_UI.cs" />
+    <Compile Include="Assets\Game Functions\GAME\Solo\UI_GameoverMenu.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\nameHandling.cs" />
     <Compile Include="Assets\UniScripts\AndroidFIleBrowser.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\main.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\Game Functions\GAME\Solo\UI_Matchart_QuestionTable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\UtilScript\Utils\World_Mesh.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Grabart_QuestionTable.cs" />
@@ -99,7 +102,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Grabart.cs" />
     <Compile Include="Assets\TextMesh Pro\NewBehaviourScript.cs" />
-    <Compile Include="Assets\UniScripts\UploadQuizDatabase-Old.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Category_Handling.cs" />
     <Compile Include="Assets\UniScripts\JoinGameLobby.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionTimer.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Assets\UniScripts\ChangeInput.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_TicTacToe.cs" />
+    <Compile Include="Assets\Game Functions\GAME\Solo\UI_Classifyart_QuestionTable.cs" />
     <Compile Include="Assets\Game Functions\PLAY\PlayGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -124,6 +127,7 @@
     <Compile Include="Assets\UniScripts\InputFieldsChecker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\ComponentActions.cs" />
+    <Compile Include="Assets\UniScripts\DebugMessage.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_Sprite.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\UniScripts\AvatarDisplay.cs" />
@@ -135,10 +139,12 @@
     <Compile Include="Assets\UtilScript\Utils\UI_BarMultiple.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
+    <Compile Include="Assets\Game Functions\GAME\Solo\UI_SwitchArt_QuestionTable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\UniScripts\NetworkGamePlayer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\UniScripts\BackgroundMusic.cs" />
     <Compile Include="Assets\UniScripts\Testing Code.cs" />
     <Compile Include="Assets\Game Functions\HELP\Help.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
@@ -148,7 +154,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Matchart.cs" />
-    <Compile Include="Assets\UniScripts\PermissionsRationaleDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

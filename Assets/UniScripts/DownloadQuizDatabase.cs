@@ -5,11 +5,9 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
-using TMPro;
-using UnityGoogleDrive;
 
 [System.Serializable]
+[HideInInspector]
 public class QuizList
 {
     public List<QuizName> QuizName = new List<QuizName>();
@@ -33,15 +31,23 @@ public class DownloadQuizDatabase : MonoBehaviour
     [SerializeField] private QuizLoader quizLoader;
 
     [Header("Debug Menu")]
-    [SerializeField] private TMP_Text debugText;
+    [SerializeField] private DebugMessage debugMessage;
 
     // Json Google Drive Link
     readonly string jsonURL = "https://drive.google.com/uc?export=download&id=1N27nMhcAJT4DWBzTboLfZ9UvGeWN4j-I";
+    string filepath;
 
-    void Start()
+    int questionDownloaded = 0;
+    public bool DownloadQuizzes()
     {
         StartCoroutine(GetData(jsonURL));
 
+        if (questionDownloaded == questionTypes.Length)
+        {
+            CheckQuiz();
+        }
+
+        return CheckQuiz();
     }
 
     IEnumerator GetData(string url)
@@ -68,15 +74,19 @@ public class DownloadQuizDatabase : MonoBehaviour
                     if (name.Quiz == type)
                     {
                         StartCoroutine(GetQuiz(name.FileURL, type));
+
+                        questionDownloaded++;
                     }
                 }
             }
-
         }
+
+
+
         request.Dispose();
     }
 
-    IEnumerator GetQuiz(string url, string questionType)
+    IEnumerator GetQuiz(string url, string typeOfQuestion)
     {
         UnityWebRequest request = UnityWebRequest.Get(url);
 
@@ -88,20 +98,33 @@ public class DownloadQuizDatabase : MonoBehaviour
         }
         else
         {
-#if UNITY_ANDROID
-            quizLoader.filepath = Application.persistentDataPath + "/Quiz Database/" + questionType + ".csv";
-#endif
-#if UNITY_STANDALONE
-            quizLoader.filepath = Application.dataPath + "/Quiz Database/" + questionType + ".csv";
-#endif
+            filepath = Application.persistentDataPath + "/" + typeOfQuestion + ".csv";
+
             string[] csvReplace = request.downloadHandler.text.Split(new string[] { "\n" }, StringSplitOptions.None).ToArray();
-            File.WriteAllLines(quizLoader.filepath, csvReplace);
+            File.WriteAllLines(filepath, csvReplace);
 
-            debugText.text = questionType + " Replaced";
-            Debug.Log("File: " + questionType + " Replaced");
-
-
+            debugMessage.OnDownloadComplete(typeOfQuestion);
+            Debug.Log("File: " + typeOfQuestion + " Replaced");
         }
         request.Dispose();
+    }
+
+    public bool CheckQuiz()
+    {
+        for(int i = 0; i < questionTypes.Length; i++)
+        {
+            if (File.Exists(Application.persistentDataPath + "/" + questionTypes[i] + ".csv"))
+            {
+                // Conditions if that file exists
+                Debug.Log(questionTypes[i] + "verified!");
+            }
+            else
+            {
+                Debug.Log(questionTypes[i] + "unknown. Cancelling...");
+                return false;
+            }
+        }
+
+        return true;
     }
 }
