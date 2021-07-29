@@ -1,13 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreDisplay : MonoBehaviour
 {
+    [SerializeField] private GameObject scoreDisplay;
+
     [Header("Text")]
-    [SerializeField] private TMP_Text txt_Congratulations;
+    [SerializeField] private TMP_Text txt_Player;
     [SerializeField] private TMP_Text txt_Score;
 
     [Header("Avatar")]
@@ -19,12 +24,12 @@ public class ScoreDisplay : MonoBehaviour
     {
         CurrentName(PlayerInputName.DisplayName);
         CurrentAvatar(AvatarDisplay.AvatarProfileIndex);
-        // CurrentScore();
+        // CurrentScore(GamePlay.Score);
     }
 
     void CurrentName(string name)
     {
-        txt_Congratulations.text = "Congratulations," + name;
+        txt_Player.text = name;
     }
 
     void CurrentAvatar(int index)
@@ -34,6 +39,37 @@ public class ScoreDisplay : MonoBehaviour
 
     void CurrentScore(int score)
     {
+        // txt_Score.text = score;
+    }
 
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    // For the share function
+    public void ShareScore()
+    {
+        StartCoroutine("TakeScreenShotandShare");
+    }
+
+    IEnumerator TakeScreenShotandShare()
+    {
+        yield return new WaitForEndOfFrame();
+
+        Texture2D tx = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        tx.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+        tx.Apply();
+
+        string path = Path.Combine(Application.temporaryCachePath, "sharedImage.png");
+        File.WriteAllBytes(path, tx.EncodeToPNG());
+
+        Destroy(tx);
+
+        new NativeShare()
+            .AddFile(path)
+            .SetSubject("This is my score")
+            .SetText("share your score with your friends")
+            .Share();
     }
 }

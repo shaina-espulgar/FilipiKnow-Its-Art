@@ -21,9 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telepathy", "Telepathy.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Authenticators", "Mirror.Authenticators.csproj", "{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileBrowser.Runtime", "SimpleFileBrowser.Runtime.csproj", "{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{C0E907A3-8E0E-125C-F101-880E32BC3C3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeShare.Runtime", "NativeShare.Runtime.csproj", "{23316F97-3B36-4DFD-B59A-881B487FF044}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayFabEditorExtensions", "PlayFabEditorExtensions.csproj", "{86BC03A4-7CB3-5265-7810-0428FA2CEE22}"
 EndProject
@@ -36,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayFabSDKEditor", "PlayFabSDKEditor.csproj", "{77D78110-2836-165F-7230-55B0800D892F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elringus.UnityGoogleDrive.Editor", "Elringus.UnityGoogleDrive.Editor.csproj", "{4823E9EC-D01D-356B-BB1A-C105471E14D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeShare.Editor", "NativeShare.Editor.csproj", "{46C11335-109F-4922-EC93-AD2394ED39F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,14 +83,10 @@ Global
 		{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0E907A3-8E0E-125C-F101-880E32BC3C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0E907A3-8E0E-125C-F101-880E32BC3C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0E907A3-8E0E-125C-F101-880E32BC3C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0E907A3-8E0E-125C-F101-880E32BC3C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23316F97-3B36-4DFD-B59A-881B487FF044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23316F97-3B36-4DFD-B59A-881B487FF044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23316F97-3B36-4DFD-B59A-881B487FF044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23316F97-3B36-4DFD-B59A-881B487FF044}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86BC03A4-7CB3-5265-7810-0428FA2CEE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{86BC03A4-7CB3-5265-7810-0428FA2CEE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86BC03A4-7CB3-5265-7810-0428FA2CEE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -115,6 +111,10 @@ Global
 		{4823E9EC-D01D-356B-BB1A-C105471E14D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4823E9EC-D01D-356B-BB1A-C105471E14D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4823E9EC-D01D-356B-BB1A-C105471E14D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46C11335-109F-4922-EC93-AD2394ED39F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C11335-109F-4922-EC93-AD2394ED39F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C11335-109F-4922-EC93-AD2394ED39F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C11335-109F-4922-EC93-AD2394ED39F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

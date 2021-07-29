@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Download Quiz Database")]
+    [SerializeField] private DownloadQuizDatabase downloadQuizDatabase;
+
+    public void Start()
+    {
+        downloadQuizDatabase.DownloadQuizzes();
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("PlayGame");

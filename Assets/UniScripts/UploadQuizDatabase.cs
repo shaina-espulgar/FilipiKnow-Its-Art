@@ -31,7 +31,6 @@ public class UploadQuizDatabase : MonoBehaviour
     private string typeOfQuestion;
     public void Start()
     {
-
         // For Dropdown Options
         for (int i = 0; i < quizLoader.TextAssetData.Length; i++)
         {

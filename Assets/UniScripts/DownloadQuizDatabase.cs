@@ -23,31 +23,22 @@ public class QuizName
 public class DownloadQuizDatabase : MonoBehaviour
 {
     // Loads all of the Quizzes inside Google Drive
-    public QuizList QuizList = new QuizList();
+    [HideInInspector] public QuizList QuizList = new QuizList();
 
     private readonly string[] questionTypes = { "Classicart", "Switchart", "Classifyart", "Matchart", "Grabart", "TicTacToe", "Maze" };
 
-    [Header("Quizloader")]
-    [SerializeField] private QuizLoader quizLoader;
-
     [Header("Debug Menu")]
     [SerializeField] private DebugMessage debugMessage;
+
+    [HideInInspector] public int questionDownloaded = 0;
 
     // Json Google Drive Link
     readonly string jsonURL = "https://drive.google.com/uc?export=download&id=1N27nMhcAJT4DWBzTboLfZ9UvGeWN4j-I";
     string filepath;
 
-    int questionDownloaded = 0;
-    public bool DownloadQuizzes()
+    public void DownloadQuizzes()
     {
         StartCoroutine(GetData(jsonURL));
-
-        if (questionDownloaded == questionTypes.Length)
-        {
-            CheckQuiz();
-        }
-
-        return CheckQuiz();
     }
 
     IEnumerator GetData(string url)
@@ -75,7 +66,7 @@ public class DownloadQuizDatabase : MonoBehaviour
                     {
                         StartCoroutine(GetQuiz(name.FileURL, type));
 
-                        questionDownloaded++;
+                        
                     }
                 }
             }
@@ -102,10 +93,12 @@ public class DownloadQuizDatabase : MonoBehaviour
 
             debugMessage.OnDownloadComplete(typeOfQuestion);
             Debug.Log("File: " + typeOfQuestion + " Replaced");
+            questionDownloaded++;
         }
         request.Dispose();
     }
 
+    /*
     public bool CheckQuiz()
     {
         for(int i = 0; i < questionTypes.Length; i++)
@@ -124,4 +117,5 @@ public class DownloadQuizDatabase : MonoBehaviour
 
         return true;
     }
+    */
 }

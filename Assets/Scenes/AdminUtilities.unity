@@ -1986,7 +1986,6 @@ MonoBehaviour:
   - {fileID: 4900000, guid: ea816335803f66641a4bd9727ff702b8, type: 3}
   - {fileID: 4900000, guid: 83f7d2fd6a684ea49bd42e23598682e3, type: 3}
   - {fileID: 4900000, guid: d553356ba1c16d74dbad0b417a0829a9, type: 3}
-  - {fileID: 4900000, guid: 6fcc4ecbcce5f2b41b55312a6caf678b, type: 3}
   - {fileID: 4900000, guid: aabc0c6d306d4344882ab40ce3e217ad, type: 3}
   - {fileID: 4900000, guid: a7604a8b927962e448656f40041063ca, type: 3}
   filepath: 
@@ -2032,6 +2031,7 @@ MonoBehaviour:
   class_Maze: {fileID: 14645611}
   questionNumber: {fileID: 196502173}
   emptyCaution: {fileID: 1326045772}
+  utilitiesButton: []
 --- !u!114 &92138412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2046,8 +2046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   QuizList:
     QuizName: []
-  quizLoader: {fileID: 92138410}
   debugMessage: {fileID: 92138413}
+  questionDownloaded: 0
 --- !u!114 &92138413
 MonoBehaviour:
   m_ObjectHideFlags: 0

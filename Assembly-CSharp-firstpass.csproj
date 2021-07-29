@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -796,6 +796,14 @@
     <ProjectReference Include="Mirror.Components.csproj">
       <Project>{054CE4DF-BBAB-43E1-352D-DC91AE734847}</Project>
       <Name>Mirror.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="NativeShare.Runtime.csproj">
+      <Project>{23316F97-3B36-4DFD-B59A-881B487FF044}</Project>
+      <Name>NativeShare.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="NativeShare.Editor.csproj">
+      <Project>{46C11335-109F-4922-EC93-AD2394ED39F6}</Project>
+      <Name>NativeShare.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

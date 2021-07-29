@@ -60,7 +60,6 @@
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_GameoverMenu.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\nameHandling.cs" />
-    <Compile Include="Assets\UniScripts\AndroidFIleBrowser.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Game Functions\ABOUT US\AboutUs.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Assets\UtilScript\MonoBehaviours\CameraFollow.cs" />
     <Compile Include="Assets\UtilScript\Assets.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\UniScripts\ScoreDisplay.cs" />
     <Compile Include="Assets\UtilScript\Utils\World_Sprite.cs" />
     <Compile Include="Assets\UtilScript\Utils\World_Bar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -92,7 +92,6 @@
     <Compile Include="Assets\UtilScript\MonoBehaviours\PositionRendererSorter.cs" />
     <Compile Include="Assets\UniScripts\PlayerAvatarProfile.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Switchart.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Nameart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\MainMenu.cs" />
     <Compile Include="Assets\UniScripts\NetworkManagerLobby.cs" />
@@ -134,6 +133,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\UniScripts\DownloadQuizDatabase.cs" />
+    <Compile Include="Assets\Game Functions\GAME\Solo\CSV_Questionnaire_Classifyart.cs" />
     <Compile Include="Assets\UniScripts\ToggleBehavior.cs" />
     <Compile Include="Assets\UniScripts\UploadQuizDatabase.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_BarMultiple.cs" />
@@ -147,6 +147,7 @@
     <Compile Include="Assets\UniScripts\BackgroundMusic.cs" />
     <Compile Include="Assets\UniScripts\Testing Code.cs" />
     <Compile Include="Assets\Game Functions\HELP\Help.cs" />
+    <Compile Include="Assets\UniScripts\DontDestroyAudio.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\AvatarMenu.cs" />
@@ -154,8 +155,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\UniScripts\AdminUtilities\Class_Matchart.cs" />
-    <Compile Include="Assets\UniScripts\DontDestroyAudio.cs" />
-    <Compile Include="Assets\UniScripts\ScoreDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
@@ -877,10 +876,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{C0E907A3-8E0E-125C-F101-880E32BC3C3A}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="PlayFabSDKEditor.csproj">
       <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
       <Name>PlayFabSDKEditor</Name>
@@ -908,10 +903,6 @@
     <ProjectReference Include="Mirror.Weaver.csproj">
       <Project>{B9258465-38BB-F704-7D2A-7277AA31AC11}</Project>
       <Name>Mirror.Weaver</Name>
-    </ProjectReference>
-    <ProjectReference Include="SimpleFileBrowser.Runtime.csproj">
-      <Project>{760632CC-A5CA-14F5-8EB0-1C56D3F2854A}</Project>
-      <Name>SimpleFileBrowser.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Elringus.UnityGoogleDrive.Runtime.csproj">
       <Project>{B2F03D87-FCFC-3CE7-5A24-8DEA160FC1E1}</Project>
@@ -944,6 +935,14 @@
     <ProjectReference Include="Mirror.Components.csproj">
       <Project>{054CE4DF-BBAB-43E1-352D-DC91AE734847}</Project>
       <Name>Mirror.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="NativeShare.Runtime.csproj">
+      <Project>{23316F97-3B36-4DFD-B59A-881B487FF044}</Project>
+      <Name>NativeShare.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="NativeShare.Editor.csproj">
+      <Project>{46C11335-109F-4922-EC93-AD2394ED39F6}</Project>
+      <Name>NativeShare.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

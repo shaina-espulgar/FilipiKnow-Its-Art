@@ -639,6 +639,8 @@ GameObject:
   - component: {fileID: 423973617}
   - component: {fileID: 423973616}
   - component: {fileID: 423973618}
+  - component: {fileID: 423973620}
+  - component: {fileID: 423973619}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -753,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4595a5673b0129f4db0a73861de478a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkLobby: {fileID: 2032415104}
+  downloadQuizDatabase: {fileID: 0}
   editAddress: {fileID: 0}
   playerNumber:
   - {fileID: 0}
@@ -786,6 +788,35 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92703a38c65678445858287b6f22ccbc, type: 3}
   - {fileID: 21300000, guid: b49cc1d3930a1bc44890b89c395f9b2a, type: 3}
   - {fileID: 21300000, guid: 3b743af164b999343beca7bc12098d4b, type: 3}
+--- !u!114 &423973619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423973611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ef9d5143131404a8c3248a94858115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugText: {fileID: 214780536}
+--- !u!114 &423973620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423973611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6077d69a377e0d4789902a378201ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuizList:
+    QuizName: []
+  debugMessage: {fileID: 423973619}
+  questionDownloaded: 0
 --- !u!1 &442062303
 GameObject:
   m_ObjectHideFlags: 0

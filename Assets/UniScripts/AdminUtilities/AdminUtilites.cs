@@ -42,7 +42,6 @@ public class AdminUtilites : MonoBehaviour
     [SerializeField] private Class_Matchart class_Matchart;
     [SerializeField] private Class_Switchart class_Switchart;
     [SerializeField] private Class_Grabart class_Grabart;
-    [SerializeField] private Class_Nameart class_Nameart;
     [SerializeField] private Class_Classifyart class_Classifyart;
     [SerializeField] private Class_TicTacToe class_TicTacToe;
     [SerializeField] private Class_Maze class_Maze;
@@ -53,34 +52,13 @@ public class AdminUtilites : MonoBehaviour
     [Header("Prompt Warning if Empty")]
     [SerializeField] private GameObject emptyCaution;
 
+    [Header("Utilities Buttons")]
+    [SerializeField] private Button[] utilitiesButton; 
+
     // private GameObject permissionWindow = null;
 
     string currentPanel;
     string currentSubject;
-
-    /*
-    private void Start()
-    {
-        downloadQuizDatabase.DownloadQuizzes();
-        while (downloadQuizDatabase.CheckQuiz() != true)
-        {
-            for (int i = 0; i < adminButton.Length; i++)
-            {
-                adminButton[i].interactable = false;
-            }
-        }
-
-        if (downloadQuizDatabase.CheckQuiz() == true)
-        {
-            for (int i = 0; i < adminButton.Length; i++)
-            {
-                adminButton[i].interactable = true;
-            }
-
-            Activate();
-        }
-    }
-    */
 
     void Start()
     {
