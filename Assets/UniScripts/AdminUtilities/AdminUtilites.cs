@@ -7,14 +7,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-using UnityEngine.Android;
-
-
 public class AdminUtilites : MonoBehaviour
 {
     // Lists all of the Quiz Databases
     [Header("QuizLoader")]
     [SerializeField] private QuizLoader quizLoader;
+
     [Header("Download Quiz Database")]
     [SerializeField] private DownloadQuizDatabase downloadQuizDatabase;
 
@@ -83,6 +81,7 @@ public class AdminUtilites : MonoBehaviour
         }
     }
     */
+
     void Start()
     {
         downloadQuizDatabase.DownloadQuizzes();
@@ -92,10 +91,7 @@ public class AdminUtilites : MonoBehaviour
         {
             dropDownQuizList.options.Add(new Dropdown.OptionData() { text = quizLoader.TextAssetData[i].name });
         }
-        for (int i = 0; i < quizLoader.TextAssetData.Length; i++)
-        {
-            dropDownQuizList.options.Add(new Dropdown.OptionData() { text = quizLoader.TextAssetData[i].name });
-        }
+
         OpenPanel(dropDownQuizList, dropDownSubjectList);
 
         dropDownQuizList.onValueChanged.AddListener(delegate {
@@ -180,8 +176,6 @@ public class AdminUtilites : MonoBehaviour
             UI_TicTacToe.SetActive(false);
             UI_Maze.SetActive(false);
         }
-
-
     }
 
     public void EditCSV()

@@ -80,9 +80,6 @@ public class DownloadQuizDatabase : MonoBehaviour
                 }
             }
         }
-
-
-
         request.Dispose();
     }
 

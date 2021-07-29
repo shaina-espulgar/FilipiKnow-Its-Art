@@ -34,6 +34,11 @@ public class PlayGame : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void GoToGamePlay()
+    {
+        SceneManager.LoadScene("ScoreMenu");
+    }
+
     public void GoToAvatarChangeScene()
     {
         SceneManager.LoadScene("AvatarMenu");
