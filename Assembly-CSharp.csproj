@@ -54,11 +54,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\UniScripts\PermissionsRationaleDialog.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\AdminUtilites.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\AdminUtilites.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\UtilScript\Utils\Button_UI.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_GameoverMenu.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classifyart.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Classifyart.cs" />
     <Compile Include="Assets\Game Functions\AVATAR\nameHandling.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Game Functions\ABOUT US\AboutUs.cs" />
@@ -77,8 +77,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\CameraFollowSetup.cs" />
     <Compile Include="Assets\UniScripts\QuizLoader.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Classicart.cs" />
-    <Compile Include="Assets\UniScripts\NetworkPlayerLobby.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Classicart.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\CameraFollow.cs" />
     <Compile Include="Assets\UtilScript\Assets.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -91,24 +90,22 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\PositionRendererSorter.cs" />
     <Compile Include="Assets\UniScripts\PlayerAvatarProfile.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Switchart.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Switchart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\MainMenu.cs" />
-    <Compile Include="Assets\UniScripts\NetworkManagerLobby.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionUpdater.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Grabart.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Grabart.cs" />
     <Compile Include="Assets\TextMesh Pro\NewBehaviourScript.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Category_Handling.cs" />
-    <Compile Include="Assets\UniScripts\JoinGameLobby.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionTimer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Maze.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Maze.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_Bar.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_PlayerStat.cs" />
     <Compile Include="Assets\UniScripts\PlayerInputName.cs" />
@@ -116,7 +113,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\UniScripts\ChangeInput.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_TicTacToe.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_TicTacToe.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Classifyart_QuestionTable.cs" />
     <Compile Include="Assets\Game Functions\PLAY\PlayGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -141,7 +138,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_SwitchArt_QuestionTable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
-    <Compile Include="Assets\UniScripts\NetworkGamePlayer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\UniScripts\BackgroundMusic.cs" />
@@ -154,28 +150,21 @@
     <Compile Include="Assets\UtilScript\CMDebug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
-    <Compile Include="Assets\UniScripts\AdminUtilities\Class_Matchart.cs" />
+    <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Matchart.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Game Assets\Questions\Classic and Switch\Classicart-Questions.txt" />
-    <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Game Assets\Questions\Grab\CATAPP.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Game Assets\Questions\TicTacToe and Maze\Tic-Tac-Toe.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\Game Assets\Questions\Grab\CAP.txt" />
-    <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll" />
     <None Include="Assets\Game Assets\Questions\Grab\NATART.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
-    <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\UnityGoogleDrive\ThirdParty\JsonNet-Lite\UnityGoogleDrive.Newtonsoft.Json.dll" />
     <None Include="Assets\UtilScript\README.txt" />
-    <None Include="Assets\Mirror\Version.txt" />
-    <None Include="Assets\Mirror\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -183,14 +172,11 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Mirror\Notice.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Mirror\Plugins\Mono.Cecil\License.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Game Assets\Questions\Grab\GAMABA.txt" />
-    <None Include="Assets\UnityGoogleDrive\ThirdParty\JsonNet-Lite\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Game Assets\Questions\Grab\CAFAP.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
@@ -421,29 +407,35 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.14f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Pdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
       <HintPath>Library\PackageCache\com.unity.analytics@3.5.3\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Rocks">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>Library\PackageCache\com.unity.analytics@3.5.3\Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.CecilX">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>Library\PackageCache\com.unity.analytics@3.5.3\Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>Library\PackageCache\com.unity.collections@0.15.0-preview.21\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.1.14f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -874,71 +866,44 @@
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Jobs">
+      <HintPath>Library\ScriptAssemblies\Unity.Jobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Jobs.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Jobs.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PlayFabSDKEditor.csproj">
       <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
       <Name>PlayFabSDKEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="Mirror.csproj">
-      <Project>{4E9FE01F-2E53-A857-1642-69BDFE54F314}</Project>
-      <Name>Mirror</Name>
-    </ProjectReference>
-    <ProjectReference Include="kcp2k.csproj">
-      <Project>{1EBFC4F8-E0B3-9F90-404E-5C7C155DA695}</Project>
-      <Name>kcp2k</Name>
-    </ProjectReference>
     <ProjectReference Include="PlayFabEditorExtensions.csproj">
       <Project>{86BC03A4-7CB3-5265-7810-0428FA2CEE22}</Project>
       <Name>PlayFabEditorExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="Mirror.Examples.csproj">
-      <Project>{2B1638BA-783C-4B41-79DC-8318FC796D74}</Project>
-      <Name>Mirror.Examples</Name>
+    <ProjectReference Include="NativeShare.Runtime.csproj">
+      <Project>{23316F97-3B36-4DFD-B59A-881B487FF044}</Project>
+      <Name>NativeShare.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="PlayFab.csproj">
       <Project>{2C923674-5DD0-1E56-FBCE-EB8D1CB4ADF7}</Project>
       <Name>PlayFab</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Weaver.csproj">
-      <Project>{B9258465-38BB-F704-7D2A-7277AA31AC11}</Project>
-      <Name>Mirror.Weaver</Name>
-    </ProjectReference>
-    <ProjectReference Include="Elringus.UnityGoogleDrive.Runtime.csproj">
-      <Project>{B2F03D87-FCFC-3CE7-5A24-8DEA160FC1E1}</Project>
-      <Name>Elringus.UnityGoogleDrive.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Editor.csproj">
-      <Project>{A2336EAB-7645-D87D-6A2B-A7E9D198FDB2}</Project>
-      <Name>Mirror.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.CompilerSymbols.csproj">
-      <Project>{877C11A9-AC70-F9AF-435E-E786B4E43F56}</Project>
-      <Name>Mirror.CompilerSymbols</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Authenticators.csproj">
-      <Project>{4DBCDAFF-BB85-BCB5-111B-41373D5057D0}</Project>
-      <Name>Mirror.Authenticators</Name>
-    </ProjectReference>
-    <ProjectReference Include="Telepathy.csproj">
-      <Project>{081384ED-AFCC-DC84-F7A9-A2F4B787D905}</Project>
-      <Name>Telepathy</Name>
-    </ProjectReference>
-    <ProjectReference Include="Elringus.UnityGoogleDrive.Editor.csproj">
-      <Project>{4823E9EC-D01D-356B-BB1A-C105471E14D9}</Project>
-      <Name>Elringus.UnityGoogleDrive.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="SimpleWebTransport.csproj">
-      <Project>{3321C9D1-C260-FCF8-809E-8F9C58C5356E}</Project>
-      <Name>SimpleWebTransport</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Components.csproj">
-      <Project>{054CE4DF-BBAB-43E1-352D-DC91AE734847}</Project>
-      <Name>Mirror.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="NativeShare.Runtime.csproj">
-      <Project>{23316F97-3B36-4DFD-B59A-881B487FF044}</Project>
-      <Name>NativeShare.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="NativeShare.Editor.csproj">
       <Project>{46C11335-109F-4922-EC93-AD2394ED39F6}</Project>

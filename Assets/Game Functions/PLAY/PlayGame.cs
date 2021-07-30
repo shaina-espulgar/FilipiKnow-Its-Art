@@ -14,9 +14,6 @@ public class PlayGame : MonoBehaviour
     // Sets the button that has formely applied by the selected color
     private Button former;
 
-    // The default settings for the number of players allowed to play in the game
-    private int numberOfPlayers = 4;
-
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");

@@ -77,10 +77,10 @@ public class UploadQuizDatabase : MonoBehaviour
             Debug.Log("File has been exported");
         }
 #elif PLATFORM_ANDROID
-        Directory.CreateDirectory("/storage/emulated/0/Downloads/Filipiknow-Its-Art");  
+        Directory.CreateDirectory("mnt/sdcard/Download/Filipiknow-Its-Art");  
         quizLoader.filepath = Application.persistentDataPath + "/" + typeOfQuestion + ".csv";
 
-        string exportPath = "/storage/emulated/0/Downloads/Filipiknow-Its-Art/" + typeOfQuestion + ".csv";
+        string exportPath = "mnt/sdcard/Download/Filipiknow-Its-Art/" + typeOfQuestion + ".csv";
 
         string[] csvFile = File.ReadAllLines(quizLoader.filepath);
 

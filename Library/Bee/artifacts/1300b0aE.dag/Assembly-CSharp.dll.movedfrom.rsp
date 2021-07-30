@@ -1,6 +1,13 @@
 Library\Bee\artifacts\movedfrom\Unity.2D.Sprite.Editor.ref.dll_7818677736438628686.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.2D.Tilemap.Editor.ref.dll_14072021331937363979.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.Analytics.DataPrivacy.ref.dll_7728113268354097112.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Burst.Editor.ref.dll_2462486920950163055.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Burst.ref.dll_4050349675296591202.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Collections.ref.dll_16382939934763791495.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Jobs.Editor.ref.dll_6586161004370875639.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Jobs.ref.dll_16937703498607892058.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Mathematics.Editor.ref.dll_6142065247344853801.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Mathematics.ref.dll_7412445722425142536.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.PlasticSCM.Editor.ref.dll_11914477213132117968.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.Rider.Editor.ref.dll_15747089688779514197.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.TextMeshPro.Editor.ref.dll_15040393372921687916.movedfrom
@@ -101,3 +108,9 @@ Library\Bee\artifacts\movedfrom\UnityEngine.XRModule.dll_5881072390251566867.mov
 Library\Bee\artifacts\movedfrom\Unity.Analytics.StandardEvents.dll_4418580201776251861.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.Analytics.Editor.dll_16972050138346867769.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.Analytics.Tracker.dll_17234735119747038056.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Burst.Cecil.dll_15737736900824013844.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Burst.Cecil.Mdb.dll_16672780675015754833.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Burst.Cecil.Pdb.dll_18353318706240865748.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Burst.Cecil.Rocks.dll_14863877021179512948.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Burst.Unsafe.dll_12398908340484854847.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Collections.LowLevel.ILSupport.dll_7581706757333417262.movedfrom
