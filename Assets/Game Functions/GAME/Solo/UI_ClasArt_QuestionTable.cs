@@ -27,6 +27,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
 
     public string playerInput; 
     public int indexNumber; // [BAGARES] int var for changing the indexer variable from quizloader
+    bool inputFinish; //[BAGARES] bool var to check if the player finished answering
     public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in Question UI
 
     float currentTime = 0f; //[BAGARES] float var, for the Timer 
@@ -36,6 +37,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     {
         currentTime = startingTime;
         UI_changeToWhiteButton();
+        inputFinish = false;
     }
 
 
@@ -49,9 +51,11 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         answers = quizLoader.Answers;
         question = quizLoader.Question;
 
+        
+
         showTextInQuestionUI();
         showTextInChoiceUI();
-
+        checkingTheInput();
         UI_Timer(); // Shows the UI for the Timer
         Next();
 
@@ -67,6 +71,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     {
         if (currentTime == 0)
         {
+            inputFinish = false;
 
             choiceAButton.interactable = !choiceAButton.interactable;
             choiceBButton.interactable = !choiceBButton.interactable;
@@ -138,6 +143,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         choiceCButton.interactable = !choiceCButton.interactable;
         choiceDButton.interactable = !choiceDButton.interactable;
         Debug.Log("Choice Buttons are set to !interactable");
+        inputFinish = true;
     }
     public void choiceButtonB_Input()
     {
@@ -149,6 +155,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         choiceCButton.interactable = !choiceCButton.interactable;
         choiceDButton.interactable = !choiceDButton.interactable;
         Debug.Log("Choice Buttons are set to !interactable");
+        inputFinish = true;
     }
     public void choiceButtonC_Input()
     {
@@ -160,6 +167,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         choiceCButton.interactable = !choiceCButton.interactable;
         choiceDButton.interactable = !choiceDButton.interactable;
         Debug.Log("Choice Buttons are set to !interactable");
+        inputFinish = true;
     }
     public void choiceButtonD_Input()
     {
@@ -171,6 +179,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         choiceCButton.interactable = !choiceCButton.interactable;
         choiceDButton.interactable = !choiceDButton.interactable;
         Debug.Log("Choice Buttons are set to !interactable");
+        inputFinish = true;
     }
 
     void UI_changeToWhiteButton()
@@ -189,6 +198,25 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
+        }
+    }
+
+    //###Some Function for processing Input data
+    void checkingTheInput()
+    {
+        if (inputFinish == true)
+        { 
+            if (answers[0] == playerInput)
+            {
+                Debug.Log("PLAYER SCORE");
+                inputFinish = false;
+
+            }
+            else
+            {
+                Debug.Log("Player not Score");
+                inputFinish = false;
+            }
         }
     }
 }

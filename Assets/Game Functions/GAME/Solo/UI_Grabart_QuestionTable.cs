@@ -32,6 +32,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     public string playerInput; 
     public int indexNumber; //[BAGARES] int var for changing the indexer variable from quizloader
     public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in QUestion UI
+    bool inputFinish;
+    int indexForAnswer;
 
     float currentTime = 0f; //[BAGARES] float var, for the Timer 
     float startingTime = 10f;
@@ -39,6 +41,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
     void Start()
     {
+        inputFinish = false;
+        
         currentTime = startingTime;
         UI_changeToWhiteButton();
 
@@ -59,30 +63,28 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
         showTextInChoiceUI();
 
         UI_Timer(); // Shows the UI for the Timer
+        checkingTheInput();
         Next();
 
-    }
-
-    void Previous()
-    {
-        quizLoader.indexQuestion--;
     }
 
     public void Next()
     {
         if (currentTime == 0)
         {
+           
             disableEnableButton();
-            Debug.Log("Buttons are now set to interactable");
             UI_changeToWhiteButton();
 
-            indexNumber += 2;
+            indexNumber += 1;
             quizLoader.indexQuestion = indexNumber;
+            Debug.Log(choiceA.text + " is the new text");
 
             currentTime = startingTime;
         }
 
     }
+
 
     //-- Need some code for not overpassing the value of indexQuestion to the no.of questions
 
@@ -179,6 +181,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 0;
+        inputFinish = true;
     }
     public void choiceButtonB_Input()
     {
@@ -187,6 +191,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 1;
+        inputFinish = true;
     }
     public void choiceButtonC_Input()
     {
@@ -195,6 +201,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 2;
+        inputFinish = true;
     }
     public void choiceButtonD_Input()
     {
@@ -203,6 +211,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 3;
+        inputFinish = true;
     }
     public void choiceButtonE_Input()
     {
@@ -211,6 +221,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 4;
+        inputFinish = true;
     }
     public void choiceButtonF_Input()
     {
@@ -219,6 +231,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 5;
+        inputFinish = true;
     }
     public void choiceButtonG_Input()
     {
@@ -227,6 +241,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 6;
+        inputFinish = true;
     }
     public void choiceButtonH_Input()
     {
@@ -235,6 +251,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 7;
+        inputFinish = true;
     }
     public void choiceButtonI_Input()
     {
@@ -243,6 +261,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 8;
+        inputFinish = true;
     }
     public void choiceButtonJ_Input()
     {
@@ -251,6 +271,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 9;
+        inputFinish = true;
     }
     public void choiceButtonK_Input()
     {
@@ -259,6 +281,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 10;
+        inputFinish = true;
     }
     public void choiceButtonL_Input()
     {
@@ -267,6 +291,8 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
         disableEnableButton();
         Debug.Log("Choice Buttons are set to !interactable");
+        indexForAnswer = 11;
+        inputFinish = true;
     }
 
     void UI_Timer() //[BAGARES] Function for the UI Timer in game (some errors exist when in separate script)
@@ -310,5 +336,22 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
         choiceKButton.image.color = new Color(1f, 1f, 1f, 0.22f);
         choiceLButton.image.color = new Color(1f, 1f, 1f, 0.22f);
 
+    }
+    void checkingTheInput()
+    {
+        if (inputFinish == true)
+        {
+            if (answers[indexForAnswer] == "TRUE")
+            {
+                Debug.Log("PLAYER SCORE");
+                inputFinish = false;
+
+            }
+            else
+            {
+                Debug.Log("Player not Score");
+                inputFinish = false;
+            }
+        }
     }
 }

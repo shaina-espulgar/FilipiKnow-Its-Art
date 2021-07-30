@@ -29,6 +29,9 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
     public string firstInput; //[BAGARES] Since MAtchart is a game that will match two words related, we need 2 variables for the input
     public string secondInput;
     bool isAtSecondOption;
+    bool inputFinish;
+    int indexForAnswer, indexForAnswer2;
+
 
     public int indexNumber;
 
@@ -39,6 +42,7 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
     void Start()
     {
         isAtSecondOption = false;
+        inputFinish = false;
         currentTime = startingTime;
         UI_changeToWhiteButton();
     }
@@ -55,6 +59,7 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         question = quizLoader.Question;
 
         showTextInChoiceUI();
+        checkingTheInput();
 
         UI_Timer(); // Shows the UI for the Timer
         Next();
@@ -77,7 +82,8 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
             UI_changeToWhiteButton();
 
             isAtSecondOption = false;
-            indexNumber += 1;
+            inputFinish = false;
+            indexNumber += 2;
             quizLoader.indexQuestion = indexNumber;
 
             currentTime = startingTime;
@@ -152,12 +158,16 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if(isAtSecondOption == false)
         {
             firstInput = choiceA.text;
+            indexForAnswer = 0;
             isAtSecondOption = true;
+            
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceA.text;
+            indexForAnswer2 = 0;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -170,12 +180,15 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if (isAtSecondOption == false)
         {
             firstInput = choiceB.text;
+            indexForAnswer = 1;
             isAtSecondOption = true;
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceB.text;
+            indexForAnswer2 = 1;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -185,12 +198,15 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if (isAtSecondOption == false)
         {
             firstInput = choiceC.text;
+            indexForAnswer = 2;
             isAtSecondOption = true;
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceC.text;
+            indexForAnswer2 = 2;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -200,12 +216,15 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if (isAtSecondOption == false)
         {
             firstInput = choiceD.text;
+            indexForAnswer = 3;
             isAtSecondOption = true;
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceD.text;
+            indexForAnswer2 = 3;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -215,12 +234,15 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if (isAtSecondOption == false)
         {
             firstInput = choiceE.text;
+            indexForAnswer = 4;
             isAtSecondOption = true;
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceE.text;
+            indexForAnswer2 = 4;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -230,12 +252,15 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if (isAtSecondOption == false)
         {
             firstInput = choiceF.text;
+            indexForAnswer = 5;
             isAtSecondOption = true;
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceF.text;
+            indexForAnswer2 = 5;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -245,12 +270,15 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if (isAtSecondOption == false)
         {
             firstInput = choiceG.text;
+            indexForAnswer = 6;
             isAtSecondOption = true;
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceG.text;
+            indexForAnswer2 = 6;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -260,12 +288,15 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         if (isAtSecondOption == false)
         {
             firstInput = choiceH.text;
+            indexForAnswer = 7;
             isAtSecondOption = true;
             Debug.Log("Choice _, selected. Choose one more option");
         }
         else
         {
             secondInput = choiceH.text;
+            indexForAnswer2 = 7;
+            inputFinish = true;
             disableEnableButton();
 
         }
@@ -306,5 +337,23 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
         choiceGButton.interactable = !choiceGButton.interactable;
         choiceHButton.interactable = !choiceHButton.interactable;
 
+    }
+
+    void checkingTheInput()
+    {
+        if (inputFinish == true)
+        {
+            if (answers[indexForAnswer] == "TRUE" && answers[indexForAnswer2] == "TRUE")
+            {
+                Debug.Log("PLAYER SCORE");
+                inputFinish = false;
+
+            }
+            else
+            {
+                Debug.Log("Player not Score");
+                inputFinish = false;
+            }
+        }
     }
 }

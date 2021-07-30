@@ -44,7 +44,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
     void Start()
     {
         System.Random random = new System.Random();
-        //currentTime = startingTime;
+        currentTime = startingTime;
         randomNumForChoiceText = random.Next(0,2);
         UI_changeToWhiteButton();
 
@@ -58,7 +58,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
     //--- BELOW HERE will eventually be the product ---
     private void Update()
     {
-        quizLoader.LoadCSV("Classifyart", "CATPP");
+        quizLoader.LoadCSV("Classifyart", "GAMABA");
         choices = quizLoader.Choices; //<choices>
         answers = quizLoader.Answers; //<topics>
 
@@ -68,7 +68,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
         checkingTheInput();
         UI_Timer();
 
-        //Next();
+        Next();
 
 
 
@@ -77,6 +77,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
     {
         if(addToDictionary == true)
         {
+
             CSV_Questionnaire_Classifyart[] classifyart = {
             new CSV_Questionnaire_Classifyart(choices[0], answers[0]), // The Key should be the answer and the string should be the topic thar refers to answer.
             new CSV_Questionnaire_Classifyart(choices[1], answers[0]),
@@ -91,8 +92,8 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
                 ChoicesAnswersDictionary.Add(x.Answers, x); //x.Answers here are the choices[x]
 
             }
-            CSV_Questionnaire_Classifyart csv_data = ChoicesAnswersDictionary[choices[0]]; //This could be a potential variable for the player input
-            Debug.Log(csv_data.Topics);
+            //CSV_Questionnaire_Classifyart csv_data = ChoicesAnswersDictionary[choices[0]]; //This could be a potential variable for the player input
+            //Debug.Log(csv_data.Topics);
 
             addToDictionary = false;
         }
@@ -100,22 +101,23 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
 
     public void Next()
     {
-
+        if (currentTime == 0)
+        {
             /*Format for the Dictionary<string, string>
-            * Dictionary<choices, answers> Tkey, Tstring
-            */
-
+        * Dictionary<choices, answers> Tkey, Tstring
+        */
             disableEnableChoiceButton();
             UI_changeToWhiteButton();
 
             indexNumber += 1;
+            inputFinish = false;
             quizLoader.indexQuestion = indexNumber;
 
             currentTime = startingTime;
 
             addToDictionary = true;
             Add_Array_In_Dictionary();
-        
+        }
 
     }
 
