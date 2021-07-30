@@ -18,6 +18,8 @@ public class PlayfabManager : MonoBehaviour
     public InputField emailInput;
     public InputField passwordInput;
 
+    public static string EmailAccount { get; private set; }
+
     // Registering
     public void RegisterButton() {
         var request = new RegisterPlayFabUserRequest {
@@ -59,9 +61,13 @@ public class PlayfabManager : MonoBehaviour
     void OnForgotPasswordSuccess(SendAccountRecoveryEmailResult result) {
         messageText.text = "Sent password recovery link!";
     }
-    
 
     void OnError(PlayFabError error) {
         messageText.text = "Error: " + error.ErrorMessage;
+    }
+
+    public void SaveEmail()
+    {
+        EmailAccount = emailInput.text;
     }
 }

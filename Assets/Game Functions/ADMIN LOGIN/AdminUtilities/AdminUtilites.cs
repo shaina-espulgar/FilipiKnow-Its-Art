@@ -22,6 +22,9 @@ public class AdminUtilites : MonoBehaviour
     [Header("Admin Utility Button")]
     [SerializeField] Button[] adminButton;
 
+    [Header("Account Name")]
+    [SerializeField] private TMP_Text accountName;
+
     // GameObjects that will be presented inside the ScrollView
     [Header("GameObjects")]
     public GameObject UI_Classicart;
@@ -63,6 +66,8 @@ public class AdminUtilites : MonoBehaviour
     void Start()
     {
         downloadQuizDatabase.DownloadQuizzes();
+
+        AccountName(PlayfabManager.EmailAccount);
 
         // For Dropdown Options
         for (int i = 0; i < quizLoader.TextAssetData.Length; i++)
@@ -170,6 +175,21 @@ public class AdminUtilites : MonoBehaviour
             case "TicTacToe": class_TicTacToe.Modify("edit"); break;
             case "Maze": class_Maze.Modify("edit"); break;
         }
+    }
+
+    public void AccountName(string name)
+    {
+
+        if (name == null)
+        {
+            accountName.text = "adminAccount";
+        }
+        else
+        {
+            string[] email = name.Split('@');
+            accountName.text = email[0];
+        }
+
     }
 
     public void CreateNew()
