@@ -20,7 +20,6 @@ public class UploadQuizDatabase : MonoBehaviour
 
     [Header("Game Object")]
     [SerializeField] private GameObject promptWindow;
-    private GameObject permissionWindow = null;
 
     [Header("Dropdown Quizzes")]
     [SerializeField] private TMP_Dropdown dropDownQuizzes;

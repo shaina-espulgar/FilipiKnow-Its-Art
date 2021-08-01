@@ -44,7 +44,7 @@ public class ScoreDisplay : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("LeaderBoards");
     }
 
     // For the share function

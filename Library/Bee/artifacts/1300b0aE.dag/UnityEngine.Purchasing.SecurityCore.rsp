@@ -130,6 +130,7 @@
 -define:MIRROR_40_0_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Mono.Data.Sqlite.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

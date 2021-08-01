@@ -8,7 +8,6 @@ public class PlayerInputName : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private TMP_InputField playerName;
-    [SerializeField] private Button joinGame;
 
     public static string DisplayName { get; private set; }
 

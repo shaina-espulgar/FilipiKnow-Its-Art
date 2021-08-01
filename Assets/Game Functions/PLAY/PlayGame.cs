@@ -11,9 +11,6 @@ public class PlayGame : MonoBehaviour
     [Header("Number of Players")]
     [SerializeField] private Button[] playerNumber;
 
-    // Sets the button that has formely applied by the selected color
-    private Button former;
-
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -23,8 +20,12 @@ public class PlayGame : MonoBehaviour
     {
         downloadQuizDatabase.DownloadQuizzes();
 
-        // test
+        // Use this if you are now already done with the game
+        // SceneManager.LoadScene("GamePlay");
+
+        // Testing....
         SceneManager.LoadScene("ScoreMenu");
+        // SceneManager.LoadScene("LeaderBoards");
     }
 
     public void GoToAvatarChangeScene()
