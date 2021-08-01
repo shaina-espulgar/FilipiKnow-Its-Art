@@ -19,7 +19,7 @@ public class PlayGame : MonoBehaviour
     public void GoToGamePlay()
     {
         downloadQuizDatabase.DownloadQuizzes();
-
+            
         // Use this if you are now already done with the game
         // SceneManager.LoadScene("GamePlay");
 

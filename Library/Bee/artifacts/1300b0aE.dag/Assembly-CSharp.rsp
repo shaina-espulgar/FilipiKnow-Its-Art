@@ -444,6 +444,7 @@
 "Assets/UniScripts/PermissionsRationaleDialog.cs"
 "Assets/UniScripts/PlayerAvatarProfile.cs"
 "Assets/UniScripts/PlayerInputName.cs"
+"Assets/UniScripts/PlayfabLeaderboard.cs"
 "Assets/UniScripts/PlayfabManager.cs"
 "Assets/UniScripts/QuizLoader.cs"
 "Assets/UniScripts/ScoreDisplay.cs"
