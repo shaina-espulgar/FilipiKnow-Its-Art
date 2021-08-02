@@ -100,7 +100,7 @@ public class PlayfabLeaderboard : MonoBehaviour
         {
             StatisticName = "Filipiknow Score",
             StartPosition = 0,
-            MaxResultsCount = 10
+            MaxResultsCount = 5
         };
         PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
     }
@@ -116,9 +116,8 @@ public class PlayfabLeaderboard : MonoBehaviour
         {
             GameObject newGameObject = Instantiate(rowPrefab, rowsParent);
             TMP_Text[] texts = newGameObject.GetComponentsInChildren<TMP_Text>();
-            texts[0].text = (item.Position + 1).ToString();
-            texts[1].text = item.DisplayName;
-            texts[2].text = item.StatValue.ToString();
+            texts[0].text = item.DisplayName;
+            texts[1].text = item.StatValue.ToString();
 
             Debug.Log(item.Position + "|" + item.PlayFabId + "|" + item.StatValue);
         }

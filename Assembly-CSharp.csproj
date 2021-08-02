@@ -120,7 +120,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\UniScripts\PlayfabManager.cs" />
     <Compile Include="Assets\Game Functions\MAIN MENU\MainMenu.cs" />
-    <Compile Include="Assets\UniScripts\DisplayHighScore.cs" />
+    <Compile Include="Assets\UniScripts\PlayfabLeaderboard.cs" />
     <Compile Include="Assets\UniScripts\InputFieldsChecker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\ComponentActions.cs" />
@@ -152,7 +152,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Matchart.cs" />
-    <Compile Include="Assets\UniScripts\PlayfabLeaderboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -423,9 +422,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>Library\PackageCache\com.unity.analytics@3.5.3\Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.Sqlite">
-      <HintPath>Assets\Plugins\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.Unsafe.dll</HintPath>

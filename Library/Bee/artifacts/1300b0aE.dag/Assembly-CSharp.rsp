@@ -130,7 +130,6 @@
 -define:MIRROR_40_0_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"Assets/Plugins/Mono.Data.Sqlite.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
@@ -437,7 +436,6 @@
 "Assets/UniScripts/BackgroundMusic.cs"
 "Assets/UniScripts/ChangeInput.cs"
 "Assets/UniScripts/DebugMessage.cs"
-"Assets/UniScripts/DisplayHighScore.cs"
 "Assets/UniScripts/DontDestroyAudio.cs"
 "Assets/UniScripts/DownloadQuizDatabase.cs"
 "Assets/UniScripts/InputFieldsChecker.cs"
