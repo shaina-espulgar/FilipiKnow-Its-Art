@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
 using TMPro;
@@ -121,5 +122,10 @@ public class PlayfabLeaderboard : MonoBehaviour
 
             Debug.Log(item.Position + "|" + item.PlayFabId + "|" + item.StatValue);
         }
+    }
+
+    public void ExitToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
