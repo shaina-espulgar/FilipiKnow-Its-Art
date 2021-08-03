@@ -10,6 +10,7 @@ public class QuizGameInitializer : MonoBehaviour
     [Header("Gameobjects")]
     [SerializeField] private GameObject quizTypePanel;
     [SerializeField] private GameObject subjectTypePanel;
+    [SerializeField] private GameObject dummyDisplayQuestion;
 
     [Header("ToQuizTypes")]
     [SerializeField] private TMP_Text textButton;
@@ -22,8 +23,7 @@ public class QuizGameInitializer : MonoBehaviour
     [Header("PickerWheel")]
     [SerializeField] private PickerWheel pickerWheel;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         quizTypePanel.SetActive(true);
 
@@ -43,6 +43,8 @@ public class QuizGameInitializer : MonoBehaviour
 
             pickerWheel.OnSpinEnd(wheelPiece => {
                 Debug.Log("Label  : " + wheelPiece.Label);
+
+                SaveTypeOfQuestion(wheelPiece.Label);
                 textButton.text = "Next";
             });
         }
@@ -78,23 +80,43 @@ public class QuizGameInitializer : MonoBehaviour
         {
             case "National Artists":
                 Debug.Log("Chosen Subject: National Artists");
+                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "GAMABA":
                 Debug.Log("Chosen Subject: GAMABA");
+                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "CAFP":
                 Debug.Log("Chosen Subject: CAFP");
+                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "CATPP":
                 Debug.Log("Chosen Subject: CATPP");
+                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "CAP":
                 Debug.Log("Chosen Subject: CAP");
+                SaveTypeOfSubject(typeOfSubject);
                 break;
         }
+
+        subjectTypePanel.SetActive(false);
+        dummyDisplayQuestion.SetActive(true);
+    }
+
+    public static string typeOfSubject { get; private set; }
+    void SaveTypeOfSubject(string selectedSubject)
+    {
+        typeOfSubject = selectedSubject;
+    }
+
+    public static string typeOfQuestion { get; private set; }
+    void SaveTypeOfQuestion(string selectedQuestion)
+    {
+        typeOfQuestion = selectedQuestion;
     }
 }
