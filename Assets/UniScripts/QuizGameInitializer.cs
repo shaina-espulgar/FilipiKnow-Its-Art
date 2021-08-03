@@ -80,29 +80,25 @@ public class QuizGameInitializer : MonoBehaviour
         {
             case "National Artists":
                 Debug.Log("Chosen Subject: National Artists");
-                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "GAMABA":
                 Debug.Log("Chosen Subject: GAMABA");
-                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "CAFP":
                 Debug.Log("Chosen Subject: CAFP");
-                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "CATPP":
                 Debug.Log("Chosen Subject: CATPP");
-                SaveTypeOfSubject(typeOfSubject);
                 break;
 
             case "CAP":
                 Debug.Log("Chosen Subject: CAP");
-                SaveTypeOfSubject(typeOfSubject);
                 break;
         }
+        SaveTypeOfSubject(typeOfSubject);
 
         subjectTypePanel.SetActive(false);
         dummyDisplayQuestion.SetActive(true);

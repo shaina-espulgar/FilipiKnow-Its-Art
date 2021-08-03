@@ -116,6 +116,7 @@
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\UniScripts\ChangeInput.cs" />
+    <Compile Include="Assets\UniScripts\DummyCode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_TicTacToe.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Classifyart_QuestionTable.cs" />
@@ -162,7 +163,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Matchart.cs" />
-    <Compile Include="Assets\UniScripts\DummyCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

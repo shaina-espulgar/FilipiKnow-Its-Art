@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 [System.Serializable]
-[HideInInspector]
 public class QuizList
 {
     public List<QuizName> QuizName = new List<QuizName>();
@@ -23,14 +22,12 @@ public class QuizName
 public class DownloadQuizDatabase : MonoBehaviour
 {
     // Loads all of the Quizzes inside Google Drive
-    [HideInInspector] public QuizList QuizList = new QuizList();
+    public QuizList QuizList = new QuizList();
 
     private readonly string[] questionTypes = { "Classicart", "Switchart", "Classifyart", "Matchart", "Grabart", "TicTacToe", "Maze" };
 
     [Header("Debug Menu")]
     [SerializeField] private DebugMessage debugMessage;
-
-    [HideInInspector] public int questionDownloaded = 0;
 
     // Json Google Drive Link
     readonly string jsonURL = "https://drive.google.com/uc?export=download&id=1N27nMhcAJT4DWBzTboLfZ9UvGeWN4j-I";
@@ -65,8 +62,6 @@ public class DownloadQuizDatabase : MonoBehaviour
                     if (name.Quiz == type)
                     {
                         StartCoroutine(GetQuiz(name.FileURL, type));
-
-                        
                     }
                 }
             }
@@ -88,34 +83,12 @@ public class DownloadQuizDatabase : MonoBehaviour
         {
             filepath = Application.persistentDataPath + "/" + typeOfQuestion + ".csv";
 
-            string[] csvReplace = request.downloadHandler.text.Split(new string[] { "\n" }, StringSplitOptions.None).ToArray();
-            File.WriteAllLines(filepath, csvReplace);
+            // string[] csvReplace = new List<string>.(request.downloadHandler.text);
+            File.WriteAllText(filepath, request.downloadHandler.text);
 
             debugMessage.OnDownloadComplete(typeOfQuestion);
             Debug.Log("File: " + typeOfQuestion + " Replaced");
-            questionDownloaded++;
         }
         request.Dispose();
     }
-
-    /*
-    public bool CheckQuiz()
-    {
-        for(int i = 0; i < questionTypes.Length; i++)
-        {
-            if (File.Exists(Application.persistentDataPath + "/" + questionTypes[i] + ".csv"))
-            {
-                // Conditions if that file exists
-                Debug.Log(questionTypes[i] + "verified!");
-            }
-            else
-            {
-                Debug.Log(questionTypes[i] + "unknown. Cancelling...");
-                return false;
-            }
-        }
-
-        return true;
-    }
-    */
 }
