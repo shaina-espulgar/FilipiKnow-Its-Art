@@ -130,6 +130,7 @@
 -define:MIRROR_40_0_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
@@ -369,6 +370,13 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs"
+"Assets/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs"
+"Assets/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs"
+"Assets/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs"
+"Assets/Demigiant/DOTween/Modules/DOTweenModuleUI.cs"
+"Assets/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs"
+"Assets/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs"
 "Assets/Game Functions/ABOUT US/AboutUs.cs"
 "Assets/Game Functions/ADMIN LOGIN/AdminMenu.cs"
 "Assets/Game Functions/ADMIN LOGIN/AdminUtilities/AdminUtilites.cs"
@@ -397,6 +405,8 @@
 "Assets/Game Functions/MAIN MENU/MainMenu.cs"
 "Assets/Game Functions/PLAY/PlayGame.cs"
 "Assets/Game Functions/SETTINGS/SettingsMenu.cs"
+"Assets/PickerWheel/Scripts/PickerWheel.cs"
+"Assets/PickerWheel/Scripts/WheelPiece.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
@@ -444,6 +454,7 @@
 "Assets/UniScripts/PlayerInputName.cs"
 "Assets/UniScripts/PlayfabLeaderboard.cs"
 "Assets/UniScripts/PlayfabManager.cs"
+"Assets/UniScripts/QuizGameInitializer.cs"
 "Assets/UniScripts/QuizLoader.cs"
 "Assets/UniScripts/ScoreDisplay.cs"
 "Assets/UniScripts/Testing Code.cs"

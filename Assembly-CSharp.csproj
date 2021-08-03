@@ -88,6 +88,7 @@
     <Compile Include="Assets\UtilScript\Utils\UtilsClass.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_PauseMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\PickerWheel\Scripts\WheelPiece.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\PositionRendererSorter.cs" />
     <Compile Include="Assets\UniScripts\PlayerAvatarProfile.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Switchart.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Grabart.cs" />
     <Compile Include="Assets\TextMesh Pro\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Category_Handling.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionTimer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Assets\UtilScript\Utils\UI_Bar.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_PlayerStat.cs" />
     <Compile Include="Assets\UniScripts\PlayerInputName.cs" />
+    <Compile Include="Assets\PickerWheel\Scripts\PickerWheel.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\UniScripts\ChangeInput.cs" />
@@ -117,12 +120,17 @@
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Classifyart_QuestionTable.cs" />
     <Compile Include="Assets\Game Functions\PLAY\PlayGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\UniScripts\PlayfabManager.cs" />
     <Compile Include="Assets\Game Functions\MAIN MENU\MainMenu.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
     <Compile Include="Assets\UniScripts\PlayfabLeaderboard.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\UniScripts\InputFieldsChecker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\UtilScript\MonoBehaviours\ComponentActions.cs" />
     <Compile Include="Assets\UniScripts\DebugMessage.cs" />
     <Compile Include="Assets\UtilScript\Utils\UI_Sprite.cs" />
@@ -139,6 +147,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_SwitchArt_QuestionTable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\UniScripts\BackgroundMusic.cs" />
@@ -152,6 +161,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\UtilScript\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_Matchart.cs" />
+    <Compile Include="Assets\UniScripts\QuizGameInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -164,17 +174,20 @@
     <None Include="Assets\Game Assets\Questions\Grab\CAP.txt" />
     <None Include="Assets\Game Assets\Questions\Grab\NATART.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\UtilScript\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Demigiant\DOTween\DOTween.dll" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Game Assets\Questions\Grab\GAMABA.txt" />
@@ -416,6 +429,9 @@
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
