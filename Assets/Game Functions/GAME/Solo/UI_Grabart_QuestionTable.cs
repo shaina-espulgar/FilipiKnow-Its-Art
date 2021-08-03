@@ -30,10 +30,13 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
 
 
     public string playerInput; 
-    public int indexNumber; //[BAGARES] int var for changing the indexer variable from quizloader
+    public int indexNumber;
+    public int indexNumber_;//[BAGARES] int var for changing the indexer variable from quizloader
     public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in QUestion UI
     bool inputFinish;
     int indexForAnswer;
+    public int questionNumber;
+    System.Random random = new System.Random();
 
     float currentTime = 0f; //[BAGARES] float var, for the Timer 
     float startingTime = 10f;
@@ -42,7 +45,9 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     void Start()
     {
         inputFinish = false;
-        
+        randomizingFunction();
+        questionNumber = 0;
+        quizLoader.indexQuestion = indexNumber_;
         currentTime = startingTime;
         UI_changeToWhiteButton();
 
@@ -53,7 +58,7 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
     void Update()
     {
         //== Then assign a Question Type...
-        quizLoader.LoadCSV("Grabart", "National Artist");
+        quizLoader.LoadCSV("Grabart", "National Artists");
 
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;
@@ -76,8 +81,9 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
             disableEnableButton();
             UI_changeToWhiteButton();
 
-            indexNumber += 1;
-            quizLoader.indexQuestion = indexNumber;
+            randomizingFunction();
+            questionNumber += 1; 
+            quizLoader.indexQuestion = indexNumber_;
             Debug.Log(choiceA.text + " is the new text");
 
             currentTime = startingTime;
@@ -353,5 +359,16 @@ public class UI_Grabart_QuestionTable : MonoBehaviour
                 inputFinish = false;
             }
         }
+    }
+    void randomizingFunction()
+    {
+        indexNumber = random.Next(0, 10);
+        while (indexNumber % 2 == 0)
+        {
+            indexNumber = random.Next(0, 10);
+
+        }
+        indexNumber_ = indexNumber + 1;
+        Debug.Log("The index Number is: " + indexNumber_);
     }
 }

@@ -25,8 +25,10 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     [SerializeField] private Button choiceCButton; public TextMeshProUGUI choiceC;
     [SerializeField] private Button choiceDButton; public TextMeshProUGUI choiceD;
 
-    public string playerInput; 
-    public int indexNumber; // [BAGARES] int var for changing the indexer variable from quizloader
+    public string playerInput;
+    public int questionNumber; // [BAGARES] A number integer to know how many questions ave passed
+    int indexNumber; // [BAGARES] int var for changing the indexer variable from quizloader
+    System.Random random = new System.Random();
     bool inputFinish; //[BAGARES] bool var to check if the player finished answering
     public TextMeshProUGUI QuestionText; //[BAGARES] Reference for the Text in Question UI
 
@@ -35,6 +37,9 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
 
     void Start()
     {
+        
+        indexNumber = random.Next(0, 11);
+        questionNumber = 0;
         currentTime = startingTime;
         UI_changeToWhiteButton();
         inputFinish = false;
@@ -78,8 +83,8 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
             choiceCButton.interactable = !choiceCButton.interactable;
             choiceDButton.interactable = !choiceDButton.interactable;
             UI_changeToWhiteButton();
-
-            indexNumber += 1;
+            questionNumber += 1;
+            indexNumber = random.Next(0, 11);
             quizLoader.indexQuestion = indexNumber;
 
             currentTime = startingTime;

@@ -17,7 +17,7 @@ public class UI_GameoverMenu : MonoBehaviour
     public UI_Classifyart_QuestionTable Classifyart;
     void Update()
     {
-        if(Classicart.indexNumber == 5 || Grabart.indexNumber == 10 || Matchart.indexNumber == 10 || Classifyart.indexNumber == 5) //[BAGARES] Change the value of this to an indexernumber that you want
+        if(Classicart.questionNumber == 5 || Grabart.questionNumber == 5 || Matchart.questionNumber == 5 || Classifyart.questionNumber == 5) //[BAGARES] Change the value of this to an indexernumber that you want
         {
             GameOverMenuShow();
             Time.timeScale = 0f;

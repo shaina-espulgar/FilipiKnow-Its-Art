@@ -2313,7 +2313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &269221799
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2881,7 +2881,7 @@ GameObject:
   - component: {fileID: 407464793}
   - component: {fileID: 407464792}
   m_Layer: 5
-  m_Name: subjectIndicator
+  m_Name: category_Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4183,7 +4183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &758511138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4234,7 +4234,7 @@ MonoBehaviour:
   choiceDButton: {fileID: 703383015}
   choiceD: {fileID: 1814044374}
   playerInput: 
-  indexNumber: 0
+  questionNumber: 0
   QuestionText: {fileID: 183103007}
 --- !u!114 &758511140
 MonoBehaviour:
@@ -4500,7 +4500,9 @@ MonoBehaviour:
   choiceL: {fileID: 616080774}
   playerInput: 
   indexNumber: 0
+  indexNumber_: 0
   QuestionText: {fileID: 1301659853}
+  questionNumber: 0
 --- !u!114 &804651536
 MonoBehaviour:
   m_ObjectHideFlags: 0

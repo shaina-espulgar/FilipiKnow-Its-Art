@@ -13,7 +13,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
     [SerializeField] private CSV_Questionnaire_Classifyart CLASSIFY_ART;
     [SerializeField] TextMeshProUGUI UI_CountDown; //[BAGARES] UI Object for the timer
 
-    string question; //{BAGARES] MAybe reference for an array of questions, answers and choices saved in Quizloader.cs
+    string question; //{BAGARES] MAybe reference for an array of questions, answers and choices saved in Quizloader.
     string[] choices;
     string[] answers;
 
@@ -31,6 +31,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
     public string playerInput; //variable for First Chocie of the player to get the key.
     public string playerInput2; // Second choice of the player to get the string.
     public int indexNumber; // [BAGARES] int var for changing the indexer variable from quizloader
+    public int questionNumber;
 
 
     public Dictionary<string, CSV_Questionnaire_Classifyart> ChoicesAnswersDictionary 
@@ -43,6 +44,8 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
 
     void Start()
     {
+        questionNumber = 0;
+
         System.Random random = new System.Random();
         currentTime = startingTime;
         randomNumForChoiceText = random.Next(0,2);
@@ -58,7 +61,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
     //--- BELOW HERE will eventually be the product ---
     private void Update()
     {
-        quizLoader.LoadCSV("Classifyart", "GAMABA");
+        quizLoader.LoadCSV("Classifyart", "National Artist");
         choices = quizLoader.Choices; //<choices>
         answers = quizLoader.Answers; //<topics>
 
@@ -106,6 +109,9 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
             /*Format for the Dictionary<string, string>
         * Dictionary<choices, answers> Tkey, Tstring
         */
+
+            questionNumber += 1;
+
             disableEnableChoiceButton();
             UI_changeToWhiteButton();
 
@@ -115,6 +121,7 @@ public class UI_Classifyart_QuestionTable : MonoBehaviour
 
             currentTime = startingTime;
 
+            ChoicesAnswersDictionary.Clear();
             addToDictionary = true;
             Add_Array_In_Dictionary();
         }

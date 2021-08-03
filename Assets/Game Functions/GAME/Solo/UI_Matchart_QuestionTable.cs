@@ -34,6 +34,10 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
 
 
     public int indexNumber;
+    public int indexNumber_;
+    System.Random random = new System.Random();
+
+    public int questionNumber;
 
     float currentTime = 0f; //[BAGARES] float var, for the Timer 
     float startingTime = 10f;
@@ -41,6 +45,9 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
 
     void Start()
     {
+        questionNumber = 0;
+        randomizingFunction();
+        quizLoader.indexQuestion = indexNumber_;
         isAtSecondOption = false;
         inputFinish = false;
         currentTime = startingTime;
@@ -52,8 +59,8 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
     void Update()
     {
         //== Then assign a Question Type...
-        quizLoader.LoadCSV("Matchart", "National Artist");
 
+        quizLoader.LoadCSV("Matchart", "National Artist");
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;
         question = quizLoader.Question;
@@ -73,9 +80,10 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
 
     public void Next()
     {
-
+        
         if (currentTime == 0)
         {
+            randomizingFunction();
 
             disableEnableButton();
             Debug.Log("Buttons are now set to interactable");
@@ -83,8 +91,9 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
 
             isAtSecondOption = false;
             inputFinish = false;
-            indexNumber += 2;
-            quizLoader.indexQuestion = indexNumber;
+            questionNumber += 1;
+
+            quizLoader.indexQuestion = indexNumber_;
 
             currentTime = startingTime;
         }
@@ -355,5 +364,17 @@ public class UI_Matchart_QuestionTable : MonoBehaviour
                 inputFinish = false;
             }
         }
+    }
+
+    void randomizingFunction()
+    {
+        indexNumber = random.Next(0, 10);
+        while(indexNumber % 2 == 0)
+        {
+            indexNumber = random.Next(0, 10);
+            
+        }
+        indexNumber_ = indexNumber + 1;
+        Debug.Log("The index Number is: " + indexNumber_);
     }
 }
