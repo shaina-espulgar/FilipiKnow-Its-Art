@@ -7,11 +7,19 @@ using TMPro;
 
 public class QuizGameInitializer : MonoBehaviour
 {
-    [Header("Gameobjects")]
+    [Header("Main Gameobject")]
+    [SerializeField] private GameObject quizIntializerPanel;
+
+    [Header("Initializer Gameobjects")]
     [SerializeField] private GameObject quizTypePanel;
     [SerializeField] private GameObject subjectTypePanel;
-    [SerializeField] private GameObject dummyDisplayQuestion;
 
+    [Header("Gameplay Gameobjects")]
+    [SerializeField] private GameObject UI_ClassicartPanel;
+    [SerializeField] private GameObject UI_GrabartPanel;
+    [SerializeField] private GameObject UI_MatchartPanel;
+    [SerializeField] private GameObject UI_ClassifyartPanel;
+    
     [Header("ToQuizTypes")]
     [SerializeField] private TMP_Text textButton;
 
@@ -50,11 +58,11 @@ public class QuizGameInitializer : MonoBehaviour
         }
         else if (textButton.text == "Next")
         {
-            ChooseSubject();
+            SelectSubject();
         }
     }
 
-    void ChooseSubject()
+    void SelectSubject()
     {
         quizTypePanel.SetActive(false);
         subjectTypePanel.SetActive(true);
@@ -104,9 +112,31 @@ public class QuizGameInitializer : MonoBehaviour
                 break;
         }
 
-
         subjectTypePanel.SetActive(false);
-        dummyDisplayQuestion.SetActive(true);
+        quizIntializerPanel.SetActive(false);
+        SwitchPanel();
+    }
+
+    void SwitchPanel()
+    {
+        switch (typeOfQuestion)
+        {
+            case "Classicart":
+                UI_ClassicartPanel.SetActive(true);
+                break;
+
+            case "Grabart":
+                UI_GrabartPanel.SetActive(true);
+                break;
+
+            case "Matchart":
+                UI_MatchartPanel.SetActive(true);
+                break;
+
+            case "Classifyart":
+                UI_ClassifyartPanel.SetActive(true);
+                break;
+        }
     }
 
     public static string typeOfSubject { get; private set; }
@@ -114,8 +144,7 @@ public class QuizGameInitializer : MonoBehaviour
     void SaveTypeOfSubject(string selectedSubject, int indexSubject)
     {
         typeOfSubject = selectedSubject;
-        indexOfSubject = indexSubject;
-        
+        indexOfSubject = indexSubject; 
     }
 
     public static string typeOfQuestion { get; private set; }

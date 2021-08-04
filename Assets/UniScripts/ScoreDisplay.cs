@@ -42,7 +42,7 @@ public class ScoreDisplay : MonoBehaviour
         // txt_Score.text = score;
     }
 
-    public void ReturnToMainMenu()
+    public void GoToLeaderboards()
     {
         SceneManager.LoadScene("LeaderBoards");
     }
