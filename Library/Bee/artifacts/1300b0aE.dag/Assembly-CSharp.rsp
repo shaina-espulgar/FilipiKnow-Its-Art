@@ -450,6 +450,7 @@
 "Assets/UniScripts/DownloadQuizDatabase.cs"
 "Assets/UniScripts/DummyCode.cs"
 "Assets/UniScripts/GamePlay/Game_Classicart.cs"
+"Assets/UniScripts/GamePlay/Game_Matchart.cs"
 "Assets/UniScripts/InputFieldsChecker.cs"
 "Assets/UniScripts/PermissionsRationaleDialog.cs"
 "Assets/UniScripts/PlayerAvatarProfile.cs"
