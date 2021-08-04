@@ -118,6 +118,7 @@
     <Compile Include="Assets\UniScripts\ChangeInput.cs" />
     <Compile Include="Assets\UniScripts\DummyCode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\UniScripts\GamePlay\Game_Classicart.cs" />
     <Compile Include="Assets\Game Functions\ADMIN LOGIN\AdminUtilities\Class_TicTacToe.cs" />
     <Compile Include="Assets\Game Functions\GAME\Solo\UI_Classifyart_QuestionTable.cs" />
     <Compile Include="Assets\Game Functions\PLAY\PlayGame.cs" />

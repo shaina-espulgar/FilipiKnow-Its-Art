@@ -449,6 +449,7 @@
 "Assets/UniScripts/DontDestroyAudio.cs"
 "Assets/UniScripts/DownloadQuizDatabase.cs"
 "Assets/UniScripts/DummyCode.cs"
+"Assets/UniScripts/GamePlay/Game_Classicart.cs"
 "Assets/UniScripts/InputFieldsChecker.cs"
 "Assets/UniScripts/PermissionsRationaleDialog.cs"
 "Assets/UniScripts/PlayerAvatarProfile.cs"

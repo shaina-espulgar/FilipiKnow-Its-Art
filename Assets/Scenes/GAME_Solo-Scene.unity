@@ -1937,6 +1937,7 @@ MonoBehaviour:
   playerInput: 
   playerInput2: 
   indexNumber: 0
+  questionNumber: 0
 --- !u!114 &238403794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2313,7 +2314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &269221799
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2393,6 +2394,8 @@ MonoBehaviour:
   firstInput: 
   secondInput: 
   indexNumber: 0
+  indexNumber_: 0
+  questionNumber: 0
 --- !u!1 &274626059
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,7 +4186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &758511138
 RectTransform:
   m_ObjectHideFlags: 0
