@@ -17,9 +17,7 @@ public class Class_Matchart : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] private TMP_InputField input_Question;
     [SerializeField] private TMP_InputField[] arrChoices;
-
-    [Header("Toggle")]
-    [SerializeField] private Toggle[] arrAnswers;
+    [SerializeField] private TMP_InputField[] arrAnswers;
 
     [Header("Dropdown")]
     [SerializeField] public Dropdown dropDownSubjectList;
@@ -33,11 +31,6 @@ public class Class_Matchart : MonoBehaviour
             string[] answers = quizLoader.Answers;
 
             input_Question.text = question;
-            for (int i = 0; i < answers.Length - 1; i++)
-            {
-                answers[i] = answers[i + 1];
-            }
-            Array.Resize(ref answers, answers.Length - 1);
 
             int index = 0;
             foreach (string text in choices)
@@ -49,14 +42,7 @@ public class Class_Matchart : MonoBehaviour
             index = 0;
             foreach (string text in answers)
             {
-                if (text == "TRUE")
-                {
-                    arrAnswers[index].isOn = true;
-                }
-                if (text == "FALSE")
-                {
-                    arrAnswers[index].isOn = false;
-                }
+                arrAnswers[index].text = text;
                 index++;
             }
         }
@@ -93,27 +79,19 @@ public class Class_Matchart : MonoBehaviour
         }
         combineInput = reserveInput + "|" + subject;
 
-        reserveToggle = "|";
+        reserveInput = "|";
         for (int i = 0; i < arrAnswers.Length; i++)
         {
             if (i < arrAnswers.Length - 1)
             {
-                if (arrAnswers[i].isOn == true)
-                {
-                    combineToggle = reserveToggle + "TRUE|";
-                    reserveToggle = combineToggle;
-                }
-                else
-                {
-                    combineToggle = reserveToggle + "|";
-                    reserveToggle = combineToggle;
-                }
+                combineInput = reserveInput + arrChoices[i].text + "|";
+                reserveInput = combineInput;
             }
             else
             {
-                if (arrAnswers[i].isOn == true) { combineToggle = reserveToggle + "TRUE"; }
-                else { combineToggle = reserveToggle; }
+                combineInput = reserveInput + arrAnswers[i].text;
             }
+
         }
 
         if (operation == "add")
