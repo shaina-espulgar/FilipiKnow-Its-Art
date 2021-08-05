@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loginRegisterBox: {fileID: 532493875}
-  loggedInText: {fileID: 0}
+  loggedInText: {fileID: 823540282}
   messageText: {fileID: 823540284}
   emailInput: {fileID: 2146863289}
   passwordInput: {fileID: 1065866588}

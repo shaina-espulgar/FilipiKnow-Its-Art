@@ -8,11 +8,6 @@ using PlayFab.ClientModels;
 
 public class PlayfabManager : MonoBehaviour
 {
-
-    [Header("Other")]
-    public GameObject loginRegisterBox;
-    public GameObject loggedInText;
-
     [Header("Login/register box")]
     public Text messageText;
     public InputField emailInput;
@@ -30,9 +25,7 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
     }
     void OnRegisterSuccess(RegisterPlayFabUserResult result) {
-        messageText.text = "Registered and logged in!";
-        loginRegisterBox.SetActive(false);
-        loggedInText.SetActive(true);
+        messageText.text = "Registered!";
     }
 
     // Logging in
