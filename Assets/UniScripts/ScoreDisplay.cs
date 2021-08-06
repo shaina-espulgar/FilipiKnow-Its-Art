@@ -24,7 +24,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         CurrentName(PlayerInputName.DisplayName);
         CurrentAvatar(AvatarDisplay.AvatarProfileIndex);
-        // CurrentScore(GamePlay.Score);
+        CurrentScore(Player_Score.PlayerScore);
     }
 
     void CurrentName(string name)
@@ -39,7 +39,7 @@ public class ScoreDisplay : MonoBehaviour
 
     void CurrentScore(int score)
     {
-        // txt_Score.text = score;
+        txt_Score.text = score.ToString();
     }
 
     public void GoToLeaderboards()

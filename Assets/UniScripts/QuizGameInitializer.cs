@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using EasyUI.PickerWheelUI;
 using TMPro;
@@ -28,15 +29,31 @@ public class QuizGameInitializer : MonoBehaviour
     [SerializeField] private Button subject_1;
     [SerializeField] private Button subject_2;
 
+    [Header("To Subject Counter")]
+    [SerializeField] private Sprite[] iconSubjectSprites;
+    [SerializeField] private Image[] iconSubjectImages;
+
     [Header("PickerWheel")]
     [SerializeField] private PickerWheel pickerWheel;
 
+    [HideInInspector] public int QuizCounter = 0;
+    private readonly int QuizLimit = 3; 
+
     void OnEnable()
     {
-        quizTypePanel.SetActive(true);
+        textButton.text = "Spin";
 
-        subject_1.onClick.AddListener(delegate { ChosenSubject(subject_1.image.sprite.name); });
-        subject_2.onClick.AddListener(delegate { ChosenSubject(subject_2.image.sprite.name); });
+        if (QuizCounter == QuizLimit)
+        {
+            SceneManager.LoadScene("ScoreMenu");
+        }
+        else
+        {
+            quizTypePanel.SetActive(true);
+
+            subject_1.onClick.AddListener(delegate { ChosenSubject(subject_1.image.sprite.name); });
+            subject_2.onClick.AddListener(delegate { ChosenSubject(subject_2.image.sprite.name); });
+        }
     }
 
     public void RandomQuiz()
@@ -112,6 +129,8 @@ public class QuizGameInitializer : MonoBehaviour
                 break;
         }
 
+        ApplySubjectIcon();
+
         subjectTypePanel.SetActive(false);
         quizIntializerPanel.SetActive(false);
         SwitchPanel();
@@ -136,6 +155,14 @@ public class QuizGameInitializer : MonoBehaviour
             case "Classifyart":
                 UI_ClassifyartPanel.SetActive(true);
                 break;
+        }
+    }
+
+    public void ApplySubjectIcon()
+    {
+        for (int i = 0; i < iconSubjectImages.Length; i++)
+        {
+            iconSubjectImages[i].sprite = iconSubjectSprites[QuizGameInitializer.indexOfSubject];
         }
     }
 

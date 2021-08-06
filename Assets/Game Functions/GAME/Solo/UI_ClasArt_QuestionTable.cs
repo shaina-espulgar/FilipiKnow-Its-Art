@@ -26,7 +26,7 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
     [SerializeField] private Button choiceDButton; public TextMeshProUGUI choiceD;
 
     public string playerInput;
-    public int questionNumber; // [BAGARES] A number integer to know how many questions ave passed
+    public int questionNumber; // [BAGARES] A number integer to know how many questions have passed
     int indexNumber; // [BAGARES] int var for changing the indexer variable from quizloader
     System.Random random = new System.Random();
     bool inputFinish; //[BAGARES] bool var to check if the player finished answering
@@ -37,7 +37,6 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
 
     void Start()
     {
-        
         indexNumber = random.Next(0, 11);
         questionNumber = 0;
         currentTime = startingTime;
@@ -55,8 +54,6 @@ public class UI_ClasArt_QuestionTable : MonoBehaviour
         choices = quizLoader.Choices;
         answers = quizLoader.Answers;
         question = quizLoader.Question;
-
-        
 
         showTextInQuestionUI();
         showTextInChoiceUI();

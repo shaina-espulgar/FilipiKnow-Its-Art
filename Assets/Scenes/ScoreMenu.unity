@@ -242,8 +242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105.32852, y: -472.14}
-  m_SizeDelta: {x: 187.8249, y: 94.875}
+  m_AnchoredPosition: {x: -70.74599, y: -314.71967}
+  m_SizeDelta: {x: 136.4368, y: 63.8561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893143843
 MonoBehaviour:
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab407acf164b134ebed15ac29acc18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 0}
+  scoreDisplay: {fileID: 1875062729}
   txt_Player: {fileID: 1664118279}
   txt_Score: {fileID: 1875062731}
   image_Avatar: {fileID: 1900368206}
@@ -481,8 +481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281.6086, y: -467.9}
-  m_SizeDelta: {x: 109.9809, y: 103.3509}
+  m_AnchoredPosition: {x: -187.93486, y: -312.19156}
+  m_SizeDelta: {x: 73.1912, y: 69.3912}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198118474
 MonoBehaviour:

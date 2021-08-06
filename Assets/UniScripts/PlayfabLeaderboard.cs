@@ -15,8 +15,7 @@ public class PlayfabLeaderboard : MonoBehaviour
     private int scoreRecorded;
     void Start()
     {
-        // TO KHUILLE: PLACE YOUR GAMEPLAY SCORE IN HERE
-        // scoreRecorded = GamePlay.score;
+        scoreRecorded = Player_Score.PlayerScore;
 
         Login();
     }
@@ -47,8 +46,6 @@ public class PlayfabLeaderboard : MonoBehaviour
 
         SubmitName();
 
-        // TO KHUILLE: THEN remove this line
-        scoreRecorded = Random.Range(0, 1000);
         SendLeaderboard(scoreRecorded);
 
         GetLeaderboard();

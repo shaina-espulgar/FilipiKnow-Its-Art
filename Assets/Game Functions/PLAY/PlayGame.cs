@@ -20,12 +20,7 @@ public class PlayGame : MonoBehaviour
     {
         downloadQuizDatabase.DownloadQuizzes();
             
-        // Use this if you are now already done with the game
-        // SceneManager.LoadScene("GamePlay");
-
-        // Testing....
-        SceneManager.LoadScene("ScoreMenu");
-        // SceneManager.LoadScene("LeaderBoards");
+        SceneManager.LoadScene("GamePlay");
     }
 
     public void GoToAvatarChangeScene()
