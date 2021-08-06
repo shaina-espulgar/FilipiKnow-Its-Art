@@ -26,11 +26,8 @@ public class Class_Matchart : MonoBehaviour
     {
         if (display == true)
         {
-            string question = quizLoader.Question;
             string[] choices = quizLoader.Choices;
             string[] answers = quizLoader.Answers;
-
-            input_Question.text = question;
 
             int index = 0;
             foreach (string text in choices)
