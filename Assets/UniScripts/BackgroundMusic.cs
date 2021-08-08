@@ -5,19 +5,17 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
-    private static BackgroundMusic backgroundMusic;
 
     void Awake()
     {
-        if (backgroundMusic == null)
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Audio_BG");
+        if (objs.Length > 1)
         {
-            backgroundMusic = this;
-            DontDestroyOnLoad(backgroundMusic);
+            Destroy(this.gameObject);
         }
-
         else
         {
-            Destroy(gameObject);
+            DontDestroyOnLoad(this.gameObject);
         }
     }
 }

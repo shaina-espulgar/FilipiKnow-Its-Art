@@ -9,6 +9,9 @@ public class Game_Matchart : MonoBehaviour
     [Header("Quizloader")]
     [SerializeField] private QuizLoader quizLoader;
 
+    [Header("Audio Play")]
+    [SerializeField] private AudioPlay audioPlay;
+
     [Header("Quiz Game Initializer")]
     [SerializeField] private QuizGameInitializer quizGameInitializer;
 
@@ -44,9 +47,12 @@ public class Game_Matchart : MonoBehaviour
 
     // Modify this part for the mechanics....
     private float currentTime = 0f;
-    private float startingTime = 10f;
+    private float startingTime = 20f;
     private int round = 1;
     private readonly int roundLimit = 2;
+
+    private int selected;
+    private int selectedLimit = 2;
 
     private int clickedButton;
     private Dictionary<string, string> questionDict = new Dictionary<string, string>();
@@ -60,8 +66,10 @@ public class Game_Matchart : MonoBehaviour
         roundCounter.text = round.ToString();
 
 
-        // quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
-        quizLoader.LoadCSV("Matchart", "CAFP");
+        quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
+        // quizLoader.LoadCSV("Matchart", "CAFP");
+
+        audioPlay.AudioTimer("play");
     }
 
     void Update()
@@ -119,8 +127,8 @@ public class Game_Matchart : MonoBehaviour
         }
 
         quizLoader.indexQuestion = randomNumberInterval[Random.Range(0, randomNumberInterval.Count - 1)];
-        // quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
-        quizLoader.LoadCSV("Matchart", "CAFP");
+        quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
+        // quizLoader.LoadCSV("Matchart", "CAFP");
     }
 
     void QuestionDisplay()
@@ -209,6 +217,43 @@ public class Game_Matchart : MonoBehaviour
 
     void CheckResponse()
     {
+        selected++;
+        if (selected == selectedLimit)
+        {
+            selected = 0;
+            currentTime = 3;
+            audioPlay.AudioTimer("stop");
+        }
+        else
+        {
+            clickedButton = 0;
+
+
+            for (int i = 0; i < choicesButton.Length; i++)
+            {
+                if (i == indexChoice)
+                {
+                    // Do Nothing
+                }
+                else
+                {
+                    choicesButton[i].interactable = true;
+                }
+            }
+
+            for (int i = 0; i < answersButton.Length; i++)
+            {
+                if (i == indexAnswer)
+                {
+                    // Do Nothing
+                }
+                else
+                {
+                    answersButton[i].interactable = true;
+                }
+            }
+        }
+
         if (questionDict[choicesText[indexChoice].text] == answersText[indexAnswer].text)
         {
             Debug.Log("Correct!");
@@ -216,14 +261,16 @@ public class Game_Matchart : MonoBehaviour
             answersButton[indexAnswer].GetComponent<Image>().color = Color.green;
 
             player_score.ChangeScore();
-            currentTime = 3;
+
+            audioPlay.AudioWin();
         }
         else
         {
             Debug.Log("Wrong!");
             choicesButton[indexChoice].GetComponent<Image>().color = Color.red;
             answersButton[indexAnswer].GetComponent<Image>().color = Color.red;
-            currentTime = 3;
+
+            audioPlay.AudioLose();
         }
     }
 
@@ -235,6 +282,10 @@ public class Game_Matchart : MonoBehaviour
 
             matchartPanel.SetActive(false);
             quizInitializerPanel.SetActive(true);
+        }
+        else
+        {
+            audioPlay.AudioTimer("play");
         }
 
         for (int i = 0; i < choicesButton.Length; i++)

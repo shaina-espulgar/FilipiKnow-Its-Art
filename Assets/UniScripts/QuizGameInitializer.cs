@@ -41,6 +41,8 @@ public class QuizGameInitializer : MonoBehaviour
 
     void OnEnable()
     {
+        doFixedUpdate = true;
+        indexedQuizzes.Clear();
         textButton.text = "Spin";
 
         if (QuizCounter == QuizLimit)
@@ -53,6 +55,27 @@ public class QuizGameInitializer : MonoBehaviour
 
             subject_1.onClick.AddListener(delegate { ChosenSubject(subject_1.image.sprite.name); });
             subject_2.onClick.AddListener(delegate { ChosenSubject(subject_2.image.sprite.name); });
+        }
+    }
+
+    bool doFixedUpdate = true;
+    List<int> indexedQuizzes = new List<int>();
+    int randomNumber;
+    private void FixedUpdate()
+    {
+        if (doFixedUpdate == true)
+        {
+            randomNumber = Random.Range(0, subjectSprites.Length - 1);
+            if (indexedQuizzes.Contains(randomNumber) == false)
+            {
+                indexedQuizzes.Add(randomNumber);
+                Debug.Log("Index Added");
+            }
+
+            if (indexedQuizzes.Count >= 2)
+            {
+                doFixedUpdate = false;
+            }
         }
     }
 
@@ -84,23 +107,13 @@ public class QuizGameInitializer : MonoBehaviour
         quizTypePanel.SetActive(false);
         subjectTypePanel.SetActive(true);
 
-        int randomSubjectSprite_1 = Random.Range(0, subjectSprites.Length - 1);
-        subject_1.image.sprite = subjectSprites[randomSubjectSprite_1];
-
-        int randomSubjectSprite_2 = Random.Range(0, subjectSprites.Length - 1);
-        if (randomSubjectSprite_2 == randomSubjectSprite_1)
-        {
-            randomSubjectSprite_2 = Random.Range(0, subjectSprites.Length - 1);
-            subject_2.image.sprite = subjectSprites[randomSubjectSprite_2];
-        }
-        else
-        {
-            subject_2.image.sprite = subjectSprites[randomSubjectSprite_2];
-        }
+        subject_1.image.sprite = subjectSprites[indexedQuizzes[0]];
+        subject_2.image.sprite = subjectSprites[indexedQuizzes[1]];
     }
 
     void ChosenSubject(string typeOfSubject)
     {
+        doFixedUpdate = true;
         switch (typeOfSubject)
         {
             case "National Artists":

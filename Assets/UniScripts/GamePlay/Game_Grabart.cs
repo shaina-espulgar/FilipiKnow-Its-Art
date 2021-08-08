@@ -9,6 +9,9 @@ public class Game_Grabart : MonoBehaviour
     [Header("Quizloader")]
     [SerializeField] private QuizLoader quizLoader;
 
+    [Header("Audio Play")]
+    [SerializeField] private AudioPlay audioPlay;
+
     [Header("Quiz Game Initializer")]
     [SerializeField] private QuizGameInitializer quizGameInitializer;
 
@@ -53,8 +56,9 @@ public class Game_Grabart : MonoBehaviour
         roundCounter.text = round.ToString();
 
         quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
-        // quizLoader.LoadCSV("Grabart", "National Artists");
         QuestionDisplay();
+
+        audioPlay.AudioTimer("play");
     }
 
     void Update()
@@ -77,9 +81,8 @@ public class Game_Grabart : MonoBehaviour
             }
         }
 
-        quizLoader.indexQuestion = randomNumberInterval[Random.Range(0, randomNumberInterval.Count)];
+        quizLoader.indexQuestion = randomNumberInterval[Random.Range(0, randomNumberInterval.Count - 1)];
         quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
-        // quizLoader.LoadCSV("Grabart", "National Artists");
     }
 
     void QuestionDisplay()
@@ -110,6 +113,7 @@ public class Game_Grabart : MonoBehaviour
 
     public void ButtonResponse(int buttonIndex)
     {
+
         selected++;
         if (selected == selectedLimit)
         {
@@ -118,6 +122,7 @@ public class Game_Grabart : MonoBehaviour
                 choicesButton[i].interactable = false;
             }
             currentTime = 3;
+            audioPlay.AudioTimer("stop");
         }
 
         if (answers[buttonIndex] == "TRUE")
@@ -125,11 +130,15 @@ public class Game_Grabart : MonoBehaviour
             Debug.Log("Correct!");
             choicesButton[buttonIndex].GetComponent<Image>().color = Color.green;
             player_score.ChangeScore();
+
+            audioPlay.AudioWin();
         }
         else if (answers[buttonIndex] == "FALSE")
         {
             Debug.Log("Wrong!");
             choicesButton[buttonIndex].GetComponent<Image>().color = Color.red;
+
+            audioPlay.AudioLose();
         }
     }
 
@@ -140,6 +149,10 @@ public class Game_Grabart : MonoBehaviour
             quizGameInitializer.QuizCounter++;
             grabartPanel.SetActive(false);
             quizInitializerPanel.SetActive(true);
+        }
+        else
+        {
+            audioPlay.AudioTimer("play");
         }
 
         for (int i = 0; i < choicesButton.Length; i++)

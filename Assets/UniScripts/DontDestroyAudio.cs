@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroyAudio : MonoBehaviour
 {
@@ -15,10 +16,5 @@ public class DontDestroyAudio : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    void Destroy()
-    {
-        Destroy(gameObject);
     }
 }

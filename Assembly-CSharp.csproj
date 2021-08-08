@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A17B017E-D157-E301-92FF-150E0DF51C50}</ProjectGuid>
+    <ProjectGuid>{AD7F87A0-0506-5BBF-6FD0-B2DF16F8C510}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -920,23 +920,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PlayFabSDKEditor.csproj">
-      <Project>{8713185E-9FE3-423F-B3AA-328B0A08981F}</Project>
+      <Project>{77D78110-2836-165F-7230-55B0800D892F}</Project>
       <Name>PlayFabSDKEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PlayFabEditorExtensions.csproj">
-      <Project>{54134749-CF72-6030-8F22-C24AC579E299}</Project>
+      <Project>{86BC03A4-7CB3-5265-7810-0428FA2CEE22}</Project>
       <Name>PlayFabEditorExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="NativeShare.Runtime.csproj">
-      <Project>{67DDDA3E-CD83-692B-3911-6C97FF83D7BD}</Project>
+      <Project>{23316F97-3B36-4DFD-B59A-881B487FF044}</Project>
       <Name>NativeShare.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="PlayFab.csproj">
-      <Project>{72CF8FDF-9A23-F372-2B9D-9F5550D120C8}</Project>
+      <Project>{2C923674-5DD0-1E56-FBCE-EB8D1CB4ADF7}</Project>
       <Name>PlayFab</Name>
     </ProjectReference>
     <ProjectReference Include="NativeShare.Editor.csproj">
-      <Project>{723B4303-5EAA-0F2A-2D50-5946E21A6518}</Project>
+      <Project>{46C11335-109F-4922-EC93-AD2394ED39F6}</Project>
       <Name>NativeShare.Editor</Name>
     </ProjectReference>
   </ItemGroup>

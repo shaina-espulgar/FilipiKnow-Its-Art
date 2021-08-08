@@ -9,6 +9,9 @@ public class Game_Classifyart : MonoBehaviour
     [Header("Quizloader")]
     [SerializeField] private QuizLoader quizLoader;
 
+    [Header("Audio Play")]
+    [SerializeField] private AudioPlay audioPlay;
+
     [Header("Quiz Game Initializer")]
     [SerializeField] private QuizGameInitializer quizGameInitializer;
 
@@ -62,6 +65,9 @@ public class Game_Classifyart : MonoBehaviour
         roundCounter.text = round.ToString();
 
         quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
+        // quizLoader.LoadCSV("Matchart", "CAFP");
+
+        audioPlay.AudioTimer("play");
     }
 
     void Update()
@@ -107,6 +113,7 @@ public class Game_Classifyart : MonoBehaviour
         quizLoader.indexQuestion = Random.Range(0, quizLoader.data_questionSet.Count - 1);
 
         quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
+        // quizLoader.LoadCSV("Matchart", "CAFP");
     }
 
     void QuestionDisplay()
@@ -121,7 +128,7 @@ public class Game_Classifyart : MonoBehaviour
         questionDict.Add(choices[2], answers[1]);
         questionDict.Add(choices[3], answers[1]);
 
-        
+
         for (int i = 0; i < choicesText.Length; i++)
         {
             choicesText[indexedChoices[i]].text = choices[i];
@@ -193,6 +200,7 @@ public class Game_Classifyart : MonoBehaviour
 
     void CheckResponse()
     {
+        audioPlay.AudioTimer("stop");
         if (questionDict[choicesText[indexChoice].text] == answersText[indexAnswer].text)
         {
             Debug.Log("Correct!");
@@ -201,6 +209,8 @@ public class Game_Classifyart : MonoBehaviour
 
             player_score.ChangeScore();
             currentTime = 3;
+
+            audioPlay.AudioWin();
         }
         else
         {
@@ -208,6 +218,8 @@ public class Game_Classifyart : MonoBehaviour
             choicesButton[indexChoice].GetComponent<Image>().color = Color.red;
             answersButton[indexAnswer].GetComponent<Image>().color = Color.red;
             currentTime = 3;
+
+            audioPlay.AudioLose();
         }
     }
 
@@ -219,6 +231,10 @@ public class Game_Classifyart : MonoBehaviour
 
             classifyartPanel.SetActive(false);
             quizInitializerPanel.SetActive(true);
+        }
+        else
+        {
+            audioPlay.AudioTimer("play");
         }
 
         for (int i = 0; i < choicesButton.Length; i++)

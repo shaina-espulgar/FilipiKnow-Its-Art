@@ -15,9 +15,8 @@ public class PlayfabLeaderboard : MonoBehaviour
     private int scoreRecorded;
     void Start()
     {
-        scoreRecorded = Player_Score.PlayerScore;
-
         Login();
+        scoreRecorded = Player_Score.PlayerScore;
     }
 
     void Login()
@@ -47,8 +46,6 @@ public class PlayfabLeaderboard : MonoBehaviour
         SubmitName();
 
         SendLeaderboard(scoreRecorded);
-
-        GetLeaderboard();
     }
 
     public void SubmitName()
@@ -63,6 +60,7 @@ public class PlayfabLeaderboard : MonoBehaviour
     void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
     {
         Debug.Log("Updated display name!");
+        GetLeaderboard();
     }
 
     void OnError(PlayFabError error)
@@ -90,6 +88,7 @@ public class PlayfabLeaderboard : MonoBehaviour
     void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
         Debug.Log("Successful leaderboard sent");
+
     }
 
     public void GetLeaderboard()

@@ -5,22 +5,22 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637635953027093547
-    m_Hash: 3021183940
+      ticks: 637639204553360298
+    m_Hash: 430960557
   m_LockFileStatus:
     m_FilePath: C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637635954125184848
-    m_Hash: 736927396
+      ticks: 637639206290570693
+    m_Hash: 518543106
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: C:/Users/mapan/Documents/GitHub/FilipiKnow-Its-Art/Packages
-m_EditorVersion: 2021.1.14f1 (51d2f824827f)
+m_EditorVersion: 2021.1.16f1 (5fa502fca597)
 m_ResolvedPackages:
 - packageId: com.unity.2d.sprite@1.0.0
   testable: 0
@@ -328,12 +328,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.5.3
     nextVersion: 
-- packageId: com.unity.collab-proxy@1.5.7
+- packageId: com.unity.collab-proxy@1.7.1
   testable: 0
   isDirectDependency: 1
-  version: 1.5.7
+  version: 1.7.1
   source: 1
-  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.collab-proxy@1.5.7
+  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.collab-proxy@1.7.1
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -372,6 +372,8 @@ m_ResolvedPackages:
     - 1.5.7
     - 1.6.0
     - 1.7.1
+    - 1.8.0
+    - 1.9.0
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -383,9 +385,9 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
-    - 1.5.7
-    - 1.6.0
     - 1.7.1
+    - 1.8.0
+    - 1.9.0
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -396,7 +398,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    verified: 1.5.7
+    verified: 1.7.1
   dependencies:
   - name: com.unity.nuget.newtonsoft-json
     version: 2.0.0
@@ -404,16 +406,19 @@ m_ResolvedPackages:
   - name: com.unity.nuget.newtonsoft-json
     version: 2.0.0
   keywords:
-  - vsc
-  - version
-  - control
-  - collab
-  - collaboration
-  - collaborate
-  - teams
-  - team
-  - cloud
   - backup
+  - cloud
+  - collab
+  - collaborate
+  - collaboration
+  - control
+  - plastic
+  - plasticscm
+  - source
+  - team
+  - teams
+  - version
+  - vcs
   registry:
     id: main
     name: 
@@ -426,16 +431,16 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637551413290000000
+  datePublishedTicks: 637616921650000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: f079d307344f568804d3ea6d781013135e614e45
+    revision: 30ef59f552633de9ff0401db4e73ac89982d4ac0
     path: 
   unityLifecycle:
-    version: 1.5.7
+    version: 1.7.1
     nextVersion: 
 - packageId: com.unity.ide.rider@3.0.7
   testable: 0
@@ -655,6 +660,144 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.2.3
+    nextVersion: 
+- packageId: com.unity.jobs@0.8.0-preview.23
+  testable: 0
+  isDirectDependency: 1
+  version: 0.8.0-preview.23
+  source: 1
+  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.jobs@0.8.0-preview.23
+  assetPath: Packages/com.unity.jobs
+  name: com.unity.jobs
+  displayName: Jobs
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: The Jobs package provides additional job types like IJobParallelForBatch,
+    IJobParallelForDefer, and IJobParallelForFilter.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.0.7-preview.1
+    - 0.0.7-preview.2
+    - 0.0.7-preview.3
+    - 0.0.7-preview.4
+    - 0.0.7-preview.5
+    - 0.0.7-preview.6
+    - 0.0.7-preview.7
+    - 0.0.7-preview.8
+    - 0.0.7-preview.9
+    - 0.0.7-preview.10
+    - 0.0.7-preview.11
+    - 0.0.7-preview.12
+    - 0.0.7-preview.13
+    - 0.1.0-preview
+    - 0.1.1-preview
+    - 0.2.0-preview.13
+    - 0.2.1-preview.3
+    - 0.2.2-preview.6
+    - 0.2.3-preview.9
+    - 0.2.4-preview.11
+    - 0.2.5-preview.20
+    - 0.2.6-preview.13
+    - 0.2.7-preview.11
+    - 0.2.8-preview.3
+    - 0.2.9-preview.15
+    - 0.2.10-preview.11
+    - 0.2.10-preview.12
+    - 0.2.10-preview.13
+    - 0.4.0-preview.18
+    - 0.5.0-preview.14
+    - 0.7.0-preview.17
+    - 0.8.0-preview.23
+    compatible:
+    - 0.0.7-preview.1
+    - 0.0.7-preview.2
+    - 0.0.7-preview.3
+    - 0.0.7-preview.4
+    - 0.0.7-preview.5
+    - 0.0.7-preview.6
+    - 0.0.7-preview.7
+    - 0.0.7-preview.8
+    - 0.0.7-preview.9
+    - 0.0.7-preview.10
+    - 0.0.7-preview.11
+    - 0.0.7-preview.12
+    - 0.0.7-preview.13
+    - 0.1.0-preview
+    - 0.1.1-preview
+    - 0.2.0-preview.13
+    - 0.2.1-preview.3
+    - 0.2.2-preview.6
+    - 0.2.3-preview.9
+    - 0.2.4-preview.11
+    - 0.2.5-preview.20
+    - 0.2.6-preview.13
+    - 0.2.7-preview.11
+    - 0.2.8-preview.3
+    - 0.2.9-preview.15
+    - 0.2.10-preview.11
+    - 0.2.10-preview.12
+    - 0.2.10-preview.13
+    - 0.4.0-preview.18
+    - 0.5.0-preview.14
+    - 0.7.0-preview.17
+    - 0.8.0-preview.23
+    verified: 
+  dependencies:
+  - name: com.unity.collections
+    version: 0.15.0-preview.21
+  - name: com.unity.mathematics
+    version: 1.2.1
+  resolvedDependencies:
+  - name: com.unity.collections
+    version: 0.15.0-preview.21
+  - name: com.unity.test-framework.performance
+    version: 2.3.1-preview
+  - name: com.unity.test-framework
+    version: 1.1.27
+  - name: com.unity.ext.nunit
+    version: 1.0.6
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.nuget.newtonsoft-json
+    version: 2.0.0
+  - name: com.unity.burst
+    version: 1.5.4
+  - name: com.unity.mathematics
+    version: 1.2.1
+  keywords:
+  - dots
+  - jobs
+  - unity
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637469313560000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/Unity-Technologies/dots.git
+    revision: 011950b3e6b7c3fabea375fdac55ad367be62814
+    path: 
+  unityLifecycle:
+    version: 
     nextVersion: 
 - packageId: com.unity.purchasing@3.2.2
   testable: 0
@@ -1041,12 +1184,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.0.6
     nextVersion: 
-- packageId: com.unity.timeline@1.5.5
+- packageId: com.unity.timeline@1.5.6
   testable: 0
   isDirectDependency: 1
-  version: 1.5.5
+  version: 1.5.6
   source: 1
-  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.timeline@1.5.5
+  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.timeline@1.5.6
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1127,7 +1270,6 @@ m_ResolvedPackages:
     - 1.6.0-pre.5
     - 1.6.1
     compatible:
-    - 1.5.5
     - 1.5.6
     - 1.6.0-pre.1
     - 1.6.0-pre.3
@@ -1171,16 +1313,16 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637557616440000000
+  datePublishedTicks: 637613662510000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-    revision: 4bb067f24973c7cfa1e4a453615e43083ce6855d
+    revision: bba45362fa74fde39bfa14d05688da527254b39f
     path: 
   unityLifecycle:
-    version: 1.5.5
+    version: 1.5.6
     nextVersion: 
 - packageId: com.unity.ugui@1.0.0
   testable: 0
@@ -3066,121 +3208,159 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.jobs@0.8.0-preview.23
+- packageId: com.unity.modules.subsystems@1.0.0
   testable: 0
-  isDirectDependency: 1
-  version: 0.8.0-preview.23
-  source: 1
-  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.jobs@0.8.0-preview.23
-  assetPath: Packages/com.unity.jobs
-  name: com.unity.jobs
-  displayName: Jobs
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 2
+  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.modules.subsystems@1.0.0
+  assetPath: Packages/com.unity.modules.subsystems
+  name: com.unity.modules.subsystems
+  displayName: Subsystems
   author:
     name: 
     email: 
     url: 
   category: 
-  type: 
-  description: The Jobs package provides additional job types like IJobParallelForBatch,
-    IJobParallelForDefer, and IJobParallelForFilter.
+  type: module
+  description: 'The Subsystem module contains the definitions and runtime support
+    for general subsystems in Unity. Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.SubsystemsModule.html'
   status: 4
   errors: []
   versions:
     all:
-    - 0.0.7-preview.1
-    - 0.0.7-preview.2
-    - 0.0.7-preview.3
-    - 0.0.7-preview.4
-    - 0.0.7-preview.5
-    - 0.0.7-preview.6
-    - 0.0.7-preview.7
-    - 0.0.7-preview.8
-    - 0.0.7-preview.9
-    - 0.0.7-preview.10
-    - 0.0.7-preview.11
-    - 0.0.7-preview.12
-    - 0.0.7-preview.13
-    - 0.1.0-preview
-    - 0.1.1-preview
-    - 0.2.0-preview.13
-    - 0.2.1-preview.3
-    - 0.2.2-preview.6
-    - 0.2.3-preview.9
-    - 0.2.4-preview.11
-    - 0.2.5-preview.20
-    - 0.2.6-preview.13
-    - 0.2.7-preview.11
-    - 0.2.8-preview.3
-    - 0.2.9-preview.15
-    - 0.2.10-preview.11
-    - 0.2.10-preview.12
-    - 0.2.10-preview.13
-    - 0.4.0-preview.18
-    - 0.5.0-preview.14
-    - 0.7.0-preview.17
-    - 0.8.0-preview.23
+    - 1.0.0
     compatible:
-    - 0.0.7-preview.1
-    - 0.0.7-preview.2
-    - 0.0.7-preview.3
-    - 0.0.7-preview.4
-    - 0.0.7-preview.5
-    - 0.0.7-preview.6
-    - 0.0.7-preview.7
-    - 0.0.7-preview.8
-    - 0.0.7-preview.9
-    - 0.0.7-preview.10
-    - 0.0.7-preview.11
-    - 0.0.7-preview.12
-    - 0.0.7-preview.13
-    - 0.1.0-preview
-    - 0.1.1-preview
-    - 0.2.0-preview.13
-    - 0.2.1-preview.3
-    - 0.2.2-preview.6
-    - 0.2.3-preview.9
-    - 0.2.4-preview.11
-    - 0.2.5-preview.20
-    - 0.2.6-preview.13
-    - 0.2.7-preview.11
-    - 0.2.8-preview.3
-    - 0.2.9-preview.15
-    - 0.2.10-preview.11
-    - 0.2.10-preview.12
-    - 0.2.10-preview.13
-    - 0.4.0-preview.18
-    - 0.5.0-preview.14
-    - 0.7.0-preview.17
-    - 0.8.0-preview.23
-    verified: 
+    - 1.0.0
+    verified: 1.0.0
   dependencies:
-  - name: com.unity.collections
-    version: 0.15.0-preview.21
-  - name: com.unity.mathematics
-    version: 1.2.1
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
   resolvedDependencies:
-  - name: com.unity.collections
-    version: 0.15.0-preview.21
-  - name: com.unity.test-framework.performance
-    version: 2.3.1-preview
-  - name: com.unity.test-framework
-    version: 1.1.27
-  - name: com.unity.ext.nunit
-    version: 1.0.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: 
+    name: 
+    url: 
+    scopes: []
+    isDefault: 0
+    capabilities: 0
+  hasRegistry: 0
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: com.unity.modules.uielementsnative@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 2
+  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
+  assetPath: Packages/com.unity.modules.uielementsnative
+  name: com.unity.modules.uielementsnative
+  displayName: UIElements Native
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    verified: 1.0.0
+  dependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
-  - name: com.unity.nuget.newtonsoft-json
-    version: 2.0.0
-  - name: com.unity.burst
-    version: 1.5.4
-  - name: com.unity.mathematics
-    version: 1.2.1
+  resolvedDependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: 
+    name: 
+    url: 
+    scopes: []
+    isDefault: 0
+    capabilities: 0
+  hasRegistry: 0
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+- packageId: com.unity.ext.nunit@1.0.6
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.6
+  source: 1
+  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.ext.nunit@1.0.6
+  assetPath: Packages/com.unity.ext.nunit
+  name: com.unity.ext.nunit
+  displayName: Custom NUnit
+  author:
+    name: 
+    email: 
+    url: 
+  category: Libraries
+  type: 
+  description: Custom version of the nunit package build to work with Unity. Used
+    by the Unity Test Framework.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.1.5-preview
+    - 0.1.6-preview
+    - 0.1.9-preview
+    - 1.0.0
+    - 1.0.5
+    - 1.0.6
+    compatible:
+    - 1.0.6
+    verified: 1.0.6
+  dependencies: []
+  resolvedDependencies: []
   keywords:
-  - dots
-  - jobs
-  - unity
+  - nunit
+  - unittest
+  - test
   registry:
     id: main
     name: 
@@ -3193,16 +3373,16 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637469313560000000
+  datePublishedTicks: 637429759280000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: git+https://github.com/Unity-Technologies/dots.git
-    revision: 011950b3e6b7c3fabea375fdac55ad367be62814
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
+    revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
     path: 
   unityLifecycle:
-    version: 
+    version: 1.0.6
     nextVersion: 
 - packageId: com.unity.collections@0.15.0-preview.21
   testable: 0
@@ -3420,182 +3600,6 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.2.1
-    nextVersion: 
-- packageId: com.unity.modules.subsystems@1.0.0
-  testable: 0
-  isDirectDependency: 0
-  version: 1.0.0
-  source: 2
-  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.modules.subsystems@1.0.0
-  assetPath: Packages/com.unity.modules.subsystems
-  name: com.unity.modules.subsystems
-  displayName: Subsystems
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: module
-  description: 'The Subsystem module contains the definitions and runtime support
-    for general subsystems in Unity. Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.SubsystemsModule.html'
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 1.0.0
-    compatible:
-    - 1.0.0
-    verified: 1.0.0
-  dependencies:
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  keywords: []
-  registry:
-    id: 
-    name: 
-    url: 
-    scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
-  hideInEditor: 1
-  entitlements:
-    isAllowed: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 0
-  documentationUrl: 
-  hasRepository: 0
-  repository:
-    type: 
-    url: 
-    revision: 
-    path: 
-  unityLifecycle:
-    version: 
-    nextVersion: 
-- packageId: com.unity.modules.uielementsnative@1.0.0
-  testable: 0
-  isDirectDependency: 0
-  version: 1.0.0
-  source: 2
-  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
-  assetPath: Packages/com.unity.modules.uielementsnative
-  name: com.unity.modules.uielementsnative
-  displayName: UIElements Native
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: module
-  description: 
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 1.0.0
-    compatible:
-    - 1.0.0
-    verified: 1.0.0
-  dependencies:
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  keywords: []
-  registry:
-    id: 
-    name: 
-    url: 
-    scopes: []
-    isDefault: 0
-    capabilities: 0
-  hasRegistry: 0
-  hideInEditor: 1
-  entitlements:
-    isAllowed: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 0
-  documentationUrl: 
-  hasRepository: 0
-  repository:
-    type: 
-    url: 
-    revision: 
-    path: 
-  unityLifecycle:
-    version: 
-    nextVersion: 
-- packageId: com.unity.ext.nunit@1.0.6
-  testable: 0
-  isDirectDependency: 0
-  version: 1.0.6
-  source: 1
-  resolvedPath: C:\Users\mapan\Documents\GitHub\FilipiKnow-Its-Art\Library\PackageCache\com.unity.ext.nunit@1.0.6
-  assetPath: Packages/com.unity.ext.nunit
-  name: com.unity.ext.nunit
-  displayName: Custom NUnit
-  author:
-    name: 
-    email: 
-    url: 
-  category: Libraries
-  type: 
-  description: Custom version of the nunit package build to work with Unity. Used
-    by the Unity Test Framework.
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 0.1.5-preview
-    - 0.1.6-preview
-    - 0.1.9-preview
-    - 1.0.0
-    - 1.0.5
-    - 1.0.6
-    compatible:
-    - 1.0.6
-    verified: 1.0.6
-  dependencies: []
-  resolvedDependencies: []
-  keywords:
-  - nunit
-  - unittest
-  - test
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-  hasRegistry: 1
-  hideInEditor: 1
-  entitlements:
-    isAllowed: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 637429759280000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
-    revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
-    path: 
-  unityLifecycle:
-    version: 1.0.6
     nextVersion: 
 - packageId: com.unity.nuget.newtonsoft-json@2.0.0
   testable: 0

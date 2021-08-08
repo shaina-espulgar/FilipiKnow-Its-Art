@@ -9,6 +9,9 @@ public class Game_Classicart : MonoBehaviour
     [Header("Quizloader")]
     [SerializeField] private QuizLoader quizLoader;
 
+    [Header("Audio Play")]
+    [SerializeField] private AudioPlay audioPlay;
+
     [Header("Quiz Game Initializer")]
     [SerializeField] private QuizGameInitializer quizGameInitializer;
 
@@ -56,6 +59,8 @@ public class Game_Classicart : MonoBehaviour
 
         quizLoader.LoadCSV(QuizGameInitializer.typeOfQuestion, QuizGameInitializer.typeOfSubject);
         QuestionDisplay();
+
+        audioPlay.AudioTimer("play");
     }
 
    void Update()
@@ -101,6 +106,7 @@ public class Game_Classicart : MonoBehaviour
 
     public void ButtonResponse(int buttonIndex)
     {
+        audioPlay.AudioTimer("stop");
         for (int i = 0; i < choicesButton.Length; i++)
         {
             choicesButton[i].interactable = false;
@@ -113,12 +119,16 @@ public class Game_Classicart : MonoBehaviour
 
             player_score.ChangeScore();
             currentTime = 3;
+
+            audioPlay.AudioWin();
         }
         else
         {
             Debug.Log("Wrong!");
             choicesButton[buttonIndex].GetComponent<Image>().color = Color.red;
             currentTime = 3;
+
+            audioPlay.AudioLose();
         }
     }
 
@@ -130,6 +140,10 @@ public class Game_Classicart : MonoBehaviour
 
             classicartPanel.SetActive(false);
             quizInitializerPanel.SetActive(true);
+        }
+        else
+        {
+            audioPlay.AudioTimer("play");
         }
 
         for (int i = 0; i < choicesButton.Length; i++)

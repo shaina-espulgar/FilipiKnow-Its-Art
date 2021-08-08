@@ -14,6 +14,7 @@ public class Player_Score : MonoBehaviour
  
     void Start()
     {
+        PlayerScore = 0;
         Display();
     }
 

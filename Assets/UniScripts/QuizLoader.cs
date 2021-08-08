@@ -155,11 +155,11 @@ public class QuizLoader : MonoBehaviour
         _answers = data_questionSet[indexQuestion + 1].Split('|');
 
         // Decrease the size of an array by 1 (first column) since that column is composed of a question with corresponding empty block below it as always 
-        for (int i = 0; i < _choices.Length - 1; i++)
+        for (int i = 0; i < _answers.Length - 1; i++)
         {
-            _choices[i] = _choices[i + 1];
             _answers[i] = _answers[i + 1];
         }
+
         Array.Resize(ref _choices, _choices.Length - 1);
         Array.Resize(ref _answers, _answers.Length - 1);
     }
